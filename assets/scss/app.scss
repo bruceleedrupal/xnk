@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+body {
+    background-color: #f9fAfb;
+}
+img {
+	
+	max-width:100%;
+}
+.custom-center {
+	margin:0 auto;
+
+}
+.login-form-div {
+	margin-top:2em;
+}
+.login-form{
+	padding:3em;
+	
+	border-radius: .28571429rem;
+	border: 1px solid rgba(34,36,38,.15);
+	background-color:#fff;	
+	label {
+	font-size:0.9em;
+	color: rgba(0, 0, 0, 0.8);
+	font-weight:400;
+	}
+}
