@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Options index{% endblock %}
+
+{% block body %}
+    <h1>Options index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>                
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+       {% for option in options %}
+       
+        {% set position = option.position %}
+        {% set moveUpLink = path('options_moveUp',{'id':option.id}) %}
+        {% set moveTopLink = path('options_moveUp',{'id':option.id,'top':1}) %}
+        {% set moveDownLink = path('options_moveDown',{'id':option.id}) %}
+        {% set moveBottomLink = path('options_moveDown',{'id':option.id,'down':1}) %}
+        
+        
+        
+       
+            <tr>
+                <td>{{ option.id }}</td>
+                <td>{{ option.indentTitle }}</td>
+                <td>
+                    <a href="{{ path('options_show', {'id': option.id}) }}">show</a>
+                    <a href="{{ path('options_edit', {'id': option.id}) }}">edit</a>
+                    {% if option.lvl==1 %}
+                     {% if position =="first" %}
+                        <a href="{{ moveDownLink}}">MoveDown</a>
+                        <a href="{{ moveBottomLink}}">MoveBottom</a>
+                    {% elseif  position=="middle" %}
+                         <a href="{{ moveUpLink }}">MoveUp</a>
+                         <a href="{{ moveTopLink}}">MoveFirst</a>
+                         <a href="{{ moveDownLink}}">MoveDown</a>
+                         <a href="{{ moveBottomLink}}">MoveBottom</a>
+                  
+                    {% elseif position=="last" %}  
+                        <a href="{{ moveUpLink }}">MoveUp</a>
+                        <a href="{{ moveTopLink}}">MoveFirst</a> 
+                    {% endif %}  
+                    {% endif %}
+                    
+                    {% if option.lvl==0 %} <a href="{{ path('options_new', {'parent': option.id}) }}">Add sub</a> {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('options_new') }}" class='btn btn-success'>Create new</a>
+{% endblock %}
