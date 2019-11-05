@@ -3,14 +3,23 @@
 {% block title %}Options index{% endblock %}
 
 {% block body %}
-    <h1>Options index</h1>
-
+    <h1>选项列表</h1>
+    
+    <form>
+    <div class="input-group mb-2">
+      <input type="text" class="form-control form-control-nomargin" name='filter' placeholder='输入标题进行搜索' value={{ app.request.query.get('filter')}}>
+      <div class="input-group-append">
+      <button class="btn btn-success btn-outline input-group-button" >{{ button_label|default('搜索') }}</button>
+      <a href="{{ path('options_index') }}" class="btn btn-info linkbutton input-group-button">复位</a>
+      </div>
+   </div>
+   </form>
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>                
-                <th>actions</th>
+                <th>名称</th>                
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -57,6 +66,8 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('options_new') }}" class='btn btn-success'>Create new</a>
+     <div class="navigation">
+            {{ knp_pagination_render(options) }}
+     </div>
+    <a href="{{ path('options_new') }}" class='btn btn-success'>创建</a>
 {% endblock %}

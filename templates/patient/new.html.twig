@@ -3,9 +3,8 @@
 {% block title %}New Patient{% endblock %}
 
 {% block body %}
-    <h1>Create new Patient</h1>
+    <h1>新增病人</h1>
 
     {{ include('patient/_form.html.twig') }}
-
-    <a href="{{ path('patient_index') }}" class='btn btn-primary'>back to list</a>
+    
 {% endblock %}

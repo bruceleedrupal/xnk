@@ -3,11 +3,9 @@
 {% block title %}Edit Patient{% endblock %}
 
 {% block body %}
-    <h1>Edit Patient</h1>
+    <h1>编辑病人:{{ patient.name }}</h1>
 
-    {{ include('patient/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('patient_index') }}" class='btn btn-success'>back to list</a>
+    {{ include('patient/_form.html.twig', {'button_label': '更新'}) }}   
 
     {{ include('patient/_delete_form.html.twig') }}
 {% endblock %}

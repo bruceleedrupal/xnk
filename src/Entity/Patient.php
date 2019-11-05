@@ -46,6 +46,28 @@ class Patient
      */
     private $zyh;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $gender;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $scholarship;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $marriage;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $career;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -124,6 +146,54 @@ class Patient
     public function setZyh(string $zyh): self
     {
         $this->zyh = $zyh;
+
+        return $this;
+    }
+
+    public function getGender(): ?Options
+    {
+        return $this->gender;
+    }
+
+    public function setGender(?Options $gender): self
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getScholarship(): ?Options
+    {
+        return $this->scholarship;
+    }
+
+    public function setScholarship(?Options $scholarship): self
+    {
+        $this->scholarship = $scholarship;
+
+        return $this;
+    }
+
+    public function getMarriage(): ?Options
+    {
+        return $this->marriage;
+    }
+
+    public function setMarriage(?Options $marriage): self
+    {
+        $this->marriage = $marriage;
+
+        return $this;
+    }
+
+    public function getCareer(): ?Options
+    {
+        return $this->career;
+    }
+
+    public function setCareer(?Options $career): self
+    {
+        $this->career = $career;
 
         return $this;
     }

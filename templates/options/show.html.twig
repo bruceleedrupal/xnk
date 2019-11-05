@@ -18,11 +18,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('options_index') }}" class='btn btn-success'>back to list</a>
+    <a href="{{ path('options_index') }}" class='btn btn-success' class='btn btn-success'>选项列表</a>
 
-    <a href="{{ path('options_edit', {'id': option.id}) }}" class='btn btn-success'>edit</a>
+    <a href="{{ path('options_edit', {'id': option.id}) }}" class='btn btn-success'>编辑</a>
     
-      {% if option.lvl==0 %} <a href="{{ path('options_new', {'parent': option.id}) }}" class='btn btn-success'>Add sub</a> {% endif %}
+      {% if option.lvl==0 %} <a href="{{ path('options_new', {'parent': option.id}) }}" class='btn btn-success'>添加子选项</a> {% endif %}
 
     {{ include('options/_delete_form.html.twig') }}
 {% endblock %}

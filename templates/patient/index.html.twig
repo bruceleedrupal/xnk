@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Patient index{% endblock %}
+{% block title %}病人列表{% endblock %}
 
 {% block body %}
-    <h1>Patient index</h1>
+    <h1>病人列表</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>姓名</th>
                 <th>Age</th>
                 <th>actions</th>
             </tr>
@@ -21,8 +21,8 @@
                 <td>{{ patient.name }}</td>
                 <td>{{ patient.birthday ? patient.age : '' }}</td>
                 <td>
-                    <a href="{{ path('patient_show', {'id': patient.id}) }}">show</a>
-                    <a href="{{ path('patient_edit', {'id': patient.id}) }}">edit</a>
+                    <a href="{{ path('patient_show', {'id': patient.id}) }}">查看</a>
+                    <a href="{{ path('patient_edit', {'id': patient.id}) }}">编辑</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('patient_new') }}" class='btn btn-success'>Create new</a>
+    <a href="{{ path('patient_new') }}" class='btn btn-success'>创建</a>
 {% endblock %}

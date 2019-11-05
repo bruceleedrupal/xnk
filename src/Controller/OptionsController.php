@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  *
@@ -27,10 +28,23 @@ class OptionsController extends AbstractController
      *
      * @Route("/", name="options_index", methods={"GET"})
      */
-    public function index(OptionsRepository $optionsRepository): Response
+    public function index(OptionsRepository $optionsRepository,PaginatorInterface $paginator,Request $request): Response
     {
+        $query = $optionsRepository->findAllBylftQuery($request->query->get('filter'));
+         
+        
+        $options = $paginator->paginate(
+            // Doctrine Query, not results
+            $query,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            10
+          );
+        
+        
         return $this->render('options/index.html.twig', [
-            'options' => $optionsRepository->findAllBylft()
+            'options' => $options
         ]);
     }
 
