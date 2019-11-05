@@ -23,6 +23,18 @@ class OptionsRepository extends NestedTreeRepository
     {
         parent::__construct($em, $em->getClassMetadata(Options::class));
     }
+    
+    public function findAllBylftQuery($title=null){
+        
+        $qb =$this->createQueryBuilder('o');
+        if($title){
+            $qb->leftJoin('o.parent', 'p')
+            ->andWhere('o.title like :title or p.title like :title')
+            ->setParameter('title', '%'.$title.'%');
+        }
+        return $qb->orderBy('o.root,o.parent,o.lft', 'ASC')
+        ->getQuery();
+    }
 
     // /**
     //  * @return Option[] Returns an array of Option objects
