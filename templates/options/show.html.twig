@@ -19,7 +19,9 @@
     </table>
 
     <a href="{{ path('options_index') }}" class='btn btn-success' class='btn btn-success'>选项列表</a>
-
+    
+    {% if option.lvl==0 %}<a href="{{ path('options_index',{'filter':option.title}) }}" class='btn btn-success' class='btn btn-success'>子选项</a>{% endif %}
+    
     <a href="{{ path('options_edit', {'id': option.id}) }}" class='btn btn-success'>编辑</a>
     
       {% if option.lvl==0 %} <a href="{{ path('options_new', {'parent': option.id}) }}" class='btn btn-success'>添加子选项</a> {% endif %}

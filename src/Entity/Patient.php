@@ -48,7 +48,7 @@ class Patient
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $gender;
 
@@ -60,13 +60,51 @@ class Patient
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $marriage;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $career;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $weight;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $yibao;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $fuwei;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $jyyw;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $gxykzqk;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $jtyw;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $tnbkzqk;
 
     public function getId(): ?int
     {
@@ -194,6 +232,90 @@ class Patient
     public function setCareer(?Options $career): self
     {
         $this->career = $career;
+
+        return $this;
+    }
+
+    public function getWeight(): ?int
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(?int $weight): self
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    public function getYibao(): ?Options
+    {
+        return $this->yibao;
+    }
+
+    public function setYibao(?Options $yibao): self
+    {
+        $this->yibao = $yibao;
+
+        return $this;
+    }
+
+    public function getFuwei(): ?int
+    {
+        return $this->fuwei;
+    }
+
+    public function setFuwei(?int $fuwei): self
+    {
+        $this->fuwei = $fuwei;
+
+        return $this;
+    }
+
+    public function getJyyw(): ?Options
+    {
+        return $this->jyyw;
+    }
+
+    public function setJyyw(?Options $jyyw): self
+    {
+        $this->jyyw = $jyyw;
+
+        return $this;
+    }
+
+    public function getGxykzqk(): ?Options
+    {
+        return $this->gxykzqk;
+    }
+
+    public function setGxykzqk(?Options $gxykzqk): self
+    {
+        $this->gxykzqk = $gxykzqk;
+
+        return $this;
+    }
+
+    public function getJtyw(): ?Options
+    {
+        return $this->jtyw;
+    }
+
+    public function setJtyw(?Options $jtyw): self
+    {
+        $this->jtyw = $jtyw;
+
+        return $this;
+    }
+
+    public function getTnbkzqk(): ?Options
+    {
+        return $this->tnbkzqk;
+    }
+
+    public function setTnbkzqk(?Options $tnbkzqk): self
+    {
+        $this->tnbkzqk = $tnbkzqk;
 
         return $this;
     }

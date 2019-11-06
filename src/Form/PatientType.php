@@ -40,8 +40,34 @@ class PatientType extends AbstractType
                 'label'=>'年龄',
             ])
             ->add('tall',NumberType::class,[                
-                'label'=>'身高',
+                'label'=>'身高(厘米)',
                 'required'=>false,
+                'label_attr'=>[
+                    'class'=>'padding-rightless'
+                ],
+                'attr'=>[
+                    'placeholder'=>'身高'
+                ]
+            ])
+            ->add('weight',NumberType::class,[
+                'label'=>'体重(公斤)',
+                'required'=>false,
+                'label_attr'=>[
+                    'class'=>'padding-rightless'
+                ],
+                'attr'=>[
+                    'placeholder'=>'体重'
+                ]
+            ])
+            ->add('fuwei',NumberType::class,[
+                'label'=>'腹围(厘米)',
+                'required'=>false,
+                'label_attr'=>[
+                    'class'=>'padding-rightless'
+                ],
+                'attr'=>[
+                    'placeholder'=>'腹围'
+                ]
             ])
             ->add('gender',EntityType::class,[
                 'class'=>Options::class,
@@ -51,7 +77,8 @@ class PatientType extends AbstractType
                     ->orderBy('o.lft','asc');
                 },
                 'label'=>'性别',
-                'choice_label'=>'title'                
+                'choice_label'=>'title',
+                'required'=>false,
                 ])
             ->add('scholarship',EntityType::class,[
                 'class'=>Options::class,
@@ -61,7 +88,8 @@ class PatientType extends AbstractType
                 ->orderBy('o.lft','asc');
                 },
                 'label'=>'文化程度',
-                'choice_label'=>'title'
+                'choice_label'=>'title',
+                'required'=>false,
                 ])
             ->add('marriage',EntityType::class,[
                 'class'=>Options::class,
@@ -71,7 +99,8 @@ class PatientType extends AbstractType
                 ->orderBy('o.lft','asc');
                 },
                 'label'=>'婚姻状况',
-                'choice_label'=>'title'
+                'choice_label'=>'title',
+                'required'=>false,
               ])
               ->add('career',EntityType::class,[
                   'class'=>Options::class,
@@ -80,9 +109,66 @@ class PatientType extends AbstractType
                   ->where('o.parent=15')
                   ->orderBy('o.lft','asc');
                   },
+                  'required'=>false,
                   'label'=>'职业',
                   'choice_label'=>'title'
              ])
+             ->add('yibao',EntityType::class,[
+                 'class'=>Options::class,
+                 'query_builder' => function (EntityRepository $er) {
+                 return $er->createQueryBuilder('o')
+                 ->where('o.parent=21')
+                 ->orderBy('o.lft','asc');
+                 },
+                 'label'=>'医保类型',
+                 'choice_label'=>'title',
+                 'required'=>false,
+              ])
+              
+              ->add('jyyw',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=25')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'降压药物',
+                  'choice_label'=>'title',
+                  'required'=>false,                 
+                  ])
+              ->add('gxykzqk',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=33')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'控制情况',
+                  'choice_label'=>'title',
+                  'required'=>false,
+                  ])
+              ->add('jtyw',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=37')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'降糖药物',
+                  'choice_label'=>'title',
+                  'required'=>false,
+                  ])
+              ->add('tnbkzqk',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=33')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'降糖药物',
+                  'choice_label'=>'title',
+                  'required'=>false,
+                  ])
             ;           
     }
 

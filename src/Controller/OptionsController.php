@@ -71,7 +71,8 @@ class OptionsController extends AbstractController
             $entityManager->persist($option);
             $entityManager->flush();
 
-            return $this->redirectToRoute('options_index');
+           
+        return $this->redirectToRoute('options_index');
         }
 
         return $this->render('options/new.html.twig', [
@@ -104,8 +105,7 @@ class OptionsController extends AbstractController
             $this->getDoctrine()
                 ->getManager()
                 ->flush();
-
-            return $this->redirectToRoute('options_index');
+        return $this->redirectToRoute('options_index');
         }
 
         return $this->render('options/edit.html.twig', [

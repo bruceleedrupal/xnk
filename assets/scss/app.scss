@@ -1,4 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
+html {
+  font-size:15px;
+}
 body {
     background-color: #f9fAfb;
 }
@@ -35,4 +38,13 @@ img {
 }
 form[name="patient"],form[name='options'] {
  margin-top:1.5em;
+}
+
+.padding-rightless{
+  padding-right:0;
+}
+.center-col {
+  label,legend {
+   text-align:right;
+  }
 }
