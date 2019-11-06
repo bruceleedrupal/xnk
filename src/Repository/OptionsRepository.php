@@ -30,7 +30,8 @@ class OptionsRepository extends NestedTreeRepository
         if($title){
             $qb->leftJoin('o.parent', 'p')
             ->leftJoin('o.children', 'c')
-            ->andWhere('o.title like :title or p.title like :title or c.title like :title')
+            ->leftJoin('p.children', 'pc')
+            ->andWhere('o.title like :title or p.title like :title or c.title like :title or pc.title like :title')
             ->setParameter('title', '%'.$title.'%');
         }
         return $qb->orderBy('o.root,o.parent,o.lft', 'ASC')
