@@ -165,10 +165,58 @@ class PatientType extends AbstractType
                   ->where('o.parent=33')
                   ->orderBy('o.lft','asc');
                   },
-                  'label'=>'降糖药物',
+                  'label'=>'降糖控制情况',
                   'choice_label'=>'title',
                   'required'=>false,
                   ])
+              ->add('jzyw',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=46')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'降脂药物',
+                  'choice_label'=>'title',
+                  'required'=>false,
+                  ])
+              ->add('gxzkzqk',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=33')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'高血脂控制情况',                 
+                  'choice_label'=>'title',
+                  'required'=>false,
+                  ])
+              ->add('xyqk',EntityType::class,[
+                  'class'=>Options::class,
+                  'query_builder' => function (EntityRepository $er) {
+                  return $er->createQueryBuilder('o')
+                  ->where('o.parent=50')
+                  ->orderBy('o.lft','asc');
+                  },
+                  'label'=>'吸烟情况',
+                  'choice_label'=>'title',
+                  'required'=>false,
+                ])
+                
+            ->add('xyqkzhi',null,[                           
+                'attr'=>[
+                    'placeholder'=>'支/天'
+                ],
+                'label'=>'吸烟情况 支/天',                
+                'required'=>false,
+                ])
+            ->add('xyqkyear',null,[                
+                'attr'=>[
+                    'placeholder'=>'年'
+                ],
+                'label'=>'吸烟情况 年',                
+                'required'=>false,
+            ]) 
             ;           
     }
 

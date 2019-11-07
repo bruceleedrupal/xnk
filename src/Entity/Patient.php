@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PatientRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Patient
 {
@@ -105,6 +106,31 @@ class Patient
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
      */
     private $tnbkzqk;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $jzyw;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $gxzkzqk;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $xyqk;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $xyqkzhi;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $xyqkyear;
 
     public function getId(): ?int
     {
@@ -318,5 +344,79 @@ class Patient
         $this->tnbkzqk = $tnbkzqk;
 
         return $this;
+    }
+
+    public function getJzyw(): ?Options
+    {
+        return $this->jzyw;
+    }
+
+    public function setJzyw(?Options $jzyw): self
+    {
+        $this->jzyw = $jzyw;
+
+        return $this;
+    }
+
+    public function getGxzkzqk(): ?Options
+    {
+        return $this->gxzkzqk;
+    }
+
+    public function setGxzkzqk(?Options $gxzkzqk): self
+    {
+        $this->gxzkzqk = $gxzkzqk;
+
+        return $this;
+    }
+
+    public function getXyqk(): ?Options
+    {
+        return $this->xyqk;
+    }
+
+    public function setXyqk(?Options $xyqk): self
+    {
+        $this->xyqk = $xyqk;
+
+        return $this;
+    }
+
+    public function getXyqkzhi(): ?int
+    {
+        return $this->xyqkzhi;
+    }
+
+    public function setXyqkzhi(?int $xyqkzhi): self
+    {
+        $this->xyqkzhi = $xyqkzhi;
+
+        return $this;
+    }
+
+    public function getXyqkyear(): ?int
+    {
+        return $this->xyqkyear;
+    }
+
+    public function setXyqkyear(?int $xyqkyear): self
+    {
+        $this->xyqkyear = $xyqkyear;
+
+        return $this;
+    }
+    
+    /**
+     * @ORM\PreFlush
+     * 清除吸烟信息
+     */
+    public function clearDependentfomation()
+    {
+        //吸烟信息
+        if(!$this->xyqk || $this->xyqk->getId()!=51){
+            $this->setXyqkzhi(NULL);
+            $this->setXyqkyear(NULL);
+        }
+        
     }
 }

@@ -18,3 +18,30 @@ const $ = require('jquery');
 global.$ = global.jQuery = $;
 
 require('bootstrap/js/src/tab.js');
+
+function _initiallize_display(selectElement,values){	
+   siblings= selectElement.siblings('input');   
+   if(values.indexOf(selectElement.val())!=-1){
+   	  siblings.show();
+   }
+    else 
+      siblings.hide();
+}
+
+
+function initiallize_display(id,values){	
+   selectElement= $(id);
+   _initiallize_display(selectElement,values);
+	selectElement.on('change',function(){
+		 _initiallize_display(selectElement,values);
+	});
+}
+
+
+
+
+
+
+$(document).ready(function(){
+     initiallize_display('#patient_xyqk',['51']);
+});
