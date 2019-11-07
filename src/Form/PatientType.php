@@ -27,7 +27,10 @@ class PatientType extends AbstractType
             ->add('ryrq',DateType::class,[
                 'label'=>'入院日期',
                 'required'=>false,
-                'format'=>'yyyy-MM-dd'
+                'format'=>'yyyyMMdd',
+                'attr'=>[
+                    'class'=>'input-group'
+                 ]
             ])            
             ->add('tel',TextType::class,[
                 'label'=>'联系电话',                
@@ -155,6 +158,7 @@ class PatientType extends AbstractType
                   ->where('o.parent=37')
                   ->orderBy('o.lft','asc');
                   },
+                  'multiple'=>true,
                   'label'=>'降糖药物',
                   'choice_label'=>'title',
                   'required'=>false,
@@ -177,6 +181,7 @@ class PatientType extends AbstractType
                   ->where('o.parent=46')
                   ->orderBy('o.lft','asc');
                   },
+                  'multiple'=>true,
                   'label'=>'降脂药物',
                   'choice_label'=>'title',
                   'required'=>false,

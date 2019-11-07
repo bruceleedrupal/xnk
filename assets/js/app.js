@@ -21,6 +21,7 @@ require('bootstrap/js/src/tab.js');
 
 function _initiallize_display(selectElement,values){	
    siblings= selectElement.siblings('input');   
+   console.log(selectElement);
    if(values.indexOf(selectElement.val())!=-1){
    	  siblings.show();
    }
@@ -30,6 +31,7 @@ function _initiallize_display(selectElement,values){
 
 
 function initiallize_display(id,values){	
+   var selectElement;
    selectElement= $(id);
    _initiallize_display(selectElement,values);
 	selectElement.on('change',function(){

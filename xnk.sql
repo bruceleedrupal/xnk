@@ -112,9 +112,7 @@ CREATE TABLE `patient` (
   `yibao_id` int(11) DEFAULT NULL,
   `fuwei` int(11) DEFAULT NULL,
   `gxykzqk_id` int(11) DEFAULT NULL,
-  `jtyw_id` int(11) DEFAULT NULL,
   `tnbkzqk_id` int(11) DEFAULT NULL,
-  `jzyw_id` int(11) DEFAULT NULL,
   `gxzkzqk_id` int(11) DEFAULT NULL,
   `xyqk_id` int(11) DEFAULT NULL,
   `xyqkzhi` int(11) DEFAULT NULL,
@@ -129,20 +127,16 @@ CREATE TABLE `patient` (
   KEY `IDX_1ADAD7EBB58CDA09` (`career_id`),
   KEY `IDX_1ADAD7EBD338573F` (`yibao_id`),
   KEY `IDX_1ADAD7EBBA480FEE` (`gxykzqk_id`),
-  KEY `IDX_1ADAD7EBB93385BB` (`jtyw_id`),
   KEY `IDX_1ADAD7EB88DA2383` (`tnbkzqk_id`),
-  KEY `IDX_1ADAD7EB8339E4CB` (`jzyw_id`),
   KEY `IDX_1ADAD7EB34C7080D` (`gxzkzqk_id`),
   KEY `IDX_1ADAD7EBDF53B864` (`xyqk_id`),
   KEY `IDX_1ADAD7EBFC66C3E5` (`yjqk_id`),
   CONSTRAINT `FK_1ADAD7EB28722836` FOREIGN KEY (`scholarship_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB34C7080D` FOREIGN KEY (`gxzkzqk_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB708A0E0` FOREIGN KEY (`gender_id`) REFERENCES `options` (`id`),
-  CONSTRAINT `FK_1ADAD7EB8339E4CB` FOREIGN KEY (`jzyw_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB88DA2383` FOREIGN KEY (`tnbkzqk_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB9DAE1DA4` FOREIGN KEY (`marriage_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EBB58CDA09` FOREIGN KEY (`career_id`) REFERENCES `options` (`id`),
-  CONSTRAINT `FK_1ADAD7EBB93385BB` FOREIGN KEY (`jtyw_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EBBA480FEE` FOREIGN KEY (`gxykzqk_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EBD338573F` FOREIGN KEY (`yibao_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EBDF53B864` FOREIGN KEY (`xyqk_id`) REFERENCES `options` (`id`),
@@ -156,36 +150,92 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (5,'1985-11-07',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,43,36,48,35,51,3,2,56,1,5),(6,'2017-11-07',NULL,'2014-02-02','18116381898','lee','62',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `patient` VALUES (5,'1985-11-07',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,59,NULL,NULL),(6,'2017-11-07',NULL,'2014-02-02','18116381898','lee','62',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `patient_options`
+-- Table structure for table `patient_options_jtyw`
 --
 
-DROP TABLE IF EXISTS `patient_options`;
+DROP TABLE IF EXISTS `patient_options_jtyw`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `patient_options` (
+CREATE TABLE `patient_options_jtyw` (
   `patient_id` int(11) NOT NULL,
   `options_id` int(11) NOT NULL,
   PRIMARY KEY (`patient_id`,`options_id`),
-  KEY `IDX_8D56AF6C6B899279` (`patient_id`),
-  KEY `IDX_8D56AF6C3ADB05F1` (`options_id`),
-  CONSTRAINT `FK_8D56AF6C3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `FK_8D56AF6C6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+  KEY `IDX_E44879D76B899279` (`patient_id`),
+  KEY `IDX_E44879D73ADB05F1` (`options_id`),
+  CONSTRAINT `FK_E44879D73ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_E44879D76B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `patient_options`
+-- Dumping data for table `patient_options_jtyw`
 --
 
-LOCK TABLES `patient_options` WRITE;
-/*!40000 ALTER TABLE `patient_options` DISABLE KEYS */;
-INSERT INTO `patient_options` VALUES (5,26),(5,27);
-/*!40000 ALTER TABLE `patient_options` ENABLE KEYS */;
+LOCK TABLES `patient_options_jtyw` WRITE;
+/*!40000 ALTER TABLE `patient_options_jtyw` DISABLE KEYS */;
+INSERT INTO `patient_options_jtyw` VALUES (5,40),(5,41);
+/*!40000 ALTER TABLE `patient_options_jtyw` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_jyyw`
+--
+
+DROP TABLE IF EXISTS `patient_options_jyyw`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_jyyw` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_EC90EA846B899279` (`patient_id`),
+  KEY `IDX_EC90EA843ADB05F1` (`options_id`),
+  CONSTRAINT `FK_EC90EA843ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_EC90EA846B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_jyyw`
+--
+
+LOCK TABLES `patient_options_jyyw` WRITE;
+/*!40000 ALTER TABLE `patient_options_jyyw` DISABLE KEYS */;
+INSERT INTO `patient_options_jyyw` VALUES (5,26),(5,27);
+/*!40000 ALTER TABLE `patient_options_jyyw` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_jzyw`
+--
+
+DROP TABLE IF EXISTS `patient_options_jzyw`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_jzyw` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_EED654DD6B899279` (`patient_id`),
+  KEY `IDX_EED654DD3ADB05F1` (`options_id`),
+  CONSTRAINT `FK_EED654DD3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_EED654DD6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_jzyw`
+--
+
+LOCK TABLES `patient_options_jzyw` WRITE;
+/*!40000 ALTER TABLE `patient_options_jzyw` DISABLE KEYS */;
+INSERT INTO `patient_options_jzyw` VALUES (5,48),(5,49);
+/*!40000 ALTER TABLE `patient_options_jzyw` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -197,4 +247,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-07 14:49:57
+-- Dump completed on 2019-11-07 15:54:26

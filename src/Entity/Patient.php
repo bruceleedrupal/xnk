@@ -96,20 +96,14 @@ class Patient
      */
     private $gxykzqk;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
-     */
-    private $jtyw;
+ 
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
      */
     private $tnbkzqk;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
-     */
-    private $jzyw;
+   
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
@@ -148,12 +142,33 @@ class Patient
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_jyyw"
+     * )
      */
     private $jyyw;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_jtyw"
+     * )
+     */
+    private $jtyw;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_jzyw"
+     * )
+     */
+    private $jzyw;
 
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
+        $this->jtyw = new ArrayCollection();
+        $this->jzyw = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -336,17 +351,7 @@ class Patient
         return $this;
     }
 
-    public function getJtyw(): ?Options
-    {
-        return $this->jtyw;
-    }
 
-    public function setJtyw(?Options $jtyw): self
-    {
-        $this->jtyw = $jtyw;
-
-        return $this;
-    }
 
     public function getTnbkzqk(): ?Options
     {
@@ -360,17 +365,7 @@ class Patient
         return $this;
     }
 
-    public function getJzyw(): ?Options
-    {
-        return $this->jzyw;
-    }
-
-    public function setJzyw(?Options $jzyw): self
-    {
-        $this->jzyw = $jzyw;
-
-        return $this;
-    }
+   
 
     public function getGxzkzqk(): ?Options
     {
@@ -495,6 +490,58 @@ class Patient
     {
         if ($this->jyyw->contains($jyyw)) {
             $this->jyyw->removeElement($jyyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getJtyw(): Collection
+    {
+        return $this->jtyw;
+    }
+
+    public function addJtyw(Options $jtyw): self
+    {
+        if (!$this->jtyw->contains($jtyw)) {
+            $this->jtyw[] = $jtyw;
+        }
+
+        return $this;
+    }
+
+    public function removeJtyw(Options $jtyw): self
+    {
+        if ($this->jtyw->contains($jtyw)) {
+            $this->jtyw->removeElement($jtyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getJzyw(): Collection
+    {
+        return $this->jzyw;
+    }
+
+    public function addJzyw(Options $jzyw): self
+    {
+        if (!$this->jzyw->contains($jzyw)) {
+            $this->jzyw[] = $jzyw;
+        }
+
+        return $this;
+    }
+
+    public function removeJzyw(Options $jzyw): self
+    {
+        if ($this->jzyw->contains($jzyw)) {
+            $this->jzyw->removeElement($jzyw);
         }
 
         return $this;

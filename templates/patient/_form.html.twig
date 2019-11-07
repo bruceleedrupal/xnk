@@ -36,20 +36,16 @@
   <div class='row'>
       <div class='col-lg-4'>
         {{ _self.formGroup(form,'姓名/年龄',['name','birthday']) }} 
-        {{ _self.formGroup(form,'三维 数据',['tall','weight','fuwei']) }} 
-        {% for field in [ 'zyh','tel']
+        {{ _self.formGroup(form,'三维 数据',['tall','weight','fuwei']) }}     
+        {{ _self.formGroup(form,'性别/婚姻',['gender','marriage']) }} 
+        {{ _self.formGroup(form,'职业/医保',['career','yibao']) }} 
+        {% for field in [ 'zyh','tel','scholarship','ryrq']
             if (attribute(form, field) is defined) %}
             {{ form_row(attribute(form, field)) }}
-        {% endfor %}
+        {% endfor %}       
+        
         </div>
-       <div class='col-lg-4 center-col'>
-         {{ _self.formGroup(form,'性别/婚姻',['gender','marriage']) }} 
-         {{ _self.formGroup(form,'职业/医保',['career','yibao']) }} 
-         {% for field in ['scholarship','ryrq']
-            if (attribute(form, field) is defined) %}
-            {{ form_row(attribute(form, field)) }}
-        {% endfor %}
-        </div>
+
         
          <div class='col-lg-4 center-col'>
          {{ _self.formGroup(form,'高血压',['jyyw','gxykzqk']) }}  
