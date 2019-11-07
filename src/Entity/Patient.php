@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -87,10 +89,7 @@ class Patient
      */
     private $fuwei;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
-     */
-    private $jyyw;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Options")
@@ -131,6 +130,31 @@ class Patient
      * @ORM\Column(type="integer", nullable=true)
      */
     private $xyqkyear;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $yjqk;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $yjqkliang;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $yjqkyear;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     */
+    private $jyyw;
+
+    public function __construct()
+    {
+        $this->jyyw = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -298,17 +322,7 @@ class Patient
         return $this;
     }
 
-    public function getJyyw(): ?Options
-    {
-        return $this->jyyw;
-    }
-
-    public function setJyyw(?Options $jyyw): self
-    {
-        $this->jyyw = $jyyw;
-
-        return $this;
-    }
+    
 
     public function getGxykzqk(): ?Options
     {
@@ -417,6 +431,72 @@ class Patient
             $this->setXyqkzhi(NULL);
             $this->setXyqkyear(NULL);
         }
-        
+        //饮酒信息
+        if(!$this->yjqk || !in_array($this->yjqk->getId(),[55,56,57])){
+            $this->setYjqkliang(NULL);
+            $this->setYjqkyear(NULL);
+        }
+    }
+
+    public function getYjqk(): ?Options
+    {
+        return $this->yjqk;
+    }
+
+    public function setYjqk(?Options $yjqk): self
+    {
+        $this->yjqk = $yjqk;
+
+        return $this;
+    }
+
+    public function getYjqkliang(): ?int
+    {
+        return $this->yjqkliang;
+    }
+
+    public function setYjqkliang(?int $yjqkliang): self
+    {
+        $this->yjqkliang = $yjqkliang;
+
+        return $this;
+    }
+
+    public function getYjqkyear(): ?int
+    {
+        return $this->yjqkyear;
+    }
+
+    public function setYjqkyear(?int $yjqkyear): self
+    {
+        $this->yjqkyear = $yjqkyear;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getJyyw(): Collection
+    {
+        return $this->jyyw;
+    }
+
+    public function addJyyw(Options $jyyw): self
+    {
+        if (!$this->jyyw->contains($jyyw)) {
+            $this->jyyw[] = $jyyw;
+        }
+
+        return $this;
+    }
+
+    public function removeJyyw(Options $jyyw): self
+    {
+        if ($this->jyyw->contains($jyyw)) {
+            $this->jyyw->removeElement($jyyw);
+        }
+
+        return $this;
     }
 }

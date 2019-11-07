@@ -132,6 +132,7 @@ class PatientType extends AbstractType
                   ->where('o.parent=25')
                   ->orderBy('o.lft','asc');
                   },
+                  'multiple'=>true,
                   'label'=>'降压药物',
                   'choice_label'=>'title',
                   'required'=>false,                 
@@ -217,6 +218,33 @@ class PatientType extends AbstractType
                 'label'=>'吸烟情况 年',                
                 'required'=>false,
             ]) 
+            
+            ->add('yjqk',EntityType::class,[
+                'class'=>Options::class,
+                'query_builder' => function (EntityRepository $er) {
+                return $er->createQueryBuilder('o')
+                ->where('o.parent=54')
+                ->orderBy('o.lft','asc');
+                },
+                'label'=>'饮酒',
+                'choice_label'=>'title',
+                'required'=>false,
+                ])
+                
+                ->add('yjqkliang',null,[
+                    'attr'=>[
+                        'placeholder'=>'两/天'
+                    ],
+                    'label'=>'饮酒情况 两/天',
+                    'required'=>false,
+                ])
+                ->add('yjqkyear',null,[
+                    'attr'=>[
+                        'placeholder'=>'年'
+                    ],
+                    'label'=>'饮酒情况 年',
+                    'required'=>false,
+                ]) 
             ;           
     }
 

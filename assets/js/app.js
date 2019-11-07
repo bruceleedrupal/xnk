@@ -44,4 +44,5 @@ function initiallize_display(id,values){
 
 $(document).ready(function(){
      initiallize_display('#patient_xyqk',['51']);
+     initiallize_display('#patient_yjqk',['55','56','57']);
 });
