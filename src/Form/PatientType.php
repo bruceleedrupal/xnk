@@ -22,7 +22,7 @@ class PatientType extends AbstractType
     {
         $builder  
         ->add('name',TextType::class,[
-                'label'=>'姓名',
+                'label'=>'姓名',           
             ])
             ->add('ryrq',DateType::class,[
                 'label'=>'入院日期',
@@ -37,6 +37,10 @@ class PatientType extends AbstractType
             ])     
             ->add('zyh',TelType::class,[
                 'label'=>'住院号',
+                'attr'=>[
+                     'data-toggle'=>'tooltip',
+                     'title'=>'请填写住院号'
+                 ]
             ]) 
             ->add('birthday',BirthdayType::class,[
                 'mapped'=>true,
@@ -69,7 +73,7 @@ class PatientType extends AbstractType
                     'class'=>'padding-rightless'
                 ],
                 'attr'=>[
-                    'placeholder'=>'腹围'
+                    'placeholder'=>'腹围',                                    
                 ]
             ])
             ->add('gender',EntityType::class,[
@@ -79,6 +83,10 @@ class PatientType extends AbstractType
                     ->where('o.parent=1')
                     ->orderBy('o.lft','asc');
                 },
+                'attr'=>[
+                    'data-toggle'=>'tooltip',
+                    'title'=>'请选择性别'
+                ],
                 'label'=>'性别',
                 'choice_label'=>'title',
                 'required'=>false,
