@@ -250,6 +250,18 @@ class PatientType extends AbstractType
                     'label'=>'饮酒情况 年',
                     'required'=>false,
                 ]) 
+                ->add('tfyw',EntityType::class,[
+                    'class'=>Options::class,
+                    'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('o')
+                    ->where('o.parent=61')
+                    ->orderBy('o.lft','asc');
+                    },
+                    'multiple'=>true,
+                    'label'=>'痛风',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                    ])
             ;           
     }
 

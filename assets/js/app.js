@@ -18,6 +18,7 @@ const $ = require('jquery');
 global.$ = global.jQuery = $;
 
 require('bootstrap/js/src/tab.js');
+//require('admin-lte/build/js/AdminLTE.js');
 
 function _initiallize_display(selectElement,values){	
    siblings= selectElement.siblings('input');   

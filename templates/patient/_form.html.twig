@@ -52,8 +52,14 @@
          {{ _self.formGroup(form,'糖尿病',['jtyw','tnbkzqk']) }}    
          {{ _self.formGroup(form,'高血脂',['jzyw','gxzkzqk']) }}    
          {{ _self.formGroup(form,'吸烟情况',['xyqk','xyqkzhi','xyqkyear']) }}   
-         {{ _self.formGroup(form,'饮酒情况',['yjqk','yjqkliang','yjqkyear']) }}
+         {{ _self.formGroup(form,'饮酒情况',['yjqk','yjqkliang','yjqkyear']) }}         
         </div>
+        
+        
+         <div class='col-lg-4 center-col'>        
+         {{ _self.formGroup(form,'痛风药物',['tfyw']) }}
+        </div>
+        
         
     </div>
    </div>
@@ -68,7 +74,23 @@
     locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
     squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
     etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+    stumptown. Pitchfork sustainable tofu synth chambray yr.
+         <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
+
+                <p>New Orders</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+              <a href="#" class="small-box-footer">
+                More info <i class="fa fa-arrow-circle-right"></i>
+              </a>
+            </div>
+   
+   </div>
+   
    </div>
   
   <button class="btn btn-success">{{ button_label|default('保存') }}</button>

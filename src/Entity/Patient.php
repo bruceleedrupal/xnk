@@ -164,11 +164,17 @@ class Patient
      */
     private $jzyw;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     */
+    private $tfyw;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
         $this->jtyw = new ArrayCollection();
         $this->jzyw = new ArrayCollection();
+        $this->tfyw = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -542,6 +548,32 @@ class Patient
     {
         if ($this->jzyw->contains($jzyw)) {
             $this->jzyw->removeElement($jzyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getTfyw(): Collection
+    {
+        return $this->tfyw;
+    }
+
+    public function addTfyw(Options $tfyw): self
+    {
+        if (!$this->tfyw->contains($tfyw)) {
+            $this->tfyw[] = $tfyw;
+        }
+
+        return $this;
+    }
+
+    public function removeTfyw(Options $tfyw): self
+    {
+        if ($this->tfyw->contains($tfyw)) {
+            $this->tfyw->removeElement($tfyw);
         }
 
         return $this;

@@ -1,4 +1,10 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
+@import "~admin-lte/build/scss/AdminLTE";
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/css/font-awesome';
+
+
 html {
   font-size:15px;
 }
@@ -46,4 +52,6 @@ margin-bottom:1.5em;
 .padding-rightless{
   padding-right:0;
 }
-
+.col-form-label  {
+	font-weight:normal!important;
+}
