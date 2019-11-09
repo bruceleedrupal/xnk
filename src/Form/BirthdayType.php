@@ -45,6 +45,7 @@ class BirthdayType  extends AbstractType
     {
         $resolver->setDefaults([
             'compound' => false,
+            'html5'=>true,
         ]);
     }
     

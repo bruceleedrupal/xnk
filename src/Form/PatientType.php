@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Patient;
 use App\Form\BirthdayType;
 use App\Entity\Options;
+use App\Repository\OptionsRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,6 +19,12 @@ use Doctrine\ORM\EntityRepository;
 
 class PatientType extends AbstractType
 {
+    
+    private $optionsRespository;
+    
+    public function  __construct(OptionsRepository $optionsRespository){
+        $this->optionsRespository = $optionsRespository;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder  
@@ -29,7 +36,7 @@ class PatientType extends AbstractType
                 'required'=>false,
                 'format'=>'yyyyMMdd',
                 'attr'=>[
-                    'class'=>'input-group'
+                    'class'=>'input-group form-control'
                  ]
             ])            
             ->add('tel',TextType::class,[
@@ -78,11 +85,7 @@ class PatientType extends AbstractType
             ])
             ->add('gender',EntityType::class,[
                 'class'=>Options::class,
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('o')
-                    ->where('o.parent=1')
-                    ->orderBy('o.lft','asc');
-                },
+                'choices'=>$this->optionsRespository->findChirenOptions(1),
                 'attr'=>[
                     'data-toggle'=>'tooltip',
                     'title'=>'请选择性别'
@@ -93,44 +96,28 @@ class PatientType extends AbstractType
                 ])
             ->add('scholarship',EntityType::class,[
                 'class'=>Options::class,
-                'query_builder' => function (EntityRepository $er) {
-                return $er->createQueryBuilder('o')
-                ->where('o.parent=4')
-                ->orderBy('o.lft','asc');
-                },
+                'choices'=>$this->optionsRespository->findChirenOptions(4),
                 'label'=>'文化程度',
                 'choice_label'=>'title',
                 'required'=>false,
                 ])
             ->add('marriage',EntityType::class,[
                 'class'=>Options::class,
-                'query_builder' => function (EntityRepository $er) {
-                return $er->createQueryBuilder('o')
-                ->where('o.parent=10')
-                ->orderBy('o.lft','asc');
-                },
+                'choices'=>$this->optionsRespository->findChirenOptions(10),
                 'label'=>'婚姻状况',
                 'choice_label'=>'title',
                 'required'=>false,
               ])
               ->add('career',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=15')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(15),
                   'required'=>false,
                   'label'=>'职业',
                   'choice_label'=>'title'
              ])
              ->add('yibao',EntityType::class,[
                  'class'=>Options::class,
-                 'query_builder' => function (EntityRepository $er) {
-                 return $er->createQueryBuilder('o')
-                 ->where('o.parent=21')
-                 ->orderBy('o.lft','asc');
-                 },
+                 'choices'=>$this->optionsRespository->findChirenOptions(21),
                  'label'=>'医保类型',
                  'choice_label'=>'title',
                  'required'=>false,
@@ -138,11 +125,7 @@ class PatientType extends AbstractType
               
               ->add('jyyw',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=25')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(25),
                   'multiple'=>true,
                   'label'=>'降压药物',
                   'choice_label'=>'title',
@@ -150,22 +133,14 @@ class PatientType extends AbstractType
                   ])
               ->add('gxykzqk',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=33')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(33),
                   'label'=>'控制情况',
                   'choice_label'=>'title',
                   'required'=>false,
                   ])
               ->add('jtyw',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=37')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(37),
                   'multiple'=>true,
                   'label'=>'降糖药物',
                   'choice_label'=>'title',
@@ -173,22 +148,14 @@ class PatientType extends AbstractType
                   ])
               ->add('tnbkzqk',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=33')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(33),
                   'label'=>'降糖控制情况',
                   'choice_label'=>'title',
                   'required'=>false,
                   ])
               ->add('jzyw',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=46')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(46),
                   'multiple'=>true,
                   'label'=>'降脂药物',
                   'choice_label'=>'title',
@@ -196,22 +163,14 @@ class PatientType extends AbstractType
                   ])
               ->add('gxzkzqk',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=33')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(33),
                   'label'=>'高血脂控制情况',                 
                   'choice_label'=>'title',
                   'required'=>false,
                   ])
               ->add('xyqk',EntityType::class,[
                   'class'=>Options::class,
-                  'query_builder' => function (EntityRepository $er) {
-                  return $er->createQueryBuilder('o')
-                  ->where('o.parent=50')
-                  ->orderBy('o.lft','asc');
-                  },
+                  'choices'=>$this->optionsRespository->findChirenOptions(50),
                   'label'=>'吸烟情况',
                   'choice_label'=>'title',
                   'required'=>false,
@@ -234,11 +193,7 @@ class PatientType extends AbstractType
             
             ->add('yjqk',EntityType::class,[
                 'class'=>Options::class,
-                'query_builder' => function (EntityRepository $er) {
-                return $er->createQueryBuilder('o')
-                ->where('o.parent=54')
-                ->orderBy('o.lft','asc');
-                },
+                'choices'=>$this->optionsRespository->findChirenOptions(54),
                 'label'=>'饮酒',
                 'choice_label'=>'title',
                 'required'=>false,
@@ -260,11 +215,7 @@ class PatientType extends AbstractType
                 ]) 
                 ->add('tfyw',EntityType::class,[
                     'class'=>Options::class,
-                    'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('o')
-                    ->where('o.parent=61')
-                    ->orderBy('o.lft','asc');
-                    },
+                    'choices'=>$this->optionsRespository->findChirenOptions(61),
                     'multiple'=>true,
                     'label'=>'痛风',
                     'choice_label'=>'title',

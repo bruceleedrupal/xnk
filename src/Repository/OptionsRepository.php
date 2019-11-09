@@ -37,6 +37,13 @@ class OptionsRepository extends NestedTreeRepository
         return $qb->orderBy('o.root,o.parent,o.lft', 'ASC')
         ->getQuery();
     }
+    
+    public function findChirenOptions($parentId){
+        return  $this->createQueryBuilder('o')
+        ->where('o.parent=:parentId')
+        ->setParameter('parentId',$parentId)
+        ->orderBy('o.lft','asc')->getQuery()->execute();
+    }
 
     // /**
     //  * @return Option[] Returns an array of Option objects
