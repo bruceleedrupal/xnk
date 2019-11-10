@@ -52,6 +52,9 @@ class PatientType extends AbstractType
             ->add('birthday',BirthdayType::class,[
                 'mapped'=>true,
                 'label'=>'年龄',
+                'attr'=>[
+                    'class'=>'brucelee'
+                ]
             ])
             ->add('tall',NumberType::class,[                
                 'label'=>'身高(厘米)',
