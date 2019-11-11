@@ -19,8 +19,9 @@ col-sm-9
 
 
 {% block checkbox_widget -%}    
-
-        <div class="form-check {{ attr.class }}">
+     {% set  class = attr.class|default('') %}
+     
+        <div class="form-check {{ class }}">
             {{- form_label(form, null, { widget: block('checkbox_widget_single')}) -}}
         </div>
 {%- endblock checkbox_widget %}

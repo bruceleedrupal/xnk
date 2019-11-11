@@ -170,14 +170,91 @@ class Patient
     private $tfyw;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean")
      */
     private $xjgs;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean")
      */
     private $jwxjt;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $pcibs;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_cabgbs"
+     * )
+     */
+    private $cabgbs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $nzzbs;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $wzdmjb;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $gxbjzs;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $hbexzl;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_kxxbyw"
+     * )
+     */
+    private $kxxbyw;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_knyw"
+     * )
+     */
+    private $knyw;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_ttyy"
+     * )
+     */
+    private $ttyy;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $xhdkybs;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $xgnbqbs;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $tx;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $copd;
 
     public function __construct()
     {
@@ -185,6 +262,10 @@ class Patient
         $this->jtyw = new ArrayCollection();
         $this->jzyw = new ArrayCollection();
         $this->tfyw = new ArrayCollection();
+        $this->cabgbs = new ArrayCollection();
+        $this->kxxbyw = new ArrayCollection();
+        $this->knyw = new ArrayCollection();
+        $this->ttyy = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -609,6 +690,218 @@ class Patient
     public function setJwxjt(?bool $jwxjt): self
     {
         $this->jwxjt = $jwxjt;
+
+        return $this;
+    }
+
+    public function getPcibs(): ?bool
+    {
+        return $this->pcibs;
+    }
+
+    public function setPcibs(bool $pcibs): self
+    {
+        $this->pcibs = $pcibs;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getCabgbs(): Collection
+    {
+        return $this->cabgbs;
+    }
+
+    public function addCabgb(Options $cabgb): self
+    {
+        if (!$this->cabgbs->contains($cabgb)) {
+            $this->cabgbs[] = $cabgb;
+        }
+
+        return $this;
+    }
+
+    public function removeCabgb(Options $cabgb): self
+    {
+        if ($this->cabgbs->contains($cabgb)) {
+            $this->cabgbs->removeElement($cabgb);
+        }
+
+        return $this;
+    }
+
+    public function getNzzbs(): ?Options
+    {
+        return $this->nzzbs;
+    }
+
+    public function setNzzbs(?Options $nzzbs): self
+    {
+        $this->nzzbs = $nzzbs;
+
+        return $this;
+    }
+
+    public function getWzdmjb(): ?bool
+    {
+        return $this->wzdmjb;
+    }
+
+    public function setWzdmjb(bool $wzdmjb): self
+    {
+        $this->wzdmjb = $wzdmjb;
+
+        return $this;
+    }
+
+    public function getGxbjzs(): ?bool
+    {
+        return $this->gxbjzs;
+    }
+
+    public function setGxbjzs(bool $gxbjzs): self
+    {
+        $this->gxbjzs = $gxbjzs;
+
+        return $this;
+    }
+
+    public function getHbexzl(): ?bool
+    {
+        return $this->hbexzl;
+    }
+
+    public function setHbexzl(bool $hbexzl): self
+    {
+        $this->hbexzl = $hbexzl;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getKxxbyw(): Collection
+    {
+        return $this->kxxbyw;
+    }
+
+    public function addKxxbyw(Options $kxxbyw): self
+    {
+        if (!$this->kxxbyw->contains($kxxbyw)) {
+            $this->kxxbyw[] = $kxxbyw;
+        }
+
+        return $this;
+    }
+
+    public function removeKxxbyw(Options $kxxbyw): self
+    {
+        if ($this->kxxbyw->contains($kxxbyw)) {
+            $this->kxxbyw->removeElement($kxxbyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getKnyw(): Collection
+    {
+        return $this->knyw;
+    }
+
+    public function addKnyw(Options $knyw): self
+    {
+        if (!$this->knyw->contains($knyw)) {
+            $this->knyw[] = $knyw;
+        }
+
+        return $this;
+    }
+
+    public function removeKnyw(Options $knyw): self
+    {
+        if ($this->knyw->contains($knyw)) {
+            $this->knyw->removeElement($knyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getTtyy(): Collection
+    {
+        return $this->ttyy;
+    }
+
+    public function addTtyy(Options $ttyy): self
+    {
+        if (!$this->ttyy->contains($ttyy)) {
+            $this->ttyy[] = $ttyy;
+        }
+
+        return $this;
+    }
+
+    public function removeTtyy(Options $ttyy): self
+    {
+        if ($this->ttyy->contains($ttyy)) {
+            $this->ttyy->removeElement($ttyy);
+        }
+
+        return $this;
+    }
+
+    public function getXhdkybs(): ?bool
+    {
+        return $this->xhdkybs;
+    }
+
+    public function setXhdkybs(bool $xhdkybs): self
+    {
+        $this->xhdkybs = $xhdkybs;
+
+        return $this;
+    }
+
+    public function getXgnbqbs(): ?bool
+    {
+        return $this->xgnbqbs;
+    }
+
+    public function setXgnbqbs(bool $xgnbqbs): self
+    {
+        $this->xgnbqbs = $xgnbqbs;
+
+        return $this;
+    }
+
+    public function getTx(): ?bool
+    {
+        return $this->tx;
+    }
+
+    public function setTx(bool $tx): self
+    {
+        $this->tx = $tx;
+
+        return $this;
+    }
+
+    public function getCopd(): ?bool
+    {
+        return $this->copd;
+    }
+
+    public function setCopd(bool $copd): self
+    {
+        $this->copd = $copd;
 
         return $this;
     }

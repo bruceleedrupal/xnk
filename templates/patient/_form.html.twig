@@ -1,6 +1,6 @@
 {% form_theme form 'form/bootstrap_4_horizontal_layout.html.twig' %}
 
-{% macro formGroup(form,name, fields) %}
+{% macro formGroup(form,fields,name) %}
     <div class="input-group form-group">
           {% if name %}
           <div class="input-group-prepend">
@@ -47,14 +47,18 @@
   <div class='row'>
       <div class='col-lg-4'>
 
-        {{ _self.formGroup(form,'姓名/年龄',['name','birthday']) }} 
-        {{ _self.formGroup(form,'三维 数据',['tall','weight','fuwei']) }}     
-        {{ _self.formGroup(form,'性别/婚姻',['gender','marriage']) }} 
-        {{ _self.formGroup(form,'职业/医保',['career','yibao']) }} 
-        {{ _self.formGroup(form,'学历/电话',['scholarship','tel']) }} 
-        {{ _self.formGroup(form,'住院 号码',['zyh']) }}
+        {{ _self.formGroup(form,['name','birthday'],'姓名/年龄') }} 
+        {{ _self.formGroup(form,['tall','weight','fuwei'],'三维 数据') }}     
+        {{ _self.formGroup(form,['gender','marriage'],'性别/婚姻') }} 
+        {{ _self.formGroup(form,['career','yibao'],'职业/医保') }} 
+        {{ _self.formGroup(form,['scholarship','tel'],'学历/电话') }} 
+        {{ _self.formGroup(form,['zyh'],'住院 号码') }}
+        {{ _self.formGroup(form,['xyqk','xyqkzhi','xyqkyear'],'吸烟情况') }}   
+         {{ _self.formGroup(form,['yjqk','yjqkliang','yjqkyear'],'饮酒情况') }}         
+        {{ _self.formGroup(form,['ryrq'],'入院 日期') }} 
+        {{ _self.formGroup(form,['nzzbs'],'脑卒中病史') }}   
         
-        {{ _self.formGroup(form,'入院 日期',['ryrq']) }} 
+        
          {% for field in ['ryrq']
             if (attribute(form, field) is defined) %}
             {{ form_row(attribute(form, field)) }}
@@ -64,17 +68,25 @@
 
         
          <div class='col-lg-4 center-col'>
-         {{ _self.formGroup(form,'高血压',['jyyw','gxykzqk']) }}  
-         {{ _self.formGroup(form,'糖尿病',['jtyw','tnbkzqk']) }}    
-         {{ _self.formGroup(form,'高血脂',['jzyw','gxzkzqk']) }}    
-         {{ _self.formGroup(form,'吸烟情况',['xyqk','xyqkzhi','xyqkyear']) }}   
-         {{ _self.formGroup(form,'饮酒情况',['yjqk','yjqkliang','yjqkyear']) }}         
+         {{ _self.formGroup(form,['jyyw','gxykzqk'],'高血压') }}  
+         {{ _self.formGroup(form,['jtyw','tnbkzqk'],'糖尿病') }}    
+         {{ _self.formGroup(form,['jzyw','gxzkzqk'],'高血脂') }}  
+         {{ _self.formGroup(form,['tfyw'],'痛风药物') }}         
+         {{ _self.formGroup(form,['cabgbs'],'CABG病史') }}      
+                 
         </div>
         
         
          <div class='col-lg-4 center-col'>        
-         {{ _self.formGroup(form,'痛风药物',['tfyw']) }}
-         {{ _self.formGroup(form,null,['xjgs','jwxjt']) }} 
+                   
+         {{ _self.formGroup(form,['kxxbyw'],'抗血小板药物') }} 
+         {{ _self.formGroup(form,['knyw'],'既往抗凝药物') }} 
+         {{ _self.formGroup(form,['ttyy'],'既往服用他汀') }} 
+         
+         
+         {{ _self.formGroup(form,['xjgs','jwxjt','hbexzl']) }} 
+         {{ _self.formGroup(form,['wzdmjb','gxbjzs','pcibs']) }} 
+         {{ _self.formGroup(form,['xhdkybs','xgnbqbs','tx','copd']) }} 
          
         </div>
         

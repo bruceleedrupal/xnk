@@ -76,7 +76,7 @@ CREATE TABLE `options` (
   KEY `lvl_ix` (`lvl`),
   CONSTRAINT `FK_D035FA87727ACA70` FOREIGN KEY (`parent_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_D035FA87A977936C` FOREIGN KEY (`tree_root`) REFERENCES `options` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `options` (
 
 LOCK TABLES `options` WRITE;
 /*!40000 ALTER TABLE `options` DISABLE KEYS */;
-INSERT INTO `options` VALUES (1,1,NULL,'性别',1,0,6),(2,1,1,'男',2,1,3),(3,1,1,'女',4,1,5),(4,4,NULL,'文化程度',1,0,12),(5,4,4,'大学',2,1,3),(6,4,4,'高中',4,1,5),(7,4,4,'初中',6,1,7),(8,4,4,'小学',8,1,9),(9,4,4,'文盲',10,1,11),(10,10,NULL,'婚姻状况',1,0,10),(11,10,10,'已婚',2,1,3),(12,10,10,'已婚丧偶',4,1,5),(13,10,10,'已婚离异',6,1,7),(14,10,10,'未婚',8,1,9),(15,15,NULL,'职业',1,0,12),(16,15,15,'公务员',2,1,3),(17,15,15,'农民',4,1,5),(18,15,15,'教师',6,1,7),(19,15,15,'经商',8,1,9),(20,15,15,'其他',10,1,11),(21,21,NULL,'医保类型',1,0,14),(22,21,21,'退休职工',2,1,3),(23,21,21,'在职职工',4,1,5),(24,21,21,'城镇居民',6,1,7),(25,25,NULL,'降压药物',1,0,16),(26,25,25,'ACEI',2,1,3),(27,25,25,'ARB',4,1,5),(28,25,25,'β阻滞剂',6,1,7),(29,25,25,'钙拮抗剂',8,1,9),(30,25,25,'利尿剂',10,1,11),(31,25,25,'其他',12,1,13),(32,25,25,'未用降压药',14,1,15),(33,33,NULL,'控制情况',1,0,8),(34,33,33,'控制理想',2,1,3),(35,33,33,'控制欠佳',4,1,5),(36,33,33,'控制情况不详',6,1,7),(37,37,NULL,'降糖药物',1,0,14),(38,37,37,'胰岛素',2,1,3),(39,37,37,'磺脲类',4,1,5),(40,37,37,'双胍类',6,1,7),(41,37,37,'噻唑烷二酮类',8,1,9),(42,37,37,'二肽基肽酶-4抑制剂',10,1,11),(43,37,37,'未用降糖药',12,1,13),(44,21,21,'离休',8,1,9),(45,21,21,'自费',10,1,11),(46,46,NULL,'降脂药物',1,0,8),(47,46,46,'他汀',2,1,3),(48,46,46,'贝特类',4,1,5),(49,46,46,'依折麦布',6,1,7),(50,50,NULL,'吸烟情况',1,0,8),(51,50,50,'当前吸烟',2,1,3),(52,50,50,'既往吸烟',4,1,5),(53,50,50,'无吸烟史',6,1,7),(54,54,NULL,'饮酒',1,0,12),(55,54,54,'白酒',2,1,3),(56,54,54,'黄酒',4,1,5),(57,54,54,'啤酒',6,1,7),(58,54,54,'已戒酒',8,1,9),(59,54,54,'无饮酒史',10,1,11),(60,21,21,'其他',12,1,13),(61,61,NULL,'痛风',1,0,6),(62,61,61,'别嘌呤醇',2,1,3),(63,61,61,'非布司他',4,1,5);
+INSERT INTO `options` VALUES (1,1,NULL,'性别',1,0,6),(2,1,1,'男',2,1,3),(3,1,1,'女',4,1,5),(4,4,NULL,'文化程度',1,0,12),(5,4,4,'大学',2,1,3),(6,4,4,'高中',4,1,5),(7,4,4,'初中',6,1,7),(8,4,4,'小学',8,1,9),(9,4,4,'文盲',10,1,11),(10,10,NULL,'婚姻状况',1,0,10),(11,10,10,'已婚',2,1,3),(12,10,10,'已婚丧偶',4,1,5),(13,10,10,'已婚离异',6,1,7),(14,10,10,'未婚',8,1,9),(15,15,NULL,'职业',1,0,12),(16,15,15,'公务员',2,1,3),(17,15,15,'农民',4,1,5),(18,15,15,'教师',6,1,7),(19,15,15,'经商',8,1,9),(20,15,15,'其他',10,1,11),(21,21,NULL,'医保类型',1,0,14),(22,21,21,'退休职工',2,1,3),(23,21,21,'在职职工',4,1,5),(24,21,21,'城镇居民',6,1,7),(25,25,NULL,'降压药物',1,0,14),(26,25,25,'ACEI',2,1,3),(27,25,25,'ARB',4,1,5),(28,25,25,'β阻滞剂',6,1,7),(29,25,25,'钙拮抗剂',8,1,9),(30,25,25,'利尿剂',10,1,11),(31,25,25,'其他',12,1,13),(33,33,NULL,'控制情况',1,0,8),(34,33,33,'控制理想',2,1,3),(35,33,33,'控制欠佳',4,1,5),(36,33,33,'控制情况不详',6,1,7),(37,37,NULL,'降糖药物',1,0,12),(38,37,37,'胰岛素',2,1,3),(39,37,37,'磺脲类',4,1,5),(40,37,37,'双胍类',6,1,7),(41,37,37,'噻唑烷二酮类',8,1,9),(42,37,37,'二肽基肽酶-4抑制剂',10,1,11),(44,21,21,'离休',8,1,9),(45,21,21,'自费',10,1,11),(46,46,NULL,'降脂药物',1,0,8),(47,46,46,'他汀',2,1,3),(48,46,46,'贝特类',4,1,5),(49,46,46,'依折麦布',6,1,7),(50,50,NULL,'吸烟情况',1,0,8),(51,50,50,'当前吸烟',2,1,3),(52,50,50,'既往吸烟',4,1,5),(53,50,50,'无吸烟史',6,1,7),(54,54,NULL,'饮酒',1,0,12),(55,54,54,'白酒',2,1,3),(56,54,54,'黄酒',4,1,5),(57,54,54,'啤酒',6,1,7),(58,54,54,'已戒酒',8,1,9),(59,54,54,'无饮酒史',10,1,11),(60,21,21,'其他',12,1,13),(61,61,NULL,'痛风',1,0,6),(62,61,61,'别嘌呤醇',2,1,3),(63,61,61,'非布司他',4,1,5),(64,64,NULL,'CABG病史',1,0,6),(65,64,64,'LIMA',2,1,3),(66,64,64,'SVG',4,1,5),(67,67,NULL,'脑卒中病史',1,0,8),(68,67,67,'缺血性',2,1,3),(69,67,67,'出血性',4,1,5),(70,67,67,'不详',6,1,7),(71,71,NULL,'既往服用抗血小板药物',1,0,10),(72,71,71,'阿司匹林',2,1,3),(73,71,71,'波立维',4,1,5),(74,71,71,'帅泰/泰嘉',6,1,7),(75,71,71,'替格瑞洛',8,1,9),(76,76,NULL,'既往抗凝药物',1,0,6),(77,76,76,'华法林',2,1,3),(78,76,76,'利伐沙班',4,1,5),(79,79,NULL,'既往服用他汀',1,0,10),(80,79,79,'阿托伐他汀',2,1,3),(81,79,79,'瑞舒伐他汀',4,1,5),(82,79,79,'辛伐他汀',6,1,7),(83,79,79,'依折麦布',8,1,9);
 /*!40000 ALTER TABLE `options` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,8 +120,17 @@ CREATE TABLE `patient` (
   `yjqk_id` int(11) DEFAULT NULL,
   `yjqkliang` int(11) DEFAULT NULL,
   `yjqkyear` int(11) DEFAULT NULL,
-  `xjgs` tinyint(1) DEFAULT NULL,
-  `jwxjt` tinyint(1) DEFAULT NULL,
+  `xjgs` tinyint(1) NOT NULL,
+  `jwxjt` tinyint(1) NOT NULL,
+  `pcibs` tinyint(1) NOT NULL,
+  `nzzbs_id` int(11) DEFAULT NULL,
+  `wzdmjb` tinyint(1) NOT NULL,
+  `gxbjzs` tinyint(1) NOT NULL,
+  `hbexzl` tinyint(1) NOT NULL,
+  `xhdkybs` tinyint(1) NOT NULL,
+  `xgnbqbs` tinyint(1) NOT NULL,
+  `tx` tinyint(1) NOT NULL,
+  `copd` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_1ADAD7EB708A0E0` (`gender_id`),
   KEY `IDX_1ADAD7EB28722836` (`scholarship_id`),
@@ -133,8 +142,10 @@ CREATE TABLE `patient` (
   KEY `IDX_1ADAD7EB34C7080D` (`gxzkzqk_id`),
   KEY `IDX_1ADAD7EBDF53B864` (`xyqk_id`),
   KEY `IDX_1ADAD7EBFC66C3E5` (`yjqk_id`),
+  KEY `IDX_1ADAD7EB419AFB5F` (`nzzbs_id`),
   CONSTRAINT `FK_1ADAD7EB28722836` FOREIGN KEY (`scholarship_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB34C7080D` FOREIGN KEY (`gxzkzqk_id`) REFERENCES `options` (`id`),
+  CONSTRAINT `FK_1ADAD7EB419AFB5F` FOREIGN KEY (`nzzbs_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB708A0E0` FOREIGN KEY (`gender_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB88DA2383` FOREIGN KEY (`tnbkzqk_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_1ADAD7EB9DAE1DA4` FOREIGN KEY (`marriage_id`) REFERENCES `options` (`id`),
@@ -152,7 +163,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (5,'1985-11-11',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3,1,1),(6,'2017-11-11',123,'2014-02-02','18116381898','lee','62',2,6,11,17,56,24,69,34,35,35,51,2,8,55,2,8,0,1);
+INSERT INTO `patient` VALUES (5,'1985-11-11',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3,1,1,1,68,0,0,1,0,0,0,0),(6,'2017-11-11',123,'2014-02-02','18116381898','lee','62',2,6,11,17,56,24,69,34,35,35,51,2,8,55,2,8,0,1,0,NULL,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,8 +191,36 @@ CREATE TABLE `patient_options` (
 
 LOCK TABLES `patient_options` WRITE;
 /*!40000 ALTER TABLE `patient_options` DISABLE KEYS */;
-INSERT INTO `patient_options` VALUES (6,62);
+INSERT INTO `patient_options` VALUES (5,62),(5,63),(6,62);
 /*!40000 ALTER TABLE `patient_options` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_cabgbs`
+--
+
+DROP TABLE IF EXISTS `patient_options_cabgbs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_cabgbs` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_2C8F7F806B899279` (`patient_id`),
+  KEY `IDX_2C8F7F803ADB05F1` (`options_id`),
+  CONSTRAINT `FK_2C8F7F803ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_2C8F7F806B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_cabgbs`
+--
+
+LOCK TABLES `patient_options_cabgbs` WRITE;
+/*!40000 ALTER TABLE `patient_options_cabgbs` DISABLE KEYS */;
+INSERT INTO `patient_options_cabgbs` VALUES (5,65);
+/*!40000 ALTER TABLE `patient_options_cabgbs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -208,7 +247,7 @@ CREATE TABLE `patient_options_jtyw` (
 
 LOCK TABLES `patient_options_jtyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_jtyw` DISABLE KEYS */;
-INSERT INTO `patient_options_jtyw` VALUES (5,40),(5,41),(6,39),(6,40);
+INSERT INTO `patient_options_jtyw` VALUES (5,39),(5,40),(5,41),(6,39),(6,40);
 /*!40000 ALTER TABLE `patient_options_jtyw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,6 +306,87 @@ LOCK TABLES `patient_options_jzyw` WRITE;
 INSERT INTO `patient_options_jzyw` VALUES (5,48),(5,49),(6,48);
 /*!40000 ALTER TABLE `patient_options_jzyw` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_knyw`
+--
+
+DROP TABLE IF EXISTS `patient_options_knyw`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_knyw` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_4D4538146B899279` (`patient_id`),
+  KEY `IDX_4D4538143ADB05F1` (`options_id`),
+  CONSTRAINT `FK_4D4538143ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_4D4538146B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_knyw`
+--
+
+LOCK TABLES `patient_options_knyw` WRITE;
+/*!40000 ALTER TABLE `patient_options_knyw` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient_options_knyw` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_kxxbyw`
+--
+
+DROP TABLE IF EXISTS `patient_options_kxxbyw`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_kxxbyw` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_3A18728D6B899279` (`patient_id`),
+  KEY `IDX_3A18728D3ADB05F1` (`options_id`),
+  CONSTRAINT `FK_3A18728D3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_3A18728D6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_kxxbyw`
+--
+
+LOCK TABLES `patient_options_kxxbyw` WRITE;
+/*!40000 ALTER TABLE `patient_options_kxxbyw` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient_options_kxxbyw` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_ttyy`
+--
+
+DROP TABLE IF EXISTS `patient_options_ttyy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_ttyy` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_B336747C6B899279` (`patient_id`),
+  KEY `IDX_B336747C3ADB05F1` (`options_id`),
+  CONSTRAINT `FK_B336747C3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_B336747C6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_ttyy`
+--
+
+LOCK TABLES `patient_options_ttyy` WRITE;
+/*!40000 ALTER TABLE `patient_options_ttyy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient_options_ttyy` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -277,4 +397,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-11 12:41:03
+-- Dump completed on 2019-11-11 16:18:06

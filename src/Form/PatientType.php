@@ -239,10 +239,111 @@ class PatientType extends AbstractType
                     'label'=>'既往心绞痛',
                     'required'=>false,
                     'attr'=>[
-                        'class'=>'icheck-primary ml-3'
+                        'class'=>'icheck-primary ml-2'
                     ]
                 ])
-            ;           
+                ->add('pcibs',CheckboxType::class,[
+                    'label'=>'PCI病史',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-2'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('cabgbs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(64),
+                    'label'=>'CABG病史',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                
+                ->add('nzzbs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(67),
+                    'label'=>'脑卒中病史',                   
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                
+                ->add('wzdmjb',CheckboxType::class,[
+                    'label'=>'外周动脉疾病',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ]
+                ])
+                ->add('gxbjzs',CheckboxType::class,[
+                    'label'=>'冠心病家族史',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ]
+                ])
+                ->add('hbexzl',CheckboxType::class,[
+                    'label'=>'合并恶性肿瘤',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('kxxbyw',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(71),
+                    'label'=>'既往服用抗血小板药物',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('knyw',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(76),
+                    'label'=>'既往抗凝药物',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('ttyy',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(79),
+                    'label'=>'既往服用他汀',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                
+                ->add('xhdkybs',CheckboxType::class,[
+                    'label'=>'消化道溃疡',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ]
+                ])
+                ->add('xgnbqbs',CheckboxType::class,[
+                    'label'=>'肾功能',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ]
+                ])
+                ->add('tx',CheckboxType::class,[
+                    'label'=>'透析',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('copd',CheckboxType::class,[
+                    'label'=>'COPD',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                
+                
+            ;     
+               
     }
 
     public function configureOptions(OptionsResolver $resolver)
