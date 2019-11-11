@@ -256,6 +256,50 @@ class Patient
      */
     private $copd;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_xxgjbjy"
+     * )
+     */
+    private $xxgjbjy;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $zgzzl;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $pyywry;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $pypci;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $pyxjgsbs;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_fbsj"
+     * )
+     */
+    private $fbsj;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_fbdd"
+     * )
+     */
+    private $fbdd;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -266,6 +310,9 @@ class Patient
         $this->kxxbyw = new ArrayCollection();
         $this->knyw = new ArrayCollection();
         $this->ttyy = new ArrayCollection();
+        $this->xxgjbjy = new ArrayCollection();
+        $this->fbsj = new ArrayCollection();
+        $this->fbdd = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -902,6 +949,132 @@ class Patient
     public function setCopd(bool $copd): self
     {
         $this->copd = $copd;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getXxgjbjy(): Collection
+    {
+        return $this->xxgjbjy;
+    }
+
+    public function addXxgjbjy(Options $xxgjbjy): self
+    {
+        if (!$this->xxgjbjy->contains($xxgjbjy)) {
+            $this->xxgjbjy[] = $xxgjbjy;
+        }
+
+        return $this;
+    }
+
+    public function removeXxgjbjy(Options $xxgjbjy): self
+    {
+        if ($this->xxgjbjy->contains($xxgjbjy)) {
+            $this->xxgjbjy->removeElement($xxgjbjy);
+        }
+
+        return $this;
+    }
+
+    public function getZgzzl(): ?bool
+    {
+        return $this->zgzzl;
+    }
+
+    public function setZgzzl(bool $zgzzl): self
+    {
+        $this->zgzzl = $zgzzl;
+
+        return $this;
+    }
+
+    public function getPyywry(): ?bool
+    {
+        return $this->pyywry;
+    }
+
+    public function setPyywry(bool $pyywry): self
+    {
+        $this->pyywry = $pyywry;
+
+        return $this;
+    }
+
+    public function getPypci(): ?bool
+    {
+        return $this->pypci;
+    }
+
+    public function setPypci(bool $pypci): self
+    {
+        $this->pypci = $pypci;
+
+        return $this;
+    }
+
+    public function getPyxjgsbs(): ?bool
+    {
+        return $this->pyxjgsbs;
+    }
+
+    public function setPyxjgsbs(bool $pyxjgsbs): self
+    {
+        $this->pyxjgsbs = $pyxjgsbs;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getFbsj(): Collection
+    {
+        return $this->fbsj;
+    }
+
+    public function addFbsj(Options $fbsj): self
+    {
+        if (!$this->fbsj->contains($fbsj)) {
+            $this->fbsj[] = $fbsj;
+        }
+
+        return $this;
+    }
+
+    public function removeFbsj(Options $fbsj): self
+    {
+        if ($this->fbsj->contains($fbsj)) {
+            $this->fbsj->removeElement($fbsj);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getFbdd(): Collection
+    {
+        return $this->fbdd;
+    }
+
+    public function addFbdd(Options $fbdd): self
+    {
+        if (!$this->fbdd->contains($fbdd)) {
+            $this->fbdd[] = $fbdd;
+        }
+
+        return $this;
+    }
+
+    public function removeFbdd(Options $fbdd): self
+    {
+        if ($this->fbdd->contains($fbdd)) {
+            $this->fbdd->removeElement($fbdd);
+        }
 
         return $this;
     }

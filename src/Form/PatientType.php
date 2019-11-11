@@ -340,7 +340,59 @@ class PatientType extends AbstractType
                     ],
                     'required'=>false,
                 ])
+                ->add('xxgjbjy',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(84),
+                    'label'=>'参加过心血管疾病健康教育',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
                 
+                ->add('zgzzl',CheckboxType::class,[
+                    'label'=>'听说过再灌注治疗',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ]
+                ])
+                ->add('pyywry',CheckboxType::class,[
+                    'label'=>'近亲/朋友是医务人员',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ]
+                ])
+                ->add('pypci',CheckboxType::class,[
+                    'label'=>'近亲/朋友PCI病史',
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('pyxjgsbs',CheckboxType::class,[
+                    'label'=>'近亲/朋友心肌梗死',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('fbsj',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(89),
+                    'label'=>'发病时间',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('fbdd',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(96),
+                    'label'=>'发病地点',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
                 
             ;     
                

@@ -58,6 +58,11 @@
         {{ _self.formGroup(form,['ryrq'],'入院 日期') }} 
         {{ _self.formGroup(form,['nzzbs'],'脑卒中病史') }}   
         
+         {{ _self.formGroup(form,['xjgs','jwxjt','hbexzl']) }} 
+         {{ _self.formGroup(form,['wzdmjb','gxbjzs','pcibs']) }} 
+         {{ _self.formGroup(form,['xhdkybs','xgnbqbs','tx','copd']) }} 
+         {{ _self.formGroup(form,['zgzzl','pyywry']) }} 
+         {{ _self.formGroup(form,['pypci','pyxjgsbs']) }} 
         
          {% for field in ['ryrq']
             if (attribute(form, field) is defined) %}
@@ -82,11 +87,12 @@
          {{ _self.formGroup(form,['kxxbyw'],'抗血小板药物') }} 
          {{ _self.formGroup(form,['knyw'],'既往抗凝药物') }} 
          {{ _self.formGroup(form,['ttyy'],'既往服用他汀') }} 
+         {{ _self.formGroup(form,['xxgjbjy'],'心血管疾病教育') }}
+         {{ _self.formGroup(form,['fbsj'],'发病时间') }}
+         {{ _self.formGroup(form,['fbdd'],'发病地点') }}
          
          
-         {{ _self.formGroup(form,['xjgs','jwxjt','hbexzl']) }} 
-         {{ _self.formGroup(form,['wzdmjb','gxbjzs','pcibs']) }} 
-         {{ _self.formGroup(form,['xhdkybs','xgnbqbs','tx','copd']) }} 
+         
          
         </div>
         

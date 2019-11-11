@@ -76,7 +76,7 @@ CREATE TABLE `options` (
   KEY `lvl_ix` (`lvl`),
   CONSTRAINT `FK_D035FA87727ACA70` FOREIGN KEY (`parent_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
   CONSTRAINT `FK_D035FA87A977936C` FOREIGN KEY (`tree_root`) REFERENCES `options` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `options` (
 
 LOCK TABLES `options` WRITE;
 /*!40000 ALTER TABLE `options` DISABLE KEYS */;
-INSERT INTO `options` VALUES (1,1,NULL,'性别',1,0,6),(2,1,1,'男',2,1,3),(3,1,1,'女',4,1,5),(4,4,NULL,'文化程度',1,0,12),(5,4,4,'大学',2,1,3),(6,4,4,'高中',4,1,5),(7,4,4,'初中',6,1,7),(8,4,4,'小学',8,1,9),(9,4,4,'文盲',10,1,11),(10,10,NULL,'婚姻状况',1,0,10),(11,10,10,'已婚',2,1,3),(12,10,10,'已婚丧偶',4,1,5),(13,10,10,'已婚离异',6,1,7),(14,10,10,'未婚',8,1,9),(15,15,NULL,'职业',1,0,12),(16,15,15,'公务员',2,1,3),(17,15,15,'农民',4,1,5),(18,15,15,'教师',6,1,7),(19,15,15,'经商',8,1,9),(20,15,15,'其他',10,1,11),(21,21,NULL,'医保类型',1,0,14),(22,21,21,'退休职工',2,1,3),(23,21,21,'在职职工',4,1,5),(24,21,21,'城镇居民',6,1,7),(25,25,NULL,'降压药物',1,0,14),(26,25,25,'ACEI',2,1,3),(27,25,25,'ARB',4,1,5),(28,25,25,'β阻滞剂',6,1,7),(29,25,25,'钙拮抗剂',8,1,9),(30,25,25,'利尿剂',10,1,11),(31,25,25,'其他',12,1,13),(33,33,NULL,'控制情况',1,0,8),(34,33,33,'控制理想',2,1,3),(35,33,33,'控制欠佳',4,1,5),(36,33,33,'控制情况不详',6,1,7),(37,37,NULL,'降糖药物',1,0,12),(38,37,37,'胰岛素',2,1,3),(39,37,37,'磺脲类',4,1,5),(40,37,37,'双胍类',6,1,7),(41,37,37,'噻唑烷二酮类',8,1,9),(42,37,37,'二肽基肽酶-4抑制剂',10,1,11),(44,21,21,'离休',8,1,9),(45,21,21,'自费',10,1,11),(46,46,NULL,'降脂药物',1,0,8),(47,46,46,'他汀',2,1,3),(48,46,46,'贝特类',4,1,5),(49,46,46,'依折麦布',6,1,7),(50,50,NULL,'吸烟情况',1,0,8),(51,50,50,'当前吸烟',2,1,3),(52,50,50,'既往吸烟',4,1,5),(53,50,50,'无吸烟史',6,1,7),(54,54,NULL,'饮酒',1,0,12),(55,54,54,'白酒',2,1,3),(56,54,54,'黄酒',4,1,5),(57,54,54,'啤酒',6,1,7),(58,54,54,'已戒酒',8,1,9),(59,54,54,'无饮酒史',10,1,11),(60,21,21,'其他',12,1,13),(61,61,NULL,'痛风',1,0,6),(62,61,61,'别嘌呤醇',2,1,3),(63,61,61,'非布司他',4,1,5),(64,64,NULL,'CABG病史',1,0,6),(65,64,64,'LIMA',2,1,3),(66,64,64,'SVG',4,1,5),(67,67,NULL,'脑卒中病史',1,0,8),(68,67,67,'缺血性',2,1,3),(69,67,67,'出血性',4,1,5),(70,67,67,'不详',6,1,7),(71,71,NULL,'既往服用抗血小板药物',1,0,10),(72,71,71,'阿司匹林',2,1,3),(73,71,71,'波立维',4,1,5),(74,71,71,'帅泰/泰嘉',6,1,7),(75,71,71,'替格瑞洛',8,1,9),(76,76,NULL,'既往抗凝药物',1,0,6),(77,76,76,'华法林',2,1,3),(78,76,76,'利伐沙班',4,1,5),(79,79,NULL,'既往服用他汀',1,0,10),(80,79,79,'阿托伐他汀',2,1,3),(81,79,79,'瑞舒伐他汀',4,1,5),(82,79,79,'辛伐他汀',6,1,7),(83,79,79,'依折麦布',8,1,9);
+INSERT INTO `options` VALUES (1,1,NULL,'性别',1,0,6),(2,1,1,'男',2,1,3),(3,1,1,'女',4,1,5),(4,4,NULL,'文化程度',1,0,12),(5,4,4,'大学',2,1,3),(6,4,4,'高中',4,1,5),(7,4,4,'初中',6,1,7),(8,4,4,'小学',8,1,9),(9,4,4,'文盲',10,1,11),(10,10,NULL,'婚姻状况',1,0,10),(11,10,10,'已婚',2,1,3),(12,10,10,'已婚丧偶',4,1,5),(13,10,10,'已婚离异',6,1,7),(14,10,10,'未婚',8,1,9),(15,15,NULL,'职业',1,0,12),(16,15,15,'公务员',2,1,3),(17,15,15,'农民',4,1,5),(18,15,15,'教师',6,1,7),(19,15,15,'经商',8,1,9),(20,15,15,'其他',10,1,11),(21,21,NULL,'医保类型',1,0,14),(22,21,21,'退休职工',2,1,3),(23,21,21,'在职职工',4,1,5),(24,21,21,'城镇居民',6,1,7),(25,25,NULL,'降压药物',1,0,14),(26,25,25,'ACEI',2,1,3),(27,25,25,'ARB',4,1,5),(28,25,25,'β阻滞剂',6,1,7),(29,25,25,'钙拮抗剂',8,1,9),(30,25,25,'利尿剂',10,1,11),(31,25,25,'其他',12,1,13),(33,33,NULL,'控制情况',1,0,8),(34,33,33,'控制理想',2,1,3),(35,33,33,'控制欠佳',4,1,5),(36,33,33,'控制情况不详',6,1,7),(37,37,NULL,'降糖药物',1,0,12),(38,37,37,'胰岛素',2,1,3),(39,37,37,'磺脲类',4,1,5),(40,37,37,'双胍类',6,1,7),(41,37,37,'噻唑烷二酮类',8,1,9),(42,37,37,'二肽基肽酶-4抑制剂',10,1,11),(44,21,21,'离休',8,1,9),(45,21,21,'自费',10,1,11),(46,46,NULL,'降脂药物',1,0,8),(47,46,46,'他汀',2,1,3),(48,46,46,'贝特类',4,1,5),(49,46,46,'依折麦布',6,1,7),(50,50,NULL,'吸烟情况',1,0,8),(51,50,50,'当前吸烟',2,1,3),(52,50,50,'既往吸烟',4,1,5),(53,50,50,'无吸烟史',6,1,7),(54,54,NULL,'饮酒',1,0,12),(55,54,54,'白酒',2,1,3),(56,54,54,'黄酒',4,1,5),(57,54,54,'啤酒',6,1,7),(58,54,54,'已戒酒',8,1,9),(59,54,54,'无饮酒史',10,1,11),(60,21,21,'其他',12,1,13),(61,61,NULL,'痛风',1,0,6),(62,61,61,'别嘌呤醇',2,1,3),(63,61,61,'非布司他',4,1,5),(64,64,NULL,'CABG病史',1,0,6),(65,64,64,'LIMA',2,1,3),(66,64,64,'SVG',4,1,5),(67,67,NULL,'脑卒中病史',1,0,8),(68,67,67,'缺血性',2,1,3),(69,67,67,'出血性',4,1,5),(70,67,67,'不详',6,1,7),(71,71,NULL,'既往服用抗血小板药物',1,0,10),(72,71,71,'阿司匹林',2,1,3),(73,71,71,'波立维',4,1,5),(74,71,71,'帅泰/泰嘉',6,1,7),(75,71,71,'替格瑞洛',8,1,9),(76,76,NULL,'既往抗凝药物',1,0,6),(77,76,76,'华法林',2,1,3),(78,76,76,'利伐沙班',4,1,5),(79,79,NULL,'既往服用他汀',1,0,10),(80,79,79,'阿托伐他汀',2,1,3),(81,79,79,'瑞舒伐他汀',4,1,5),(82,79,79,'辛伐他汀',6,1,7),(83,79,79,'依折麦布',8,1,9),(84,84,NULL,'参加过心血管疾病健康教育',1,0,10),(85,84,84,'现场讲座（县级以上医院专家）',2,1,3),(86,84,84,'现场讲座（社区医生）',4,1,5),(87,84,84,'电视广播',6,1,7),(88,84,84,'报纸',8,1,9),(89,89,NULL,'发病时间',1,0,14),(90,89,89,'上午',2,1,3),(91,89,89,'中午',4,1,5),(92,89,89,'下午',6,1,7),(93,89,89,'晚上',8,1,9),(94,89,89,'午夜',10,1,11),(95,89,89,'凌晨',12,1,13),(96,96,NULL,'发病地点',1,0,8),(97,96,96,'家中',2,1,3),(98,96,96,'工作场所',4,1,5),(99,96,96,'户外',6,1,7);
 /*!40000 ALTER TABLE `options` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,6 +131,10 @@ CREATE TABLE `patient` (
   `xgnbqbs` tinyint(1) NOT NULL,
   `tx` tinyint(1) NOT NULL,
   `copd` tinyint(1) NOT NULL,
+  `zgzzl` tinyint(1) NOT NULL,
+  `pyywry` tinyint(1) NOT NULL,
+  `pypci` tinyint(1) NOT NULL,
+  `pyxjgsbs` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_1ADAD7EB708A0E0` (`gender_id`),
   KEY `IDX_1ADAD7EB28722836` (`scholarship_id`),
@@ -163,7 +167,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (5,'1985-11-11',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3,1,1,1,68,0,0,1,0,0,0,0),(6,'2017-11-11',123,'2014-02-02','18116381898','lee','62',2,6,11,17,56,24,69,34,35,35,51,2,8,55,2,8,0,1,0,NULL,0,0,0,0,0,0,0);
+INSERT INTO `patient` VALUES (5,'1985-11-11',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3,1,1,1,68,1,0,1,0,0,1,0,0,0,0,0),(6,'2017-11-11',123,'2014-02-02','18116381898','lee','62',2,6,11,17,56,24,69,34,35,35,51,2,8,55,2,8,0,1,0,NULL,0,0,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,6 +225,60 @@ LOCK TABLES `patient_options_cabgbs` WRITE;
 /*!40000 ALTER TABLE `patient_options_cabgbs` DISABLE KEYS */;
 INSERT INTO `patient_options_cabgbs` VALUES (5,65);
 /*!40000 ALTER TABLE `patient_options_cabgbs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_fbdd`
+--
+
+DROP TABLE IF EXISTS `patient_options_fbdd`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_fbdd` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_CDE7346F6B899279` (`patient_id`),
+  KEY `IDX_CDE7346F3ADB05F1` (`options_id`),
+  CONSTRAINT `FK_CDE7346F3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_CDE7346F6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_fbdd`
+--
+
+LOCK TABLES `patient_options_fbdd` WRITE;
+/*!40000 ALTER TABLE `patient_options_fbdd` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient_options_fbdd` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_fbsj`
+--
+
+DROP TABLE IF EXISTS `patient_options_fbsj`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_fbsj` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_2FDC9DFE6B899279` (`patient_id`),
+  KEY `IDX_2FDC9DFE3ADB05F1` (`options_id`),
+  CONSTRAINT `FK_2FDC9DFE3ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_2FDC9DFE6B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_fbsj`
+--
+
+LOCK TABLES `patient_options_fbsj` WRITE;
+/*!40000 ALTER TABLE `patient_options_fbsj` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient_options_fbsj` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -331,6 +389,7 @@ CREATE TABLE `patient_options_knyw` (
 
 LOCK TABLES `patient_options_knyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_knyw` DISABLE KEYS */;
+INSERT INTO `patient_options_knyw` VALUES (5,77),(5,78);
 /*!40000 ALTER TABLE `patient_options_knyw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -358,6 +417,7 @@ CREATE TABLE `patient_options_kxxbyw` (
 
 LOCK TABLES `patient_options_kxxbyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_kxxbyw` DISABLE KEYS */;
+INSERT INTO `patient_options_kxxbyw` VALUES (5,73),(5,74);
 /*!40000 ALTER TABLE `patient_options_kxxbyw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -385,7 +445,36 @@ CREATE TABLE `patient_options_ttyy` (
 
 LOCK TABLES `patient_options_ttyy` WRITE;
 /*!40000 ALTER TABLE `patient_options_ttyy` DISABLE KEYS */;
+INSERT INTO `patient_options_ttyy` VALUES (5,81),(5,82);
 /*!40000 ALTER TABLE `patient_options_ttyy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient_options_xxgjbjy`
+--
+
+DROP TABLE IF EXISTS `patient_options_xxgjbjy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient_options_xxgjbjy` (
+  `patient_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`patient_id`,`options_id`),
+  KEY `IDX_F6C54F986B899279` (`patient_id`),
+  KEY `IDX_F6C54F983ADB05F1` (`options_id`),
+  CONSTRAINT `FK_F6C54F983ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_F6C54F986B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient_options_xxgjbjy`
+--
+
+LOCK TABLES `patient_options_xxgjbjy` WRITE;
+/*!40000 ALTER TABLE `patient_options_xxgjbjy` DISABLE KEYS */;
+INSERT INTO `patient_options_xxgjbjy` VALUES (5,86);
+/*!40000 ALTER TABLE `patient_options_xxgjbjy` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -397,4 +486,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-11 16:18:06
+-- Dump completed on 2019-11-11 17:09:59
