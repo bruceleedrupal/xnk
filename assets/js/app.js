@@ -19,7 +19,7 @@ global.$ = global.jQuery = $;
 
 require('bootstrap/js/src/tab.js');
 require('bootstrap/js/src/alert.js');
-//require('admin-lte/build/js/AdminLTE.js');
+require('admin-lte/build/js/AdminLTE.js');
 
 function _initiallize_display(selectElement,values){	
    siblings= selectElement.siblings('input');   
@@ -49,4 +49,5 @@ function initiallize_display(id,values){
 $(document).ready(function(){
      initiallize_display('#patient_xyqk',['51']);
      initiallize_display('#patient_yjqk',['55','56','57']);
+
 });

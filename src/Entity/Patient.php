@@ -169,6 +169,16 @@ class Patient
      */
     private $tfyw;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $xjgs;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $jwxjt;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -575,6 +585,30 @@ class Patient
         if ($this->tfyw->contains($tfyw)) {
             $this->tfyw->removeElement($tfyw);
         }
+
+        return $this;
+    }
+
+    public function getXjgs(): ?bool
+    {
+        return $this->xjgs;
+    }
+
+    public function setXjgs(?bool $xjgs): self
+    {
+        $this->xjgs = $xjgs;
+
+        return $this;
+    }
+
+    public function getJwxjt(): ?bool
+    {
+        return $this->jwxjt;
+    }
+
+    public function setJwxjt(?bool $jwxjt): self
+    {
+        $this->jwxjt = $jwxjt;
 
         return $this;
     }

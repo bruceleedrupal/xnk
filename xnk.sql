@@ -120,6 +120,8 @@ CREATE TABLE `patient` (
   `yjqk_id` int(11) DEFAULT NULL,
   `yjqkliang` int(11) DEFAULT NULL,
   `yjqkyear` int(11) DEFAULT NULL,
+  `xjgs` tinyint(1) DEFAULT NULL,
+  `jwxjt` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_1ADAD7EB708A0E0` (`gender_id`),
   KEY `IDX_1ADAD7EB28722836` (`scholarship_id`),
@@ -150,7 +152,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (5,'1985-11-07',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3),(6,'2017-11-09',NULL,'2014-02-02','18116381898','lee','62',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `patient` VALUES (5,'1985-11-11',169,'2017-11-30','18116381898','李跃健','800003649',2,6,11,17,79,23,69,34,36,35,51,3,2,56,2,3,1,1),(6,'2017-11-11',123,'2014-02-02','18116381898','lee','62',2,6,11,17,56,24,69,34,35,35,51,2,8,55,2,8,0,1);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,6 +180,7 @@ CREATE TABLE `patient_options` (
 
 LOCK TABLES `patient_options` WRITE;
 /*!40000 ALTER TABLE `patient_options` DISABLE KEYS */;
+INSERT INTO `patient_options` VALUES (6,62);
 /*!40000 ALTER TABLE `patient_options` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +208,7 @@ CREATE TABLE `patient_options_jtyw` (
 
 LOCK TABLES `patient_options_jtyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_jtyw` DISABLE KEYS */;
-INSERT INTO `patient_options_jtyw` VALUES (5,40),(5,41);
+INSERT INTO `patient_options_jtyw` VALUES (5,40),(5,41),(6,39),(6,40);
 /*!40000 ALTER TABLE `patient_options_jtyw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +236,7 @@ CREATE TABLE `patient_options_jyyw` (
 
 LOCK TABLES `patient_options_jyyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_jyyw` DISABLE KEYS */;
-INSERT INTO `patient_options_jyyw` VALUES (5,26),(5,27),(6,29);
+INSERT INTO `patient_options_jyyw` VALUES (5,26),(5,27),(6,28),(6,29);
 /*!40000 ALTER TABLE `patient_options_jyyw` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,7 +264,7 @@ CREATE TABLE `patient_options_jzyw` (
 
 LOCK TABLES `patient_options_jzyw` WRITE;
 /*!40000 ALTER TABLE `patient_options_jzyw` DISABLE KEYS */;
-INSERT INTO `patient_options_jzyw` VALUES (5,48),(5,49);
+INSERT INTO `patient_options_jzyw` VALUES (5,48),(5,49),(6,48);
 /*!40000 ALTER TABLE `patient_options_jzyw` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -274,4 +277,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-09 20:00:30
+-- Dump completed on 2019-11-11 12:41:03

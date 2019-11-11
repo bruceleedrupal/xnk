@@ -17,3 +17,14 @@ col-sm-9
     {{  block('form_widget_simple') }}
 {%- endblock  %}
 
+
+{% block checkbox_widget -%}    
+
+        <div class="form-check {{ attr.class }}">
+            {{- form_label(form, null, { widget: block('checkbox_widget_single')}) -}}
+        </div>
+{%- endblock checkbox_widget %}
+
+{%- block checkbox_widget_single -%}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock checkbox_widget_single -%}

@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 
@@ -59,6 +60,7 @@ class PatientType extends AbstractType
             ->add('tall',NumberType::class,[                
                 'label'=>'身高(厘米)',
                 'required'=>false,
+                'html5'=>true,
                 'label_attr'=>[
                     'class'=>'padding-rightless'
                 ],
@@ -69,6 +71,7 @@ class PatientType extends AbstractType
             ->add('weight',NumberType::class,[
                 'label'=>'体重(公斤)',
                 'required'=>false,
+                'html5'=>true,
                 'label_attr'=>[
                     'class'=>'padding-rightless'
                 ],
@@ -79,6 +82,7 @@ class PatientType extends AbstractType
             ->add('fuwei',NumberType::class,[
                 'label'=>'腹围(厘米)',
                 'required'=>false,
+                'html5'=>true,
                 'label_attr'=>[
                     'class'=>'padding-rightless'
                 ],
@@ -224,6 +228,20 @@ class PatientType extends AbstractType
                     'choice_label'=>'title',
                     'required'=>false,
                     ])
+                ->add('xjgs',CheckboxType::class,[               
+                    'label'=>'心肌梗死',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ]                   
+                ])
+                ->add('jwxjt',CheckboxType::class,[
+                    'label'=>'既往心绞痛',
+                    'required'=>false,
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ]
+                ])
             ;           
     }
 
