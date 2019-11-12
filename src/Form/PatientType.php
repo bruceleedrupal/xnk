@@ -394,6 +394,130 @@ class PatientType extends AbstractType
                     'required'=>false,
                 ])
                 
+                ->add('yy',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(100),
+                    'label'=>'诱因',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('xtxm',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(106),
+                    'label'=>'胸痛/胸闷部位',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('bszz',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(112),
+                    'label'=>'伴随症状',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('xsqj',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(118),
+                    'label'=>'发病后第一个向谁求助',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])                
+                ->add('fbfyyw',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(125),
+                    'label'=>'发病后服用药物',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('yyjy',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(132),
+                    'label'=>'犹豫是否就医及原因',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('exxlsc',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(138),
+                    'label'=>'恶性心律失常',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('kippip',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(142),
+                    'label'=>'Killip分级',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('gsbw',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(147),
+                    'label'=>'梗死部位',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                
+                
+                ->add('zzdx',CheckboxType::class,[
+                    'label'=>'症状典型',
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('ysxg',CheckboxType::class,[
+                    'label'=>'意识得了心梗',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('ysxg',CheckboxType::class,[
+                    'label'=>'意识得了心梗',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('yqxtzt',CheckboxType::class,[
+                    'label'=>'院前心跳骤停',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zszcdzz',CheckboxType::class,[
+                    'label'=>'左束支阻滞',
+                    'attr'=>[
+                        'class'=>'icheck-primary'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('yszcdzz',CheckboxType::class,[
+                    'label'=>'右束支阻滞',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('xfcd',CheckboxType::class,[
+                    'label'=>'心房颤动',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-3'
+                    ],
+                    'required'=>false,
+                ])
+               
+                
             ;     
                
     }

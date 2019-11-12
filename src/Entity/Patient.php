@@ -300,6 +300,108 @@ class Patient
      */
     private $fbdd;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_yy"
+     * )
+     */
+    private $yy;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_xtxm"
+     * )
+     */
+    private $xtxm;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_bszz"
+     * )
+     */
+    private $bszz;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_xsqj"
+     * )
+     */
+    private $xsqj;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_fbfyyw"
+     * )
+     */
+    private $fbfyyw;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_yyjy"
+     * )
+     */
+    private $yyjy;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_exxlsc"
+     * )
+     */
+    private $exxlsc;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $kippip;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_gsbw"
+     * )
+     */
+    private $gsbw;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $zzdx;
+
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ysxg;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $yqxtzt;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $zszcdzz;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $yszcdzz;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $xfcd;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -313,6 +415,14 @@ class Patient
         $this->xxgjbjy = new ArrayCollection();
         $this->fbsj = new ArrayCollection();
         $this->fbdd = new ArrayCollection();
+        $this->yy = new ArrayCollection();
+        $this->xtxm = new ArrayCollection();
+        $this->bszz = new ArrayCollection();
+        $this->xsqj = new ArrayCollection();
+        $this->fbfyyw = new ArrayCollection();
+        $this->yyjy = new ArrayCollection();
+        $this->exxlsc = new ArrayCollection();        
+        $this->gsbw = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -1075,6 +1185,304 @@ class Patient
         if ($this->fbdd->contains($fbdd)) {
             $this->fbdd->removeElement($fbdd);
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getYy(): Collection
+    {
+        return $this->yy;
+    }
+
+    public function addYy(Options $yy): self
+    {
+        if (!$this->yy->contains($yy)) {
+            $this->yy[] = $yy;
+        }
+
+        return $this;
+    }
+
+    public function removeYy(Options $yy): self
+    {
+        if ($this->yy->contains($yy)) {
+            $this->yy->removeElement($yy);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getXtxm(): Collection
+    {
+        return $this->xtxm;
+    }
+
+    public function addXtxm(Options $xtxm): self
+    {
+        if (!$this->xtxm->contains($xtxm)) {
+            $this->xtxm[] = $xtxm;
+        }
+
+        return $this;
+    }
+
+    public function removeXtxm(Options $xtxm): self
+    {
+        if ($this->xtxm->contains($xtxm)) {
+            $this->xtxm->removeElement($xtxm);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getBszz(): Collection
+    {
+        return $this->bszz;
+    }
+
+    public function addBszz(Options $bszz): self
+    {
+        if (!$this->bszz->contains($bszz)) {
+            $this->bszz[] = $bszz;
+        }
+
+        return $this;
+    }
+
+    public function removeBszz(Options $bszz): self
+    {
+        if ($this->bszz->contains($bszz)) {
+            $this->bszz->removeElement($bszz);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getXsqj(): Collection
+    {
+        return $this->xsqj;
+    }
+
+    public function addXsqj(Options $xsqj): self
+    {
+        if (!$this->xsqj->contains($xsqj)) {
+            $this->xsqj[] = $xsqj;
+        }
+
+        return $this;
+    }
+
+    public function removeXsqj(Options $xsqj): self
+    {
+        if ($this->xsqj->contains($xsqj)) {
+            $this->xsqj->removeElement($xsqj);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getFbfyyw(): Collection
+    {
+        return $this->fbfyyw;
+    }
+
+    public function addFbfyyw(Options $fbfyyw): self
+    {
+        if (!$this->fbfyyw->contains($fbfyyw)) {
+            $this->fbfyyw[] = $fbfyyw;
+        }
+
+        return $this;
+    }
+
+    public function removeFbfyyw(Options $fbfyyw): self
+    {
+        if ($this->fbfyyw->contains($fbfyyw)) {
+            $this->fbfyyw->removeElement($fbfyyw);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getYyjy(): Collection
+    {
+        return $this->yyjy;
+    }
+
+    public function addYyjy(Options $yyjy): self
+    {
+        if (!$this->yyjy->contains($yyjy)) {
+            $this->yyjy[] = $yyjy;
+        }
+
+        return $this;
+    }
+
+    public function removeYyjy(Options $yyjy): self
+    {
+        if ($this->yyjy->contains($yyjy)) {
+            $this->yyjy->removeElement($yyjy);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getExxlsc(): Collection
+    {
+        return $this->exxlsc;
+    }
+
+    public function addExxlsc(Options $exxlsc): self
+    {
+        if (!$this->exxlsc->contains($exxlsc)) {
+            $this->exxlsc[] = $exxlsc;
+        }
+
+        return $this;
+    }
+
+    public function removeExxlsc(Options $exxlsc): self
+    {
+        if ($this->exxlsc->contains($exxlsc)) {
+            $this->exxlsc->removeElement($exxlsc);
+        }
+
+        return $this;
+    }
+
+  
+
+   
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getGsbw(): Collection
+    {
+        return $this->gsbw;
+    }
+
+    public function addGsbw(Options $gsbw): self
+    {
+        if (!$this->gsbw->contains($gsbw)) {
+            $this->gsbw[] = $gsbw;
+        }
+
+        return $this;
+    }
+
+    public function removeGsbw(Options $gsbw): self
+    {
+        if ($this->gsbw->contains($gsbw)) {
+            $this->gsbw->removeElement($gsbw);
+        }
+
+        return $this;
+    }
+
+    public function getKippip(): ?Options
+    {
+        return $this->kippip;
+    }
+
+    public function setKippip(?Options $kippip): self
+    {
+        $this->kippip = $kippip;
+
+        return $this;
+    }
+
+    public function getZzdx(): ?bool
+    {
+        return $this->zzdx;
+    }
+
+    public function setZzdx(bool $zzdx): self
+    {
+        $this->zzdx = $zzdx;
+
+        return $this;
+    }
+
+
+
+    public function getYsxg(): ?bool
+    {
+        return $this->ysxg;
+    }
+
+    public function setYsxg(bool $ysxg): self
+    {
+        $this->ysxg = $ysxg;
+
+        return $this;
+    }
+
+    public function getYqxtzt(): ?bool
+    {
+        return $this->yqxtzt;
+    }
+
+    public function setYqxtzt(bool $yqxtzt): self
+    {
+        $this->yqxtzt = $yqxtzt;
+
+        return $this;
+    }
+
+    public function getZszcdzz(): ?bool
+    {
+        return $this->zszcdzz;
+    }
+
+    public function setZszcdzz(bool $zszcdzz): self
+    {
+        $this->zszcdzz = $zszcdzz;
+
+        return $this;
+    }
+
+    public function getYszcdzz(): ?bool
+    {
+        return $this->yszcdzz;
+    }
+
+    public function setYszcdzz(bool $yszcdzz): self
+    {
+        $this->yszcdzz = $yszcdzz;
+
+        return $this;
+    }
+
+    public function getXfcd(): ?bool
+    {
+        return $this->xfcd;
+    }
+
+    public function setXfcd(bool $xfcd): self
+    {
+        $this->xfcd = $xfcd;
 
         return $this;
     }

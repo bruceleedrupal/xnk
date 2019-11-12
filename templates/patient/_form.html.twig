@@ -23,10 +23,10 @@
 
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab"  href="#basic_info">人口学资料</a>
+    <a class="nav-link" data-toggle="tab"  href="#rkx">人口学</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+    <a class="nav-link active" data-toggle="tab" href="#lc">临床</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
@@ -43,7 +43,7 @@
     {% endfor %}
 
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="basic_info" role="tabpanel">
+  <div class="tab-pane fade" id="rkx" role="tabpanel">
   <div class='row'>
       <div class='col-lg-4'>
 
@@ -72,7 +72,7 @@
         </div>
 
         
-         <div class='col-lg-4 center-col'>
+         <div class='col-lg-4'>
          {{ _self.formGroup(form,['jyyw','gxykzqk'],'高血压') }}  
          {{ _self.formGroup(form,['jtyw','tnbkzqk'],'糖尿病') }}    
          {{ _self.formGroup(form,['jzyw','gxzkzqk'],'高血脂') }}  
@@ -82,17 +82,13 @@
         </div>
         
         
-         <div class='col-lg-4 center-col'>        
+         <div class='col-lg-4'>        
                    
          {{ _self.formGroup(form,['kxxbyw'],'抗血小板药物') }} 
          {{ _self.formGroup(form,['knyw'],'既往抗凝药物') }} 
          {{ _self.formGroup(form,['ttyy'],'既往服用他汀') }} 
          {{ _self.formGroup(form,['xxgjbjy'],'心血管疾病教育') }}
-         {{ _self.formGroup(form,['fbsj'],'发病时间') }}
-         {{ _self.formGroup(form,['fbdd'],'发病地点') }}
-         
-         
-         
+           
          
         </div>
         
@@ -100,31 +96,21 @@
     </div>
    </div>
 
-  <div class="tab-pane fade" id="profile" role="tabpanel">
-    {{ form_widget(form) }}
+  <div class="tab-pane fade  show active" id="lc" role="tabpanel">
+  <div class='col-lg-4'>          
+         {{ _self.formGroup(form,['fbsj','fbdd'],'发病时间地点') }}
+         {{ _self.formGroup(form,['xtxm','yy'],'疼痛部位/诱因') }}         
+         {{ _self.formGroup(form,['bszz','xsqj'],'伴随症状/求助') }}         
+         {{ _self.formGroup(form,['fbfyyw','yyjy'],'服用药物/犹豫') }}         
+         {{ _self.formGroup(form,['exxlsc','gsbw'],'心律失常/梗死') }}
+         {{ _self.formGroup(form,['zzdx','ysxg','yqxtzt']) }} 
+         {{ _self.formGroup(form,['zszcdzz','yszcdzz','xfcd']) }}
+         
+  </div>
   </div>
   
-    <div class="tab-pane fade" id="contact" role="tabpanel">Etsy mixtape
-    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
-    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
-    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
-    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
-    stumptown. Pitchfork sustainable tofu synth chambray yr.
-         <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
-
-                <p>New Orders</p>
-              </div>
-              <div class="icon">
-                <i class="fa fa-shopping-cart"></i>
-              </div>
-              <a href="#" class="small-box-footer">
-                More info <i class="fa fa-arrow-circle-right"></i>
-              </a>
-            </div>
-   
+    <div class="tab-pane fade " id="contact" role="tabpanel">
+          {{ form_widget(form) }}   
    </div>
    
    </div>
