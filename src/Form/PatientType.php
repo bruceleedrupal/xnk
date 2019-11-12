@@ -475,23 +475,16 @@ class PatientType extends AbstractType
                     'required'=>false,
                 ])
                 ->add('ysxg',CheckboxType::class,[
-                    'label'=>'意识得了心梗',
+                    'label'=>'意识得心梗',
                     'attr'=>[
-                        'class'=>'icheck-primary ml-3'
+                        'class'=>'icheck-primary ml-1'
                     ],
                     'required'=>false,
-                ])
-                ->add('ysxg',CheckboxType::class,[
-                    'label'=>'意识得了心梗',
-                    'attr'=>[
-                        'class'=>'icheck-primary ml-3'
-                    ],
-                    'required'=>false,
-                ])
+                ])               
                 ->add('yqxtzt',CheckboxType::class,[
                     'label'=>'院前心跳骤停',
                     'attr'=>[
-                        'class'=>'icheck-primary ml-3'
+                        'class'=>'icheck-primary ml-1'
                     ],
                     'required'=>false,
                 ])
