@@ -229,7 +229,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     ])
                 ->add('xjgs',CheckboxType::class,[               
-                    'label'=>'心肌梗死',
+                    'label'=>'既往心梗',
                     'required'=>false,
                     'attr'=>[
                         'class'=>'icheck-primary'
