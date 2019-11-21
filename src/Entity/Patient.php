@@ -1750,12 +1750,12 @@ class Patient
         return $this;
     }
 
-    public function getHba1c(): ?int
+    public function getHba1c(): ?float
     {
         return $this->hba1c;
     }
 
-    public function setHba1c(?int $hba1c): self
+    public function setHba1c(?float $hba1c): self
     {
         $this->hba1c = $hba1c;
 
