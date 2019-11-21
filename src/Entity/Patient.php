@@ -402,6 +402,101 @@ class Patient
      */
     private $xfcd;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ssy;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szy;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $xl;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hx;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $tw;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sfxyzt;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $jpybhd;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $cm;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $xj;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $xn;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $xlv;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $jx;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $egfr;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $kfxt;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $hba1c;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $jgdbi;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $jgdbt;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $ckmb;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $bnp;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -1483,6 +1578,234 @@ class Patient
     public function setXfcd(bool $xfcd): self
     {
         $this->xfcd = $xfcd;
+
+        return $this;
+    }
+
+    public function getSsy(): ?int
+    {
+        return $this->ssy;
+    }
+
+    public function setSsy(?int $ssy): self
+    {
+        $this->ssy = $ssy;
+
+        return $this;
+    }
+
+    public function getSzy(): ?int
+    {
+        return $this->szy;
+    }
+
+    public function setSzy(?int $szy): self
+    {
+        $this->szy = $szy;
+
+        return $this;
+    }
+
+    public function getXl(): ?int
+    {
+        return $this->xl;
+    }
+
+    public function setXl(?int $xl): self
+    {
+        $this->xl = $xl;
+
+        return $this;
+    }
+
+    public function getHx(): ?int
+    {
+        return $this->hx;
+    }
+
+    public function setHx(?int $hx): self
+    {
+        $this->hx = $hx;
+
+        return $this;
+    }
+
+    public function getTw(): ?float
+    {
+        return $this->tw;
+    }
+
+    public function setTw(?float $tw): self
+    {
+        $this->tw = $tw;
+
+        return $this;
+    }
+
+    public function getSfxyzt(): ?bool
+    {
+        return $this->sfxyzt;
+    }
+
+    public function setSfxyzt(?bool $sfxyzt): self
+    {
+        $this->sfxyzt = $sfxyzt;
+
+        return $this;
+    }
+
+    public function getJpybhd(): ?float
+    {
+        return $this->jpybhd;
+    }
+
+    public function setJpybhd(?float $jpybhd): self
+    {
+        $this->jpybhd = $jpybhd;
+
+        return $this;
+    }
+
+    public function getCm(): ?float
+    {
+        return $this->cm;
+    }
+
+    public function setCm(float $cm): self
+    {
+        $this->cm = $cm;
+
+        return $this;
+    }
+
+    public function getXj(): ?float
+    {
+        return $this->xj;
+    }
+
+    public function setXj(?float $xj): self
+    {
+        $this->xj = $xj;
+
+        return $this;
+    }
+
+    public function getXn(): ?float
+    {
+        return $this->xn;
+    }
+
+    public function setXn(?float $xn): self
+    {
+        $this->xn = $xn;
+
+        return $this;
+    }
+
+    public function getXlv(): ?float
+    {
+        return $this->xlv;
+    }
+
+    public function setXlv(?float $xlv): self
+    {
+        $this->xlv = $xlv;
+
+        return $this;
+    }
+
+    public function getJx(): ?float
+    {
+        return $this->jx;
+    }
+
+    public function setJx(?float $jx): self
+    {
+        $this->jx = $jx;
+
+        return $this;
+    }
+
+    public function getEgfr(): ?float
+    {
+        return $this->egfr;
+    }
+
+    public function setEgfr(?float $egfr): self
+    {
+        $this->egfr = $egfr;
+
+        return $this;
+    }
+
+    public function getKfxt(): ?float
+    {
+        return $this->kfxt;
+    }
+
+    public function setKfxt(?float $kfxt): self
+    {
+        $this->kfxt = $kfxt;
+
+        return $this;
+    }
+
+    public function getHba1c(): ?int
+    {
+        return $this->hba1c;
+    }
+
+    public function setHba1c(?int $hba1c): self
+    {
+        $this->hba1c = $hba1c;
+
+        return $this;
+    }
+
+    public function getJgdbi(): ?float
+    {
+        return $this->jgdbi;
+    }
+
+    public function setJgdbi(?float $jgdbi): self
+    {
+        $this->jgdbi = $jgdbi;
+
+        return $this;
+    }
+
+    public function getJgdbt(): ?float
+    {
+        return $this->jgdbt;
+    }
+
+    public function setJgdbt(?float $jgdbt): self
+    {
+        $this->jgdbt = $jgdbt;
+
+        return $this;
+    }
+
+    public function getCkmb(): ?float
+    {
+        return $this->ckmb;
+    }
+
+    public function setCkmb(?float $ckmb): self
+    {
+        $this->ckmb = $ckmb;
+
+        return $this;
+    }
+
+    public function getBnp(): ?float
+    {
+        return $this->bnp;
+    }
+
+    public function setBnp(?float $bnp): self
+    {
+        $this->bnp = $bnp;
 
         return $this;
     }

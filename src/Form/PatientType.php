@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class PatientType extends AbstractType
 {
@@ -37,7 +38,7 @@ class PatientType extends AbstractType
                 'required'=>false,
                 'format'=>'yyyyMMdd',
                 'attr'=>[
-                    'class'=>'input-group form-control'
+                    'class'=>'input-group form-control p-0 border-0'
                  ]
             ])            
             ->add('tel',TextType::class,[
@@ -508,6 +509,157 @@ class PatientType extends AbstractType
                         'class'=>'icheck-primary ml-3'
                     ],
                     'required'=>false,
+                ])
+                
+                ->add('ssy',NumberType::class,[
+                    'label'=>'收缩压(mmHg)',   
+                    'attr'=>[
+                        'placeHolder'=>'收缩压'
+                    ],
+                    'required'=>false,
+                    'html5'=>true,
+                ])
+                ->add('szy',NumberType::class,[
+                    'label'=>'舒张压(mmHg)',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'舒张压'
+                    ],
+                    'html5'=>true,
+                ])
+                ->add('xl',NumberType::class,[
+                    'label'=>'心率(次/分)',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'心率'
+                    ],
+                    'html5'=>true,
+                ])
+                ->add('hx',NumberType::class,[
+                    'label'=>'呼吸(次/分)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'呼吸'
+                    ],
+                ])
+                ->add('tw',NumberType::class,[
+                    'label'=>'体温(℃)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'step'=>'0.1',
+                        'placeHolder'=>'体温'
+                    ]
+                ])
+                ->add('sfxyzt',ChoiceType::class,[
+                    'label'=>'是否吸氧',
+                    'required'=>false, 
+                    'choices'=>[
+                        '否'=>0,
+                        '是'=>1,                        
+                    ],
+                    'placeholder'=>'是否吸氧状态',                    
+                ])
+                ->add('jpybhd',PercentType::class,[
+                    'label'=>'经皮氧饱和度',
+                    'required'=>false,                    
+                    'attr'=>[                 
+                        'placeHolder'=>'经皮氧饱和度',                        
+                    ],                  
+                ])
+                
+                ->add('cm',NumberType::class,[
+                    'label'=>'超敏CRP(mg/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[                        
+                        'placeHolder'=>'超敏'
+                    ]
+                ])
+                ->add('xj',NumberType::class,[
+                    'label'=>'血钾(mmol/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'血钾'
+                    ]
+                ])
+                ->add('xn',NumberType::class,[
+                    'label'=>'血钠(mmol/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'血钠'
+                    ]
+                ])
+                ->add('xlv',NumberType::class,[
+                    'label'=>'血氯(mmol/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'血氯'
+                    ]
+                ])
+                ->add('jx',NumberType::class,[
+                    'label'=>'肌酐(umol/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'肌酐'
+                    ]
+                ])
+                ->add('egfr',NumberType::class,[
+                    'label'=>'eGFRMDRD(ml/min/1.73m2)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'eGFRMDRD'
+                    ]
+                ])
+                ->add('kfxt',NumberType::class,[
+                    'label'=>'空腹血糖(mmol/L)',
+                    'required'=>false,
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'空腹血糖'
+                    ]
+                ])
+                ->add('hba1c',PercentType::class,[
+                    'label'=>'HbA1c',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'HbA1c'
+                    ]
+                ])
+                ->add('jgdbi',NumberType::class,[
+                    'label'=>'肌钙蛋白I峰值(ng/ml)',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'肌钙蛋白I'
+                    ]
+                ])
+                ->add('jgdbt',NumberType::class,[
+                    'label'=>'肌钙蛋白T峰值(ng/ml)',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'肌钙蛋白T'
+                    ]
+                ])
+                ->add('ckmb',NumberType::class,[
+                    'label'=>'肌钙蛋白T峰值(ng/ml)',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'肌钙蛋白T'
+                    ]
+                ])
+                ->add('bnp',NumberType::class,[
+                    'label'=>'BNP(pg/ml)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'BNP'
+                    ]
                 ])
                
                 

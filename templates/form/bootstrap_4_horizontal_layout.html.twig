@@ -29,3 +29,17 @@ col-sm-9
 {%- block checkbox_widget_single -%}
     <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
 {%- endblock checkbox_widget_single -%}
+
+
+{% block percent_widget -%}
+    {%- if symbol -%}
+        <div class="input-group form-control p-0 border-0">
+            {{- block('form_widget_simple') -}}
+            <div class="input-group-append">
+                <span class="input-group-text">{{ symbol|default('%') }}</span>
+            </div>
+        </div>
+    {%- else -%}
+        {{- block('form_widget_simple') -}}
+    {%- endif -%}
+{%- endblock percent_widget %}
