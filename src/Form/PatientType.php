@@ -573,7 +573,8 @@ class PatientType extends AbstractType
                     'label'=>'超敏CRP(mg/L)',
                     'required'=>false,
                     'html5'=>true,
-                    'attr'=>[                        
+                    'attr'=>[       
+                        'step'=>0.1,
                         'placeHolder'=>'超敏'
                     ]
                 ])
@@ -582,6 +583,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'血钾'
                     ]
                 ])
@@ -590,6 +592,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'血钠'
                     ]
                 ])
@@ -598,6 +601,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'血氯'
                     ]
                 ])
@@ -606,6 +610,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'肌酐'
                     ]
                 ])
@@ -614,6 +619,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'eGFRMDRD'
                     ]
                 ])
@@ -622,6 +628,7 @@ class PatientType extends AbstractType
                     'required'=>false,
                     'html5'=>true,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'空腹血糖'
                     ]
                 ])
@@ -636,6 +643,7 @@ class PatientType extends AbstractType
                     'label'=>'肌钙蛋白I峰值(ng/ml)',
                     'required'=>false,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'肌钙蛋白I'
                     ]
                 ])
@@ -643,14 +651,16 @@ class PatientType extends AbstractType
                     'label'=>'肌钙蛋白T峰值(ng/ml)',
                     'required'=>false,
                     'attr'=>[
+                        'step'=>0.1,
                         'placeHolder'=>'肌钙蛋白T'
                     ]
                 ])
                 ->add('ckmb',NumberType::class,[
-                    'label'=>'肌钙蛋白T峰值(ng/ml)',
+                    'label'=>'CK-MB峰值(IU/L)',
                     'required'=>false,
                     'attr'=>[
-                        'placeHolder'=>'肌钙蛋白T'
+                        'step'=>0.1,
+                        'placeHolder'=>'CK-MB峰值'
                     ]
                 ])
                 ->add('bnp',NumberType::class,[
