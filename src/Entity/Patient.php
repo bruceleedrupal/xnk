@@ -497,6 +497,51 @@ class Patient
      */
     private $bnp;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $xhdb;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $hxbyj;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $gysz;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zdgc;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hdlc;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ldlc;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ns;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $nt;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $lvef;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -1806,6 +1851,114 @@ class Patient
     public function setBnp(?float $bnp): self
     {
         $this->bnp = $bnp;
+
+        return $this;
+    }
+
+    public function getXhdb(): ?int
+    {
+        return $this->xhdb;
+    }
+
+    public function setXhdb(?int $xhdb): self
+    {
+        $this->xhdb = $xhdb;
+
+        return $this;
+    }
+
+    public function getHxbyj(): ?float
+    {
+        return $this->hxbyj;
+    }
+
+    public function setHxbyj(?float $hxbyj): self
+    {
+        $this->hxbyj = $hxbyj;
+
+        return $this;
+    }
+
+    public function getGysz(): ?int
+    {
+        return $this->gysz;
+    }
+
+    public function setGysz(?int $gysz): self
+    {
+        $this->gysz = $gysz;
+
+        return $this;
+    }
+
+    public function getZdgc(): ?int
+    {
+        return $this->zdgc;
+    }
+
+    public function setZdgc(?int $zdgc): self
+    {
+        $this->zdgc = $zdgc;
+
+        return $this;
+    }
+
+    public function getHdlc(): ?int
+    {
+        return $this->hdlc;
+    }
+
+    public function setHdlc(?int $hdlc): self
+    {
+        $this->hdlc = $hdlc;
+
+        return $this;
+    }
+
+    public function getLdlc(): ?int
+    {
+        return $this->ldlc;
+    }
+
+    public function setLdlc(?int $ldlc): self
+    {
+        $this->ldlc = $ldlc;
+
+        return $this;
+    }
+
+    public function getNs(): ?int
+    {
+        return $this->ns;
+    }
+
+    public function setNs(?int $ns): self
+    {
+        $this->ns = $ns;
+
+        return $this;
+    }
+
+    public function getNt(): ?int
+    {
+        return $this->nt;
+    }
+
+    public function setNt(?int $nt): self
+    {
+        $this->nt = $nt;
+
+        return $this;
+    }
+
+    public function getLvef(): ?float
+    {
+        return $this->lvef;
+    }
+
+    public function setLvef(?float $lvef): self
+    {
+        $this->lvef = $lvef;
 
         return $this;
     }

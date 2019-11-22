@@ -671,7 +671,82 @@ class PatientType extends AbstractType
                         'placeHolder'=>'BNP'
                     ]
                 ])
-               
+                
+                ->add('xhdb',NumberType::class,[
+                    'label'=>'血红蛋白(g/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'血红蛋白'
+                    ]
+                ])
+                
+                ->add('hxbyj',PercentType::class,[
+                    'label'=>'红细胞压积',
+                    'required'=>false,
+                    'scale'=>0,
+                    'attr'=>[                       
+                        'placeHolder'=>'红细胞压积'
+                    ]
+                ])
+                
+                ->add('gysz',NumberType::class,[
+                    'label'=>'甘油三酯(mmol/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'甘油三酯'
+                    ]
+                ])
+                
+                ->add('zdgc',NumberType::class,[
+                    'label'=>'总胆固醇(mmol/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'总胆固醇'
+                    ]
+                ])
+                ->add('hdlc',NumberType::class,[
+                    'label'=>'HDL-C(mmol/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'HDL-C'
+                    ]
+                ])
+                ->add('ldlc',NumberType::class,[
+                    'label'=>'LDL-C(mmol/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'LDL-C'
+                    ]
+                ])
+                ->add('ns',NumberType::class,[
+                    'label'=>'尿酸(umol/L)',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'尿酸'
+                    ]
+                ])
+                ->add('nt',NumberType::class,[
+                    'label'=>'NT pro-BNP',
+                    'required'=>false,
+                    'attr'=>[
+                        'step'=>0.1,
+                        'placeHolder'=>'NT pro-BNP'
+                    ]
+                ])
+
+                ->add('lvef',PercentType::class,[
+                    'label'=>'LVEF',
+                    'required'=>false,
+                    'attr'=>[
+                        'placeHolder'=>'LVEF'
+                    ]
+                ])  
                 
             ;     
                
