@@ -542,6 +542,36 @@ class Patient
      */
     private $lvef;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $jzyybb;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $jzyy;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $zjfs;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $yqxdtcs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $zyjl;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options", inversedBy="patients")
+     */
+    private $zgzfs;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -1959,6 +1989,78 @@ class Patient
     public function setLvef(?float $lvef): self
     {
         $this->lvef = $lvef;
+
+        return $this;
+    }
+
+    public function getJzyybb(): ?Options
+    {
+        return $this->jzyybb;
+    }
+
+    public function setJzyybb(?Options $jzyybb): self
+    {
+        $this->jzyybb = $jzyybb;
+
+        return $this;
+    }
+
+    public function getJzyy(): ?Options
+    {
+        return $this->jzyy;
+    }
+
+    public function setJzyy(?Options $jzyy): self
+    {
+        $this->jzyy = $jzyy;
+
+        return $this;
+    }
+
+    public function getZjfs(): ?Options
+    {
+        return $this->zjfs;
+    }
+
+    public function setZjfs(?Options $zjfs): self
+    {
+        $this->zjfs = $zjfs;
+
+        return $this;
+    }
+
+    public function getYqxdtcs(): ?bool
+    {
+        return $this->yqxdtcs;
+    }
+
+    public function setYqxdtcs(?bool $yqxdtcs): self
+    {
+        $this->yqxdtcs = $yqxdtcs;
+
+        return $this;
+    }
+
+    public function getZyjl(): ?Options
+    {
+        return $this->zyjl;
+    }
+
+    public function setZyjl(?Options $zyjl): self
+    {
+        $this->zyjl = $zyjl;
+
+        return $this;
+    }
+
+    public function getZgzfs(): ?Options
+    {
+        return $this->zgzfs;
+    }
+
+    public function setZgzfs(?Options $zgzfs): self
+    {
+        $this->zgzfs = $zgzfs;
 
         return $this;
     }

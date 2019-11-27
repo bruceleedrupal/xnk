@@ -82,6 +82,13 @@ class Options
      */
     private $children;
 
+ 
+
+    public function __construct()
+    {
+        $this->patients = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -161,6 +168,8 @@ class Options
     {
         return $this->lvl;
     }
+
+    
 
     
 }

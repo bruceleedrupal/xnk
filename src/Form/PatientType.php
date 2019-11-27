@@ -746,7 +746,51 @@ class PatientType extends AbstractType
                     'attr'=>[
                         'placeHolder'=>'LVEF'
                     ]
-                ])  
+                ])
+                
+                ->add('zgzfs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(160),
+                    'label'=>'再灌注方式',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('jzyybb',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(166),
+                    'label'=>'就诊医院版本',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('jzyy',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(170),
+                    'label'=>'就诊医院',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('zjfs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(176),
+                    'label'=>'就诊方式',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('yqxdtcs',CheckboxType::class,[
+                    'label'=>'有院前心电图传输',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                
+                ->add('zyjl',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(182),
+                    'label'=>'转运距离(公里)',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
                 
             ;     
                
