@@ -572,6 +572,62 @@ class Patient
      */
     private $zgzfs;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $aspl;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $lbgl;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $tgrl;
+
+    /**
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    private $dfzgs;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_zytt"
+     * )
+     */
+    private $zytt;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $yzmb;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $acei;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $arb;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_lnj"
+     * )
+     */
+    private $lnj;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $bzzj;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -593,6 +649,8 @@ class Patient
         $this->yyjy = new ArrayCollection();
         $this->exxlsc = new ArrayCollection();        
         $this->gsbw = new ArrayCollection();
+        $this->zytt = new ArrayCollection();
+        $this->lnj = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -2061,6 +2119,154 @@ class Patient
     public function setZgzfs(?Options $zgzfs): self
     {
         $this->zgzfs = $zgzfs;
+
+        return $this;
+    }
+
+    public function getAspl(): ?bool
+    {
+        return $this->aspl;
+    }
+
+    public function setAspl(?bool $aspl): self
+    {
+        $this->aspl = $aspl;
+
+        return $this;
+    }
+
+    public function getLbgl(): ?bool
+    {
+        return $this->lbgl;
+    }
+
+    public function setLbgl(?bool $lbgl): self
+    {
+        $this->lbgl = $lbgl;
+
+        return $this;
+    }
+
+    public function getTgrl(): ?bool
+    {
+        return $this->tgrl;
+    }
+
+    public function setTgrl(?bool $tgrl): self
+    {
+        $this->tgrl = $tgrl;
+
+        return $this;
+    }
+
+    public function getDfzgs(): ?int
+    {
+        return $this->dfzgs;
+    }
+
+    public function setDfzgs(int $dfzgs): self
+    {
+        $this->dfzgs = $dfzgs;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getZytt(): Collection
+    {
+        return $this->zytt;
+    }
+
+    public function addZytt(Options $zytt): self
+    {
+        if (!$this->zytt->contains($zytt)) {
+            $this->zytt[] = $zytt;
+        }
+
+        return $this;
+    }
+
+    public function removeZytt(Options $zytt): self
+    {
+        if ($this->zytt->contains($zytt)) {
+            $this->zytt->removeElement($zytt);
+        }
+
+        return $this;
+    }
+
+    public function getYzmb(): ?bool
+    {
+        return $this->yzmb;
+    }
+
+    public function setYzmb(bool $yzmb): self
+    {
+        $this->yzmb = $yzmb;
+
+        return $this;
+    }
+
+    public function getAcei(): ?bool
+    {
+        return $this->acei;
+    }
+
+    public function setAcei(?bool $acei): self
+    {
+        $this->acei = $acei;
+
+        return $this;
+    }
+
+    public function getArb(): ?bool
+    {
+        return $this->arb;
+    }
+
+    public function setArb(?bool $arb): self
+    {
+        $this->arb = $arb;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getLnj(): Collection
+    {
+        return $this->lnj;
+    }
+
+    public function addLnj(Options $lnj): self
+    {
+        if (!$this->lnj->contains($lnj)) {
+            $this->lnj[] = $lnj;
+        }
+
+        return $this;
+    }
+
+    public function removeLnj(Options $lnj): self
+    {
+        if ($this->lnj->contains($lnj)) {
+            $this->lnj->removeElement($lnj);
+        }
+
+        return $this;
+    }
+
+    public function getBzzj(): ?bool
+    {
+        return $this->bzzj;
+    }
+
+    public function setBzzj(?bool $bzzj): self
+    {
+        $this->bzzj = $bzzj;
 
         return $this;
     }

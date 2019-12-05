@@ -792,6 +792,79 @@ class PatientType extends AbstractType
                     'required'=>false,
                 ])
                 
+                ->add('aspl',CheckboxType::class,[
+                    'label'=>'阿司匹林',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('lbgl',CheckboxType::class,[
+                    'label'=>'氯吡格雷',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('tgrl',CheckboxType::class,[
+                    'label'=>'替格瑞洛',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('dfzgs',NumberType::class,[
+                    'label'=>'低分子肝素',
+                    'html5'=>true,                    
+                    'required'=>false,
+                ])
+                ->add('bzzj',CheckboxType::class,[
+                    'label'=>'β阻滞剂',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zytt',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(79),
+                    'label'=>'他汀',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('yzmb',CheckboxType::class,[
+                    'label'=>'依折麦布',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('acei',CheckboxType::class,[
+                    'label'=>'ACEI',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('arb',CheckboxType::class,[
+                    'label'=>'ARB',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('lnj',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(187),
+                    'label'=>'利尿剂',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                
+                
+                
             ;     
                
     }
