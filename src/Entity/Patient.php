@@ -629,7 +629,7 @@ class Patient
     private $bzzj;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $atst;
 
@@ -2341,12 +2341,12 @@ class Patient
         return $this;
     }
 
-    public function getAtst(): ?int
+    public function getAtst(): ?bool
     {
         return $this->atst;
     }
 
-    public function setAtst(?int $atst): self
+    public function setAtst(?bool $atst): self
     {
         $this->atst = $atst;
 
