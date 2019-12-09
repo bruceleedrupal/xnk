@@ -628,6 +628,76 @@ class Patient
      */
     private $bzzj;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $atst;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $dba;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $dbada;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $mln;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zxmd;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $xhs;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $kdlz;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $adlp;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ldky;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $wcfztq;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $yctqzc;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $iabp;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ecmo;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zcysy;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -2267,6 +2337,174 @@ class Patient
     public function setBzzj(?bool $bzzj): self
     {
         $this->bzzj = $bzzj;
+
+        return $this;
+    }
+
+    public function getAtst(): ?int
+    {
+        return $this->atst;
+    }
+
+    public function setAtst(?int $atst): self
+    {
+        $this->atst = $atst;
+
+        return $this;
+    }
+
+    public function getDba(): ?int
+    {
+        return $this->dba;
+    }
+
+    public function setDba(?int $dba): self
+    {
+        $this->dba = $dba;
+
+        return $this;
+    }
+
+    public function getDbada(): ?int
+    {
+        return $this->dbada;
+    }
+
+    public function setDbada(?int $dbada): self
+    {
+        $this->dbada = $dbada;
+
+        return $this;
+    }
+
+    public function getMln(): ?int
+    {
+        return $this->mln;
+    }
+
+    public function setMln(?int $mln): self
+    {
+        $this->mln = $mln;
+
+        return $this;
+    }
+
+    public function getZxmd(): ?bool
+    {
+        return $this->zxmd;
+    }
+
+    public function setZxmd(?bool $zxmd): self
+    {
+        $this->zxmd = $zxmd;
+
+        return $this;
+    }
+
+    public function getXhs(): ?int
+    {
+        return $this->xhs;
+    }
+
+    public function setXhs(?int $xhs): self
+    {
+        $this->xhs = $xhs;
+
+        return $this;
+    }
+
+    public function getKdlz(): ?int
+    {
+        return $this->kdlz;
+    }
+
+    public function setKdlz(?int $kdlz): self
+    {
+        $this->kdlz = $kdlz;
+
+        return $this;
+    }
+
+    public function getAdlp(): ?int
+    {
+        return $this->adlp;
+    }
+
+    public function setAdlp(?int $adlp): self
+    {
+        $this->adlp = $adlp;
+
+        return $this;
+    }
+
+    public function getLdky(): ?int
+    {
+        return $this->ldky;
+    }
+
+    public function setLdky(?int $ldky): self
+    {
+        $this->ldky = $ldky;
+
+        return $this;
+    }
+
+    public function getWcfztq(): ?int
+    {
+        return $this->wcfztq;
+    }
+
+    public function setWcfztq(?int $wcfztq): self
+    {
+        $this->wcfztq = $wcfztq;
+
+        return $this;
+    }
+
+    public function getYctqzc(): ?int
+    {
+        return $this->yctqzc;
+    }
+
+    public function setYctqzc(?int $yctqzc): self
+    {
+        $this->yctqzc = $yctqzc;
+
+        return $this;
+    }
+
+    public function getIabp(): ?int
+    {
+        return $this->iabp;
+    }
+
+    public function setIabp(?int $iabp): self
+    {
+        $this->iabp = $iabp;
+
+        return $this;
+    }
+
+    public function getEcmo(): ?int
+    {
+        return $this->ecmo;
+    }
+
+    public function setEcmo(?int $ecmo): self
+    {
+        $this->ecmo = $ecmo;
+
+        return $this;
+    }
+
+    public function getZcysy(): ?bool
+    {
+        return $this->zcysy;
+    }
+
+    public function setZcysy(?bool $zcysy): self
+    {
+        $this->zcysy = $zcysy;
 
         return $this;
     }

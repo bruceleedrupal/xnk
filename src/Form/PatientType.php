@@ -862,6 +862,81 @@ class PatientType extends AbstractType
                     'choice_label'=>'title',
                     'required'=>false,
                 ])
+                ->add('atst',CheckboxType::class,[
+                    'label'=>'安体舒通',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('dba',NumberType::class,[
+                    'label'=>'多巴胺',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('dbada',NumberType::class,[
+                    'label'=>'多巴酚丁胺',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('mln',NumberType::class,[
+                    'label'=>'米力农',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('zxmd',NumberType::class,[
+                    'label'=>'左昔孟旦',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('xhs',NumberType::class,[
+                    'label'=>'新活素',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('kdlz',NumberType::class,[
+                    'label'=>'可达龙针',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('adlp',NumberType::class,[
+                    'label'=>'可达龙片',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('ldky',NumberType::class,[
+                    'label'=>'利多卡因',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('ldky',NumberType::class,[
+                    'label'=>'无创辅助通气',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('yctqzc',NumberType::class,[
+                    'label'=>'有创通气支持',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('iabp',NumberType::class,[
+                    'label'=>'IABP',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('ecmo',NumberType::class,[
+                    'label'=>'ECMO',
+                    'html5'=>true,
+                    'required'=>false,
+                ])
+                ->add('zcysy',CheckboxType::class,[
+                    'label'=>'中成药输液',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                
                 
                 
                 
