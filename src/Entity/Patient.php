@@ -698,6 +698,53 @@ class Patient
      */
     private $zcysy;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_gsxgdm"
+     * )
+     */
+    private $gsxgdm;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_hbcto"
+     * )
+     */
+    private $hbcto;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $xgbbzs;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $xgjd;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $dmyzgh;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $dmxxfhz;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $xsszxg;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $timixl;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -721,6 +768,8 @@ class Patient
         $this->gsbw = new ArrayCollection();
         $this->zytt = new ArrayCollection();
         $this->lnj = new ArrayCollection();
+        $this->gsxgdm = new ArrayCollection();
+        $this->hbcto = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -2505,6 +2554,130 @@ class Patient
     public function setZcysy(?bool $zcysy): self
     {
         $this->zcysy = $zcysy;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getGsxgdm(): Collection
+    {
+        return $this->gsxgdm;
+    }
+
+    public function addGsxgdm(Options $gsxgdm): self
+    {
+        if (!$this->gsxgdm->contains($gsxgdm)) {
+            $this->gsxgdm[] = $gsxgdm;
+        }
+
+        return $this;
+    }
+
+    public function removeGsxgdm(Options $gsxgdm): self
+    {
+        if ($this->gsxgdm->contains($gsxgdm)) {
+            $this->gsxgdm->removeElement($gsxgdm);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getHbcto(): Collection
+    {
+        return $this->hbcto;
+    }
+
+    public function addHbcto(Options $hbcto): self
+    {
+        if (!$this->hbcto->contains($hbcto)) {
+            $this->hbcto[] = $hbcto;
+        }
+
+        return $this;
+    }
+
+    public function removeHbcto(Options $hbcto): self
+    {
+        if ($this->hbcto->contains($hbcto)) {
+            $this->hbcto->removeElement($hbcto);
+        }
+
+        return $this;
+    }
+
+    public function getXgbbzs(): ?Options
+    {
+        return $this->xgbbzs;
+    }
+
+    public function setXgbbzs(?Options $xgbbzs): self
+    {
+        $this->xgbbzs = $xgbbzs;
+
+        return $this;
+    }
+
+    public function getXgjd(): ?bool
+    {
+        return $this->xgjd;
+    }
+
+    public function setXgjd(?bool $xgjd): self
+    {
+        $this->xgjd = $xgjd;
+
+        return $this;
+    }
+
+    public function getDmyzgh(): ?bool
+    {
+        return $this->dmyzgh;
+    }
+
+    public function setDmyzgh(?bool $dmyzgh): self
+    {
+        $this->dmyzgh = $dmyzgh;
+
+        return $this;
+    }
+
+    public function getDmxxfhz(): ?bool
+    {
+        return $this->dmxxfhz;
+    }
+
+    public function setDmxxfhz(?bool $dmxxfhz): self
+    {
+        $this->dmxxfhz = $dmxxfhz;
+
+        return $this;
+    }
+
+    public function getXsszxg(): ?bool
+    {
+        return $this->xsszxg;
+    }
+
+    public function setXsszxg(?bool $xsszxg): self
+    {
+        $this->xsszxg = $xsszxg;
+
+        return $this;
+    }
+
+    public function getTimixl(): ?bool
+    {
+        return $this->timixl;
+    }
+
+    public function setTimixl(?bool $timixl): self
+    {
+        $this->timixl = $timixl;
 
         return $this;
     }

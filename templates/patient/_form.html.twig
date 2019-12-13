@@ -26,10 +26,10 @@
     <a class="nav-link" data-toggle="tab"  href="#rkx">人口学</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#lc">临床</a>
+    <a class="nav-link" data-toggle="tab" href="#lc">临床</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#contact">Contact</a>
+    <a class="nav-link active" data-toggle="tab" href="#contact">其他</a>
   </li>
 </ul>
 
@@ -96,7 +96,7 @@
     </div>
    </div>
 
-  <div class="tab-pane fade  show active" id="lc" role="tabpanel">
+  <div class="tab-pane fade" id="lc" role="tabpanel">
   <div class='row'>
   <div class='col-lg-4'>          
          {{ _self.formGroup(form,['fbsj','fbdd'],'发病时间地点') }}
@@ -153,8 +153,21 @@
    </div>
   </div>
   
-    <div class="tab-pane fade " id="contact" role="tabpanel">
-          {{ form_widget(form) }}   
+  <div class="tab-pane fade show active" id="contact" role="tabpanel">
+     <div class='col-lg-4'>       
+    {{ _self.formGroup(form,['gsxgdm','hbcto'],'梗死 CTO') }}
+    {{ _self.formGroup(form,['xgbbzs'],'血管病变支数') }}
+    {{ _self.formGroup(form,['xgjd','dmyzgh']) }}
+    {{ _self.formGroup(form,['dmxxfhz','xsszxg']) }}
+    {{ _self.formGroup(form,['timixl']) }}
+    
+    </div>
+   
+   
+   
+   
+   
+   {{ form_widget(form) }}   
    </div>
    
    </div>

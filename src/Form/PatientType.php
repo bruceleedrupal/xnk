@@ -936,7 +936,64 @@ class PatientType extends AbstractType
                     ],
                     'required'=>false,
                 ])
-                
+                ->add('gsxgdm',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(191),
+                    'label'=>'梗死相关动脉',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('xgbbzs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(198),
+                    'label'=>'血管病变支数',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('hbcto',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(202),
+                    'label'=>'合并CTO',
+                    'multiple'=>true,
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('xgjd',CheckboxType::class,[
+                    'label'=>'犯罪病变于血管近段',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('dmyzgh',CheckboxType::class,[
+                    'label'=>'梗死相关动脉钙化',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-2'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('dmxxfhz',CheckboxType::class,[
+                    'label'=>'梗死动脉血栓负荷重',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('xsszxg',CheckboxType::class,[
+                    'label'=>'支架内血栓所致心梗',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-2'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('timixl',CheckboxType::class,[
+                    'label'=>'造影时TIMI血流0级',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
                 
                 
                 
