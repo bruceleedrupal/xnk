@@ -745,6 +745,120 @@ class Patient
      */
     private $timixl;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_zyj"
+     * )
+     */
+    private $zyj;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_zrzj"
+     * )
+     */
+    private $zrzj;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_clffzxg"
+     * )
+     */
+    private $clffzxg;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $pcilj;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zyjjl;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sscx;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $pcijkj;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $ykz;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ykqnzz;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $ykqncd;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zjsl;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zjzj;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zjcd;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $hkz;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hkzqnzj;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hkzqncd;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hkzdyl;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szsc;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $wfl;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $shtimi;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $sfrqjz;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -770,6 +884,9 @@ class Patient
         $this->lnj = new ArrayCollection();
         $this->gsxgdm = new ArrayCollection();
         $this->hbcto = new ArrayCollection();
+        $this->zyj = new ArrayCollection();
+        $this->zrzj = new ArrayCollection();
+        $this->clffzxg = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -2678,6 +2795,300 @@ class Patient
     public function setTimixl(?bool $timixl): self
     {
         $this->timixl = $timixl;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getZyj(): Collection
+    {
+        return $this->zyj;
+    }
+
+    public function addZyj(Options $zyj): self
+    {
+        if (!$this->zyj->contains($zyj)) {
+            $this->zyj[] = $zyj;
+        }
+
+        return $this;
+    }
+
+    public function removeZyj(Options $zyj): self
+    {
+        if ($this->zyj->contains($zyj)) {
+            $this->zyj->removeElement($zyj);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getZrzj(): Collection
+    {
+        return $this->zrzj;
+    }
+
+    public function addZrzj(Options $zrzj): self
+    {
+        if (!$this->zrzj->contains($zrzj)) {
+            $this->zrzj[] = $zrzj;
+        }
+
+        return $this;
+    }
+
+    public function removeZrzj(Options $zrzj): self
+    {
+        if ($this->zrzj->contains($zrzj)) {
+            $this->zrzj->removeElement($zrzj);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getClffzxg(): Collection
+    {
+        return $this->clffzxg;
+    }
+
+    public function addClffzxg(Options $clffzxg): self
+    {
+        if (!$this->clffzxg->contains($clffzxg)) {
+            $this->clffzxg[] = $clffzxg;
+        }
+
+        return $this;
+    }
+
+    public function removeClffzxg(Options $clffzxg): self
+    {
+        if ($this->clffzxg->contains($clffzxg)) {
+            $this->clffzxg->removeElement($clffzxg);
+        }
+
+        return $this;
+    }
+
+    public function getPcilj(): ?Options
+    {
+        return $this->pcilj;
+    }
+
+    public function setPcilj(?Options $pcilj): self
+    {
+        $this->pcilj = $pcilj;
+
+        return $this;
+    }
+
+    public function getZyjjl(): ?int
+    {
+        return $this->zyjjl;
+    }
+
+    public function setZyjjl(?int $zyjjl): self
+    {
+        $this->zyjjl = $zyjjl;
+
+        return $this;
+    }
+
+    public function getSscx(): ?bool
+    {
+        return $this->sscx;
+    }
+
+    public function setSscx(?bool $sscx): self
+    {
+        $this->sscx = $sscx;
+
+        return $this;
+    }
+
+    public function getPcijkj(): ?bool
+    {
+        return $this->pcijkj;
+    }
+
+    public function setPcijkj(?bool $pcijkj): self
+    {
+        $this->pcijkj = $pcijkj;
+
+        return $this;
+    }
+
+    public function getYkz(): ?bool
+    {
+        return $this->ykz;
+    }
+
+    public function setYkz(?bool $ykz): self
+    {
+        $this->ykz = $ykz;
+
+        return $this;
+    }
+
+    public function getYkqnzz(): ?int
+    {
+        return $this->ykqnzz;
+    }
+
+    public function setYkqnzz(?int $ykqnzz): self
+    {
+        $this->ykqnzz = $ykqnzz;
+
+        return $this;
+    }
+
+    public function getYkqncd(): ?int
+    {
+        return $this->ykqncd;
+    }
+
+    public function setYkqncd(?int $ykqncd): self
+    {
+        $this->ykqncd = $ykqncd;
+
+        return $this;
+    }
+
+    public function getZjsl(): ?int
+    {
+        return $this->zjsl;
+    }
+
+    public function setZjsl(?int $zjsl): self
+    {
+        $this->zjsl = $zjsl;
+
+        return $this;
+    }
+
+    public function getZjzj(): ?int
+    {
+        return $this->zjzj;
+    }
+
+    public function setZjzj(?int $zjzj): self
+    {
+        $this->zjzj = $zjzj;
+
+        return $this;
+    }
+
+    public function getZjcd(): ?int
+    {
+        return $this->zjcd;
+    }
+
+    public function setZjcd(?int $zjcd): self
+    {
+        $this->zjcd = $zjcd;
+
+        return $this;
+    }
+
+    public function getHkz(): ?bool
+    {
+        return $this->hkz;
+    }
+
+    public function setHkz(?bool $hkz): self
+    {
+        $this->hkz = $hkz;
+
+        return $this;
+    }
+
+    public function getHkzqnzj(): ?int
+    {
+        return $this->hkzqnzj;
+    }
+
+    public function setHkzqnzj(?int $hkzqnzj): self
+    {
+        $this->hkzqnzj = $hkzqnzj;
+
+        return $this;
+    }
+
+    public function getHkzqncd(): ?int
+    {
+        return $this->hkzqncd;
+    }
+
+    public function setHkzqncd(?int $hkzqncd): self
+    {
+        $this->hkzqncd = $hkzqncd;
+
+        return $this;
+    }
+
+    public function getHkzdyl(): ?int
+    {
+        return $this->hkzdyl;
+    }
+
+    public function setHkzdyl(?int $hkzdyl): self
+    {
+        $this->hkzdyl = $hkzdyl;
+
+        return $this;
+    }
+
+    public function getSzsc(): ?int
+    {
+        return $this->szsc;
+    }
+
+    public function setSzsc(?int $szsc): self
+    {
+        $this->szsc = $szsc;
+
+        return $this;
+    }
+
+    public function getWfl(): ?string
+    {
+        return $this->wfl;
+    }
+
+    public function setWfl(?string $wfl): self
+    {
+        $this->wfl = $wfl;
+
+        return $this;
+    }
+
+    public function getShtimi(): ?bool
+    {
+        return $this->shtimi;
+    }
+
+    public function setShtimi(?bool $shtimi): self
+    {
+        $this->shtimi = $shtimi;
+
+        return $this;
+    }
+
+    public function getSfrqjz(): ?bool
+    {
+        return $this->sfrqjz;
+    }
+
+    public function setSfrqjz(?bool $sfrqjz): self
+    {
+        $this->sfrqjz = $sfrqjz;
 
         return $this;
     }
