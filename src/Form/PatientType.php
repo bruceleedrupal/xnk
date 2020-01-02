@@ -14,10 +14,12 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class PatientType extends AbstractType
 {
@@ -51,12 +53,11 @@ class PatientType extends AbstractType
                      'title'=>'请填写住院号'
                  ]
             ]) 
-            ->add('birthday',BirthdayType::class,[
+            ->add('currentAge',NumberType::class,[
                 'mapped'=>true,
                 'label'=>'年龄',
-                'attr'=>[
-                    'class'=>'brucelee'
-                ]
+                'required'=>false,
+                'html5'=>true,                
             ])
             ->add('tall',NumberType::class,[                
                 'label'=>'身高(厘米)',
@@ -378,19 +379,20 @@ class PatientType extends AbstractType
                     ],
                     'required'=>false,
                 ])
-                ->add('fbsj',EntityType::class,[
-                    'class'=>Options::class,
-                    'choices'=>$this->optionsRespository->findChirenOptions(89),
-                    'label'=>'发病时间',
-                    'multiple'=>true,
-                    'choice_label'=>'title',
+                
+                ->add('fbsj',DateTimeType::class,[                   
+                    'label'=>'发病时间',            
                     'required'=>false,
+                    'with_minutes'=>false,
+                    'with_seconds'=>false,
+                    'date_format' => 'yMd',
+                   
                 ])
                 ->add('fbdd',EntityType::class,[
                     'class'=>Options::class,
                     'choices'=>$this->optionsRespository->findChirenOptions(96),
                     'label'=>'发病地点',
-                    'multiple'=>true,
+                    'multiple'=>false,
                     'choice_label'=>'title',
                     'required'=>false,
                 ])
@@ -1157,6 +1159,72 @@ class PatientType extends AbstractType
                     ],
                     'required'=>false,
                 ])
+                ->add('szyy_dba',NumberType::class,[
+                    'label'=>'多巴胺',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'多巴胺'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_dafda',NumberType::class,[
+                    'label'=>'多巴酚丁胺',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'多巴酚丁胺'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_qjssxs',NumberType::class,[
+                    'label'=>'去甲肾上腺素',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'去甲肾上腺素'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_atp',NumberType::class,[
+                    'label'=>'阿托品',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'阿托品'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_xsgy',NumberType::class,[
+                    'label'=>'硝酸甘油/欣康',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'硝酸甘油/欣康'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_ssxs',NumberType::class,[
+                    'label'=>'肾上腺素',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'肾上腺素'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_mf',NumberType::class,[
+                    'label'=>'吗啡',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'吗啡'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('szyy_sn',NumberType::class,[
+                    'label'=>'速尿',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'速尿'
+                    ],
+                    'required'=>false,
+                ])
+                
+                
                 
             ;     
                

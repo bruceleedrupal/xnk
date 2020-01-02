@@ -19,10 +19,7 @@ class Patient
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $birthday;
+   
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -284,22 +281,7 @@ class Patient
      */
     private $pyxjgsbs;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
-     * @ORM\JoinTable(
-     * name="patient_options_fbsj"
-     * )
-     */
-    private $fbsj;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
-     * @ORM\JoinTable(
-     * name="patient_options_fbdd"
-     * )
-     */
-    private $fbdd;
-
+  
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Options")
      * @ORM\JoinTable(
@@ -859,6 +841,61 @@ class Patient
      */
     private $sfrqjz;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $currentAge;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $fbdd;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $fbsj;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_dba;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_dafda;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_qjssxs;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_atp;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_xsgy;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_ssxs;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_mf;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $szyy_sn;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -870,8 +907,6 @@ class Patient
         $this->knyw = new ArrayCollection();
         $this->ttyy = new ArrayCollection();
         $this->xxgjbjy = new ArrayCollection();
-        $this->fbsj = new ArrayCollection();
-        $this->fbdd = new ArrayCollection();
         $this->yy = new ArrayCollection();
         $this->xtxm = new ArrayCollection();
         $this->bszz = new ArrayCollection();
@@ -894,22 +929,9 @@ class Patient
         return $this->id;
     }
 
-    public function getBirthday(): ?\DateTimeInterface
-    {
-        return $this->birthday;
-    }
-
-    public function setBirthday(\DateTimeInterface $birthday): self
-    {
-        $this->birthday = $birthday;
-
-        return $this;
-    }
+   
     
-    public function getAge()
-    {
-        return $this->birthday->diff(new \Datetime())->format('%y')+1;
-    }
+   
 
     public function getTall(): ?int
     {
@@ -1601,57 +1623,9 @@ class Patient
         return $this;
     }
 
-    /**
-     * @return Collection|Options[]
-     */
-    public function getFbsj(): Collection
-    {
-        return $this->fbsj;
-    }
+   
 
-    public function addFbsj(Options $fbsj): self
-    {
-        if (!$this->fbsj->contains($fbsj)) {
-            $this->fbsj[] = $fbsj;
-        }
-
-        return $this;
-    }
-
-    public function removeFbsj(Options $fbsj): self
-    {
-        if ($this->fbsj->contains($fbsj)) {
-            $this->fbsj->removeElement($fbsj);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Options[]
-     */
-    public function getFbdd(): Collection
-    {
-        return $this->fbdd;
-    }
-
-    public function addFbdd(Options $fbdd): self
-    {
-        if (!$this->fbdd->contains($fbdd)) {
-            $this->fbdd[] = $fbdd;
-        }
-
-        return $this;
-    }
-
-    public function removeFbdd(Options $fbdd): self
-    {
-        if ($this->fbdd->contains($fbdd)) {
-            $this->fbdd->removeElement($fbdd);
-        }
-
-        return $this;
-    }
+   
 
     /**
      * @return Collection|Options[]
@@ -3089,6 +3063,138 @@ class Patient
     public function setSfrqjz(?bool $sfrqjz): self
     {
         $this->sfrqjz = $sfrqjz;
+
+        return $this;
+    }
+
+    public function getCurrentAge(): ?int
+    {
+        return $this->currentAge;
+    }
+
+    public function setCurrentAge(int $currentAge): self
+    {
+        $this->currentAge = $currentAge;
+
+        return $this;
+    }
+
+    public function getFbdd(): ?Options
+    {
+        return $this->fbdd;
+    }
+
+    public function setFbdd(?Options $fbdd): self
+    {
+        $this->fbdd = $fbdd;
+
+        return $this;
+    }
+
+    public function getFbsj(): ?\DateTimeInterface
+    {
+        return $this->fbsj;
+    }
+
+    public function setFbsj(\DateTimeInterface $fbsj): self
+    {
+        $this->fbsj = $fbsj;
+
+        return $this;
+    }
+
+    public function getSzyyDba(): ?int
+    {
+        return $this->szyy_dba;
+    }
+
+    public function setSzyyDba(?int $szyy_dba): self
+    {
+        $this->szyy_dba = $szyy_dba;
+
+        return $this;
+    }
+
+    public function getSzyyDafda(): ?int
+    {
+        return $this->szyy_dafda;
+    }
+
+    public function setSzyyDafda(?int $szyy_dafda): self
+    {
+        $this->szyy_dafda = $szyy_dafda;
+
+        return $this;
+    }
+
+    public function getSzyyQjssxs(): ?int
+    {
+        return $this->szyy_qjssxs;
+    }
+
+    public function setSzyyQjssxs(?int $szyy_qjssxs): self
+    {
+        $this->szyy_qjssxs = $szyy_qjssxs;
+
+        return $this;
+    }
+
+    public function getSzyyAtp(): ?int
+    {
+        return $this->szyy_atp;
+    }
+
+    public function setSzyyAtp(?int $szyy_atp): self
+    {
+        $this->szyy_atp = $szyy_atp;
+
+        return $this;
+    }
+
+    public function getSzyyXsgy(): ?int
+    {
+        return $this->szyy_xsgy;
+    }
+
+    public function setSzyyXsgy(?int $szyy_xsgy): self
+    {
+        $this->szyy_xsgy = $szyy_xsgy;
+
+        return $this;
+    }
+
+    public function getSzyySsxs(): ?int
+    {
+        return $this->szyy_ssxs;
+    }
+
+    public function setSzyySsxs(?int $szyy_ssxs): self
+    {
+        $this->szyy_ssxs = $szyy_ssxs;
+
+        return $this;
+    }
+
+    public function getSzyyMf(): ?int
+    {
+        return $this->szyy_mf;
+    }
+
+    public function setSzyyMf(?int $szyy_mf): self
+    {
+        $this->szyy_mf = $szyy_mf;
+
+        return $this;
+    }
+
+    public function getSzyySn(): ?int
+    {
+        return $this->szyy_sn;
+    }
+
+    public function setSzyySn(?int $szyy_sn): self
+    {
+        $this->szyy_sn = $szyy_sn;
 
         return $this;
     }

@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ patient.id }}</td>
                 <td>{{ patient.name }}</td>
-                <td>{{ patient.birthday ? patient.age : '' }}</td>
+                <td>{{ patient.currentAge }}</td>
                 <td>
                     <a href="{{ path('patient_show', {'id': patient.id}) }}">查看</a>
                     <a href="{{ path('patient_edit', {'id': patient.id}) }}">编辑</a>
