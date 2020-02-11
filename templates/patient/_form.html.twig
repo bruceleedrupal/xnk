@@ -186,7 +186,15 @@
    
    <div class='col-lg-4'>
         {{ _self.formGroup(form,['swcy','swcy_yy'],'死亡/出院') }}   
-        {{ _self.formGroup(form,['jxxs'],'急性心衰') }}  
+        {{ _self.formGroup(form,['jxxs','zjnxs'],'心衰/血栓') }}       
+        {{ _self.formGroup(form,['bxgxycj'],'靶血管血运重建') }} 
+        {{ _self.formGroup(form,['zyzz','zyqjcx'],'卒中/出血') }}         
+        {{ _self.formGroup(form,['zyexxlsc'],'恶性心律失常') }}
+        {{ _self.formGroup(form,['zyts','zyfy'],'住院天数/费用') }}
+        {{ _self.formGroup(form,['zyicu','zyicu_ts'],'ICU住院') }}
+        {{ _self.formGroup(form,['zcxjgs','zyxtzt']) }} 
+        {{ _self.formGroup(form,['zyzyjsb','zyxfcd']) }}  
+        
    </div> 
    </div>   
    {{ form_widget(form) }}   

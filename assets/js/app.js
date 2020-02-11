@@ -49,5 +49,6 @@ $(document).ready(function(){
      initiallize_display('#patient_xyqk',['51']);
      initiallize_display('#patient_yjqk',['55','56','57']);
      initiallize_display('#patient_swcy',['1']);
+     initiallize_display('#patient_zyicu',['1']);
 
 });

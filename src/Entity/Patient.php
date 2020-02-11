@@ -913,6 +913,77 @@ class Patient
      */
     private $swcy;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $zjnxs;
+
+   
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $zyzz;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zcxjgs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $zyqjcx;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     */
+    private $zyexxlsc;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zyxtzt;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zyts;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zyfy;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zyicu;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zyicu_ts;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zyzyjsb;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $zyxfcd;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="patient_options_bxgxycj"
+     * )
+     */
+    private $bxgxycj;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -939,6 +1010,7 @@ class Patient
         $this->zyj = new ArrayCollection();
         $this->zrzj = new ArrayCollection();
         $this->clffzxg = new ArrayCollection();
+        $this->bxgxycj = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -3250,6 +3322,178 @@ class Patient
     public function setSwcy(?bool $swcy): self
     {
         $this->swcy = $swcy;
+
+        return $this;
+    }
+
+    public function getZjnxs(): ?Options
+    {
+        return $this->zjnxs;
+    }
+
+    public function setZjnxs(?Options $zjnxs): self
+    {
+        $this->zjnxs = $zjnxs;
+
+        return $this;
+    }
+
+    
+
+    public function getZyzz(): ?Options
+    {
+        return $this->zyzz;
+    }
+
+    public function setZyzz(?Options $zyzz): self
+    {
+        $this->zyzz = $zyzz;
+
+        return $this;
+    }
+
+    public function getZcxjgs(): ?bool
+    {
+        return $this->zcxjgs;
+    }
+
+    public function setZcxjgs(?bool $zcxjgs): self
+    {
+        $this->zcxjgs = $zcxjgs;
+
+        return $this;
+    }
+
+    public function getZyqjcx(): ?Options
+    {
+        return $this->zyqjcx;
+    }
+
+    public function setZyqjcx(?Options $zyqjcx): self
+    {
+        $this->zyqjcx = $zyqjcx;
+
+        return $this;
+    }
+
+    public function getZyexxlsc(): ?Options
+    {
+        return $this->zyexxlsc;
+    }
+
+    public function setZyexxlsc(?Options $zyexxlsc): self
+    {
+        $this->zyexxlsc = $zyexxlsc;
+
+        return $this;
+    }
+
+    public function getZyxtzt(): ?bool
+    {
+        return $this->zyxtzt;
+    }
+
+    public function setZyxtzt(?bool $zyxtzt): self
+    {
+        $this->zyxtzt = $zyxtzt;
+
+        return $this;
+    }
+
+    public function getZyts(): ?int
+    {
+        return $this->zyts;
+    }
+
+    public function setZyts(?int $zyts): self
+    {
+        $this->zyts = $zyts;
+
+        return $this;
+    }
+
+    public function getZyfy(): ?int
+    {
+        return $this->zyfy;
+    }
+
+    public function setZyfy(?int $zyfy): self
+    {
+        $this->zyfy = $zyfy;
+
+        return $this;
+    }
+
+    public function getZyicu(): ?bool
+    {
+        return $this->zyicu;
+    }
+
+    public function setZyicu(?bool $zyicu): self
+    {
+        $this->zyicu = $zyicu;
+
+        return $this;
+    }
+
+    public function getZyicuTs(): ?int
+    {
+        return $this->zyicu_ts;
+    }
+
+    public function setZyicuTs(?int $zyicu_ts): self
+    {
+        $this->zyicu_ts = $zyicu_ts;
+
+        return $this;
+    }
+
+    public function getZyzyjsb(): ?bool
+    {
+        return $this->zyzyjsb;
+    }
+
+    public function setZyzyjsb(?bool $zyzyjsb): self
+    {
+        $this->zyzyjsb = $zyzyjsb;
+
+        return $this;
+    }
+
+    public function getZyxfcd(): ?bool
+    {
+        return $this->zyxfcd;
+    }
+
+    public function setZyxfcd(?bool $zyxfcd): self
+    {
+        $this->zyxfcd = $zyxfcd;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getBxgxycj(): Collection
+    {
+        return $this->bxgxycj;
+    }
+
+    public function addBxgxycj(Options $bxgxycj): self
+    {
+        if (!$this->bxgxycj->contains($bxgxycj)) {
+            $this->bxgxycj[] = $bxgxycj;
+        }
+
+        return $this;
+    }
+
+    public function removeBxgxycj(Options $bxgxycj): self
+    {
+        if ($this->bxgxycj->contains($bxgxycj)) {
+            $this->bxgxycj->removeElement($bxgxycj);
+        }
 
         return $this;
     }

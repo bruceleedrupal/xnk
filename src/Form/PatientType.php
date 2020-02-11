@@ -1248,9 +1248,104 @@ class PatientType extends AbstractType
                     ],
                     'label'=>'急性心衰',
                     'required'=>false,
-                ])               
+                ])    
+                ->add('zjnxs',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(233),
+                    'label'=>'支架内血栓',                    
+                    'choice_label'=>'title',                    
+                    'required'=>false,
+                ])
+                ->add('bxgxycj',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(237),
+                    'label'=>'靶血管血运重建',
+                    'choice_label'=>'title',
+                    'multiple'=>true,
+                    'required'=>false,
+                ])
+                ->add('zyzz',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(241),
+                    'label'=>'卒中',
+                    'choice_label'=>'title',                    
+                    'required'=>false,
+                ])
+                ->add('zcxjgs',CheckboxType::class,[
+                    'label'=>'再次心肌梗死',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zyqjcx',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(245),
+                    'label'=>'住院出血',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
+                ->add('zyexxlsc',EntityType::class,[
+                    'class'=>Options::class,
+                    'choices'=>$this->optionsRespository->findChirenOptions(249),
+                    'label'=>'恶性心律失常',
+                    'choice_label'=>'title',
+                    'required'=>false,
+                ])
                 
+                ->add('zyxtzt',CheckboxType::class,[
+                    'label'=>'心跳骤停',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-4'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zyts',NumberType::class,[
+                    'label'=>'住院天数',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'住院天数'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zyfy',NumberType::class,[
+                    'label'=>'住院费用',
+                    'html5'=>true,
+                    'attr'=>[
+                        'placeHolder'=>'住院费用'
+                    ],
+                    'required'=>false,
+                ])
                 
+                ->add('zyicu',ChoiceType::class,[
+                    'choices'  => [
+                        'Yes' => true,
+                        'No' => false,
+                    ],
+                    'label'=>'ICU住院',
+                    'required'=>false,
+                ])
+                ->add('zyicu_ts',NumberType::class,[
+                    'label'=>'住院天数',
+                    'attr'=>[
+                        'placeholder'=>'住院天数'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zyzyjsb',CheckboxType::class,[
+                    'label'=>'造影剂肾病',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-1'
+                    ],
+                    'required'=>false,
+                ])
+                ->add('zyxfcd',CheckboxType::class,[
+                    'label'=>'心房颤动',
+                    'attr'=>[
+                        'class'=>'icheck-primary ml-4'
+                    ],
+                    'required'=>false,
+                ])
             ;     
                
     }
