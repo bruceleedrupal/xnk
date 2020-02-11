@@ -23,7 +23,6 @@ require('admin-lte/build/js/AdminLTE.js');
 
 function _initiallize_display(selectElement,values){	
    siblings= selectElement.siblings('input');   
-   console.log(selectElement);
    if(values.indexOf(selectElement.val())!=-1){
    	  siblings.show();
    }
@@ -49,5 +48,6 @@ function initiallize_display(id,values){
 $(document).ready(function(){
      initiallize_display('#patient_xyqk',['51']);
      initiallize_display('#patient_yjqk',['55','56','57']);
+     initiallize_display('#patient_swcy',['1']);
 
 });

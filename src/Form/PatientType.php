@@ -1224,6 +1224,31 @@ class PatientType extends AbstractType
                     'required'=>false,
                 ])
                 
+                ->add('swcy',ChoiceType::class,[
+                    'choices'  => [
+                        'Yes' => true,
+                        'No' => false,
+                    ],
+                    'label'=>'死亡',
+                    'required'=>false,
+                ])
+                ->add('swcy_yy',TextType::class,[
+                    'label'=>'死亡原因',
+                    'attr'=>[
+                        'placeholder'=>'死亡原因'
+                    ],
+                    'required'=>false,
+                ]) 
+                
+                
+                ->add('jxxs',ChoiceType::class,[
+                    'choices'  => [                      
+                        'Yes' => true,
+                        'No' => false,
+                    ],
+                    'label'=>'急性心衰',
+                    'required'=>false,
+                ])               
                 
                 
             ;     

@@ -896,6 +896,23 @@ class Patient
      */
     private $szyy_sn;
 
+    
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $swcy_yy;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $jxxs;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $swcy;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -3195,6 +3212,44 @@ class Patient
     public function setSzyySn(?int $szyy_sn): self
     {
         $this->szyy_sn = $szyy_sn;
+
+        return $this;
+    }
+
+    
+
+    public function getSwcyYy(): ?string
+    {
+        return $this->swcy_yy;
+    }
+
+    public function setSwcyYy(?string $swcy_yy): self
+    {
+        $this->swcy_yy = $swcy_yy;
+
+        return $this;
+    }
+
+    public function getJxxs(): ?bool
+    {
+        return $this->jxxs;
+    }
+
+    public function setJxxs(?bool $jxxs): self
+    {
+        $this->jxxs = $jxxs;
+
+        return $this;
+    }
+
+    public function getSwcy(): ?bool
+    {
+        return $this->swcy;
+    }
+
+    public function setSwcy(?bool $swcy): self
+    {
+        $this->swcy = $swcy;
 
         return $this;
     }

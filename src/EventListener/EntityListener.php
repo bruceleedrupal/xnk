@@ -13,7 +13,7 @@ class EntityListener {
     public function prePersistPatient(Patient $patient, LifecycleEventArgs $event)
     {
         
-        dd($event->getEntityChangeSet());
+     
               
         
     } 
