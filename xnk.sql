@@ -53,6 +53,81 @@ INSERT INTO `fos_user` VALUES (1,'admin','admin','brucelee.drupal@gmail.com','br
 UNLOCK TABLES;
 
 --
+-- Table structure for table `lcevent`
+--
+
+DROP TABLE IF EXISTS `lcevent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lcevent` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lczjnxs_id` int(11) DEFAULT NULL,
+  `lczz_id` int(11) DEFAULT NULL,
+  `lccx_id` int(11) DEFAULT NULL,
+  `lcexxlsc_id` int(11) DEFAULT NULL,
+  `lckxxb_id` int(11) DEFAULT NULL,
+  `lcsfrq` date NOT NULL,
+  `lcdie` tinyint(1) DEFAULT NULL,
+  `lcdie_reason` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lcjxxs` tinyint(1) NOT NULL,
+  `lczcxjgs` tinyint(1) DEFAULT NULL,
+  `lcxtzt` tinyint(1) DEFAULT NULL,
+  `lckxxb_reason` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fjhzcry` tinyint(1) DEFAULT NULL,
+  `fjhzcry_reason` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lclvef` decimal(3,2) DEFAULT NULL,
+  `lcntbnp` decimal(5,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_A29679A1443F796E` (`lczjnxs_id`),
+  KEY `IDX_A29679A171FA20AF` (`lczz_id`),
+  KEY `IDX_A29679A1B6031DD7` (`lccx_id`),
+  KEY `IDX_A29679A1CC88CB13` (`lcexxlsc_id`),
+  KEY `IDX_A29679A1AD77DE51` (`lckxxb_id`),
+  CONSTRAINT `FK_A29679A1443F796E` FOREIGN KEY (`lczjnxs_id`) REFERENCES `options` (`id`),
+  CONSTRAINT `FK_A29679A171FA20AF` FOREIGN KEY (`lczz_id`) REFERENCES `options` (`id`),
+  CONSTRAINT `FK_A29679A1AD77DE51` FOREIGN KEY (`lckxxb_id`) REFERENCES `options` (`id`),
+  CONSTRAINT `FK_A29679A1B6031DD7` FOREIGN KEY (`lccx_id`) REFERENCES `options` (`id`),
+  CONSTRAINT `FK_A29679A1CC88CB13` FOREIGN KEY (`lcexxlsc_id`) REFERENCES `options` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lcevent`
+--
+
+LOCK TABLES `lcevent` WRITE;
+/*!40000 ALTER TABLE `lcevent` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lcevent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lcevent_options`
+--
+
+DROP TABLE IF EXISTS `lcevent_options`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lcevent_options` (
+  `lcevent_id` int(11) NOT NULL,
+  `options_id` int(11) NOT NULL,
+  PRIMARY KEY (`lcevent_id`,`options_id`),
+  KEY `IDX_7AB250B8596A060B` (`lcevent_id`),
+  KEY `IDX_7AB250B83ADB05F1` (`options_id`),
+  CONSTRAINT `FK_7AB250B83ADB05F1` FOREIGN KEY (`options_id`) REFERENCES `options` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_7AB250B8596A060B` FOREIGN KEY (`lcevent_id`) REFERENCES `lcevent` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lcevent_options`
+--
+
+LOCK TABLES `lcevent_options` WRITE;
+/*!40000 ALTER TABLE `lcevent_options` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lcevent_options` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `options`
 --
 
@@ -1013,4 +1088,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-11 16:03:05
+-- Dump completed on 2020-02-25 16:40:58
