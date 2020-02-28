@@ -20,6 +20,7 @@ global.$ = global.jQuery = $;
 require('bootstrap/js/src/tab.js');
 require('bootstrap/js/src/alert.js');
 require('admin-lte/build/js/AdminLTE.js');
+require('symfony-collection/jquery.collection.js');
 
 function _initiallize_display(selectElement,values){	
    siblings= selectElement.siblings('input');   
@@ -50,5 +51,14 @@ $(document).ready(function(){
      initiallize_display('#patient_yjqk',['55','56','57']);
      initiallize_display('#patient_swcy',['1']);
      initiallize_display('#patient_zyicu',['1']);
+	
+	//begin collection
+    $('.collection').collection({
+          'allow_down':false,
+          'allow_up':false,
+          'add':'<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>',
+          'remove':'<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a>'
+   });
+//end collection
 
 });

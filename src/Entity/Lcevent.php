@@ -45,6 +45,9 @@ class Lcevent
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="lcevent_options_lcbxgxycj"
+     * )
      */
     private $lcbxgxycj;
 
@@ -103,11 +106,30 @@ class Lcevent
      */
     private $lcntbnp;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Patient", inversedBy="lcevent")
+     */
+    private $patient;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Options")
+     * @ORM\JoinTable(
+     * name="lcevent_options_ffzxgpci"
+     * )
+     */
+    private $ffzxgpci;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $ffzxgcto;
+
     
 
     public function __construct()
     {
         $this->lcbxgxycj = new ArrayCollection();
+        $this->ffzxgpci = new ArrayCollection();
     }
 
    
@@ -331,6 +353,56 @@ class Lcevent
     public function setLcntbnp(?string $lcntbnp): self
     {
         $this->lcntbnp = $lcntbnp;
+
+        return $this;
+    }
+
+    public function getPatient(): ?Patient
+    {
+        return $this->patient;
+    }
+
+    public function setPatient(?Patient $patient): self
+    {
+        $this->patient = $patient;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Options[]
+     */
+    public function getFfzxgpci(): Collection
+    {
+        return $this->ffzxgpci;
+    }
+
+    public function addFfzxgpci(Options $ffzxgpci): self
+    {
+        if (!$this->ffzxgpci->contains($ffzxgpci)) {
+            $this->ffzxgpci[] = $ffzxgpci;
+        }
+
+        return $this;
+    }
+
+    public function removeFfzxgpci(Options $ffzxgpci): self
+    {
+        if ($this->ffzxgpci->contains($ffzxgpci)) {
+            $this->ffzxgpci->removeElement($ffzxgpci);
+        }
+
+        return $this;
+    }
+
+    public function getFfzxgcto(): ?bool
+    {
+        return $this->ffzxgcto;
+    }
+
+    public function setFfzxgcto(?bool $ffzxgcto): self
+    {
+        $this->ffzxgcto = $ffzxgcto;
 
         return $this;
     }

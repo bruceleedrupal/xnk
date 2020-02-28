@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Patient;
 use App\Form\BirthdayType;
+use App\Form\LceventType;
 use App\Entity\Options;
 use App\Repository\OptionsRepository;
 use Symfony\Component\Form\AbstractType;
@@ -19,6 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 
 class PatientType extends AbstractType
@@ -1345,6 +1347,15 @@ class PatientType extends AbstractType
                         'class'=>'icheck-primary ml-4'
                     ],
                     'required'=>false,
+                ])
+                
+                ->add('lcevents',CollectionType::class,[
+                    'entry_type' => LceventType::class,
+                    'allow_add' => true,
+                    'label'=>false,
+                    'allow_delete' => true,
+                    'by_reference' => false,
+                    'attr'=>['class'=>'collection']
                 ])
             ;     
                

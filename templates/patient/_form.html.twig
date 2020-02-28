@@ -29,7 +29,10 @@
     <a class="nav-link" data-toggle="tab" href="#lc">临床</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#contact">其他</a>
+    <a class="nav-link" data-toggle="tab" href="#contact">其他</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#lcevent">临床事件</a>
   </li>
 </ul>
 
@@ -154,7 +157,7 @@
    </div>
   </div>
   
-  <div class="tab-pane fade show active" id="contact" role="tabpanel">
+  <div class="tab-pane fade" id="contact" role="tabpanel">
   <div class="row">
      <div class='col-lg-4'>       
     {{ _self.formGroup(form,['gsxgdm','hbcto'],'梗死 CTO') }}
@@ -179,9 +182,8 @@
         {{ _self.formGroup(form,['zjzj','zjcd'],'平均直径 总长度') }}
         {{ _self.formGroup(form,['szyy_dba','szyy_dafda','szyy_qjssxs'],'术中用药') }}
         {{ _self.formGroup(form,['szyy_atp','szyy_xsgy','szyy_ssxs'],'术中用药') }}  
-        {{ _self.formGroup(form,['szyy_mf','szyy_sn'],'术中用药') }}  
-        
-             
+        {{ _self.formGroup(form,['szyy_mf','szyy_sn'],'术中用药') }} 
+         
    </div>  
    
    <div class='col-lg-4'>
@@ -193,12 +195,23 @@
         {{ _self.formGroup(form,['zyts','zyfy'],'住院天数/费用') }}
         {{ _self.formGroup(form,['zyicu','zyicu_ts'],'ICU住院') }}
         {{ _self.formGroup(form,['zcxjgs','zyxtzt']) }} 
-        {{ _self.formGroup(form,['zyzyjsb','zyxfcd']) }}  
+        {{ _self.formGroup(form,['zyzyjsb','zyxfcd']) }} 
+       
         
    </div> 
-   </div>   
-   {{ form_widget(form) }}   
+   </div> 
    </div>
+   
+   <div class="tab-pane fade show active" id="lcevent" role="tabpanel">
+     <div class="row">
+         <div class='col-lg-4'>
+          {{ form_row(form.lcevents) }}   
+         </div>
+     </div>
+   </div>
+     
+   {{ form_widget(form) }}   
+ 
    
    </div>
   

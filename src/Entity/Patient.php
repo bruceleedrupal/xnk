@@ -984,6 +984,14 @@ class Patient
      */
     private $bxgxycj;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Lcevent", mappedBy="patient")
+     * @ORM\JoinTable(
+     * name="patient_lcevent"
+     * )
+     */
+    private $lcevents;
+
     public function __construct()
     {
         $this->jyyw = new ArrayCollection();
@@ -1011,6 +1019,7 @@ class Patient
         $this->zrzj = new ArrayCollection();
         $this->clffzxg = new ArrayCollection();
         $this->bxgxycj = new ArrayCollection();
+        $this->lcevents = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -3493,6 +3502,37 @@ class Patient
     {
         if ($this->bxgxycj->contains($bxgxycj)) {
             $this->bxgxycj->removeElement($bxgxycj);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Lcevent[]
+     */
+    public function getLcevents(): Collection
+    {
+        return $this->lcevents;
+    }
+
+    public function addLcevents(Lcevent $lcevent): self
+    {
+        if (!$this->lcevents->contains($lcevent)) {
+            $this->lcevents[] = $lcevent;
+            $lcevent->setPatient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLcevents(Lcevent $lcevent): self
+    {
+        if ($this->lcevents->contains($lcevent)) {
+            $this->lcevents->removeElement($lcevent);
+            // set the owning side to null (unless already changed)
+            if ($lcevent->getPatient() === $this) {
+                $lcevent->setPatient(null);
+            }
         }
 
         return $this;
