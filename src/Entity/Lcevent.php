@@ -369,6 +369,20 @@ class Lcevent
         return $this;
     }
 
+  
+
+    public function getFfzxgcto(): ?bool
+    {
+        return $this->ffzxgcto;
+    }
+
+    public function setFfzxgcto(?bool $ffzxgcto): self
+    {
+        $this->ffzxgcto = $ffzxgcto;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Options[]
      */
@@ -391,18 +405,6 @@ class Lcevent
         if ($this->ffzxgpci->contains($ffzxgpci)) {
             $this->ffzxgpci->removeElement($ffzxgpci);
         }
-
-        return $this;
-    }
-
-    public function getFfzxgcto(): ?bool
-    {
-        return $this->ffzxgcto;
-    }
-
-    public function setFfzxgcto(?bool $ffzxgcto): self
-    {
-        $this->ffzxgcto = $ffzxgcto;
 
         return $this;
     }

@@ -1352,6 +1352,9 @@ class PatientType extends AbstractType
                 ->add('lcevents',CollectionType::class,[
                     'entry_type' => LceventType::class,
                     'allow_add' => true,
+                    'entry_options' => [
+                        'label' => false,
+                    ],
                     'label'=>false,
                     'allow_delete' => true,
                     'by_reference' => false,

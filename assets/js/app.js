@@ -56,8 +56,8 @@ $(document).ready(function(){
     $('.collection').collection({
           'allow_down':false,
           'allow_up':false,
-          'add':'<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>',
-          'remove':'<a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash"></span></a>'
+          'add':'<a href="#" class="btn btn-default"><i class="fa fa-plus-square"></i>',
+          'remove':'<a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>'
    });
 //end collection
 
