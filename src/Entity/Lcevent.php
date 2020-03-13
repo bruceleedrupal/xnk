@@ -76,8 +76,8 @@ class Lcevent
      */
     private $lcxtzt;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Options")
+     /**
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $lckxxb;
 
@@ -286,17 +286,7 @@ class Lcevent
         return $this;
     }
 
-    public function getLckxxb(): ?Options
-    {
-        return $this->lckxxb;
-    }
-
-    public function setLckxxb(?Options $lckxxb): self
-    {
-        $this->lckxxb = $lckxxb;
-
-        return $this;
-    }
+    
 
     public function getLckxxbReason(): ?string
     {
@@ -406,6 +396,18 @@ class Lcevent
         if ($this->ffzxgpcim->contains($ffzxgpcim)) {
             $this->ffzxgpcim->removeElement($ffzxgpcim);
         }
+
+        return $this;
+    }
+
+    public function getLckxxb(): ?bool
+    {
+        return $this->lckxxb;
+    }
+
+    public function setLckxxb(?bool $lckxxb): self
+    {
+        $this->lckxxb = $lckxxb;
 
         return $this;
     }

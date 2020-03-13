@@ -44,14 +44,19 @@ class LceventType extends AbstractType
                 'Yes' => true,
                 'No' => false,
             ],
+            'attr'=>[
+               'class'=>'lcevent_lcdie', 
+            ],
             'label'=>'死亡',
             'required'=>false,
         ])
         ->add('lcdie_reason',TextType::class,[
             'label'=>'死亡原因',
             'attr'=>[
-                'placeholder'=>'死亡原因'
+                'placeholder'=>'死亡原因',
+                'class'=>'lcevent_lcdie_reason', 
             ],
+            
             'required'=>false,
         ])
         ->add('lcjxxs',CheckboxType::class,[
