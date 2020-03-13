@@ -985,7 +985,7 @@ class Patient
     private $bxgxycj;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Lcevent", mappedBy="patient")
+     * @ORM\OneToMany(targetEntity="App\Entity\Lcevent", mappedBy="patient",cascade={"persist", "remove"})
      * @ORM\JoinTable(
      * name="patient_lcevent"
      * )
@@ -3515,7 +3515,7 @@ class Patient
         return $this->lcevents;
     }
 
-    public function addLcevents(Lcevent $lcevent): self
+    public function addLcevent(Lcevent $lcevent): self
     {
         if (!$this->lcevents->contains($lcevent)) {
             $this->lcevents[] = $lcevent;
@@ -3525,7 +3525,7 @@ class Patient
         return $this;
     }
 
-    public function removeLcevents(Lcevent $lcevent): self
+    public function removeLcevent(Lcevent $lcevent): self
     {
         if ($this->lcevents->contains($lcevent)) {
             $this->lcevents->removeElement($lcevent);
@@ -3537,4 +3537,6 @@ class Patient
 
         return $this;
     }
+
+    
 }

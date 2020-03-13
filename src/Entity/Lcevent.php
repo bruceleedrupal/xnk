@@ -82,7 +82,7 @@ class Lcevent
     private $lckxxb;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lckxxb_reason;
 
@@ -92,7 +92,7 @@ class Lcevent
     private $fjhzcry;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $fjhzcry_reason;
 
@@ -107,7 +107,7 @@ class Lcevent
     private $lcntbnp;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Patient", inversedBy="lcevent")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Patient", inversedBy="lcevent",cascade={"persist"})
      */
     private $patient;
 
@@ -117,7 +117,7 @@ class Lcevent
      * name="lcevent_options_ffzxgpci"
      * )
      */
-    private $ffzxgpci;
+    private $ffzxgpcim;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
@@ -130,6 +130,7 @@ class Lcevent
     {
         $this->lcbxgxycj = new ArrayCollection();
         $this->ffzxgpci = new ArrayCollection();
+        $this->ffzxgpcim = new ArrayCollection();
     }
 
    
@@ -302,7 +303,7 @@ class Lcevent
         return $this->lckxxb_reason;
     }
 
-    public function setLckxxbReason(string $lckxxb_reason): self
+    public function setLckxxbReason(?string $lckxxb_reason): self
     {
         $this->lckxxb_reason = $lckxxb_reason;
 
@@ -326,7 +327,7 @@ class Lcevent
         return $this->fjhzcry_reason;
     }
 
-    public function setFjhzcryReason(string $fjhzcry_reason): self
+    public function setFjhzcryReason(?string $fjhzcry_reason): self
     {
         $this->fjhzcry_reason = $fjhzcry_reason;
 
@@ -386,28 +387,30 @@ class Lcevent
     /**
      * @return Collection|Options[]
      */
-    public function getFfzxgpci(): Collection
+    public function getFfzxgpcim(): Collection
     {
-        return $this->ffzxgpci;
+        return $this->ffzxgpcim;
     }
 
-    public function addFfzxgpci(Options $ffzxgpci): self
+    public function addFfzxgpcim(Options $ffzxgpcim): self
     {
-        if (!$this->ffzxgpci->contains($ffzxgpci)) {
-            $this->ffzxgpci[] = $ffzxgpci;
+        if (!$this->ffzxgpcim->contains($ffzxgpcim)) {
+            $this->ffzxgpcim[] = $ffzxgpcim;
         }
 
         return $this;
     }
 
-    public function removeFfzxgpci(Options $ffzxgpci): self
+    public function removeFfzxgpcim(Options $ffzxgpcim): self
     {
-        if ($this->ffzxgpci->contains($ffzxgpci)) {
-            $this->ffzxgpci->removeElement($ffzxgpci);
+        if ($this->ffzxgpcim->contains($ffzxgpcim)) {
+            $this->ffzxgpcim->removeElement($ffzxgpcim);
         }
 
         return $this;
     }
+
+   
 
    
 

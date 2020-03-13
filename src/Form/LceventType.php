@@ -122,7 +122,7 @@ class LceventType extends AbstractType
             'label'=>'非犯罪血管CTO',
             'required'=>false,
         ])
-        ->add('ffzxgpci',EntityType::class,[
+        ->add('ffzxgpcim',EntityType::class,[
             'class'=>Options::class,
             'choices'=>$this->optionsRespository->findChirenOptions(253),
             'label'=>'非犯罪血管PCI',
@@ -139,9 +139,9 @@ class LceventType extends AbstractType
             'required'=>false,
         ])
         ->add('lckxxb_reason',TextType::class,[
-            'label'=>'死亡原因',
+            'label'=>'停药种类、原因',
             'attr'=>[
-                'placeholder'=>'死亡原因'
+                'placeholder'=>'停药种类、原因'
             ],
             'required'=>false,
         ])
