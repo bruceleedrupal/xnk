@@ -20,6 +20,8 @@ function initiallize_display_collection(id,values){
 function initiallize_display_collection_all() {
 
 	initiallize_display_collection('.lcevent_lcdie',['1']);
+	initiallize_display_collection('.lckxxb',['0']);
+	initiallize_display_collection('.fjhzcry',['1']);
 	return true;
 }
 

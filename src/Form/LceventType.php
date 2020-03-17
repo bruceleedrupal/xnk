@@ -140,6 +140,9 @@ class LceventType extends AbstractType
                 '良好' => true,
                 '自行停药' => false,
             ],
+            'attr'=>[
+                'class'=>'lckxxb',
+            ],
             'label'=>'双联抗血小板、他汀依从性',
             'required'=>false,
         ])
@@ -154,6 +157,9 @@ class LceventType extends AbstractType
             'choices'  => [
                 'Yes' => true,
                 'No' => false,
+            ],
+            'attr'=>[
+                'class'=>'fjhzcry',
             ],
             'label'=>'非计划再次入院',
             'required'=>false,
