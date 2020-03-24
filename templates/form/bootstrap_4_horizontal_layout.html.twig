@@ -1,8 +1,9 @@
+
 {% block form_label_class -%}
-col-sm-3
+col-sm-1
 {%- endblock form_label_class %}
 {% block form_group_class -%}
-col-sm-9
+col-sm-11
 {%- endblock form_group_class %}
 
 
@@ -43,3 +44,36 @@ col-sm-9
         {{- block('form_widget_simple') -}}
     {%- endif -%}
 {%- endblock percent_widget %}
+
+
+{% block lcevent_widget -%}
+{% import '_macros.html.twig' as macros %}
+<div class="row">
+     <div class="col-lg-4">  
+        {{ macros.formGroup(form,['lcsfrq'],'随访日期') }} 
+        {{ macros.formGroup(form,['lcdie','lcdie_reason'],'死亡') }} 
+        
+        {{ macros.formGroup(form,['lczjnxs'],'支架内血栓') }} 
+       {{ macros.formGroup(form,['lcjxxs','lczcxjgs','lcxtzt']) }} 
+             
+        
+        
+        
+        
+      </div>
+      <div class="col-lg-4">         
+         {{ macros.formGroup(form,['lcbxgxycj'],'靶血管血运重建') }} 
+         {{ macros.formGroup(form,['ffzxgpcim','ffzxgcto'],'非犯罪血管') }}
+      </div>
+      
+       <div class="col-lg-4">  
+       {{ macros.formGroup(form,['lccx','lcexxlsc'],'出血/心律失常') }} 
+       {{ macros.formGroup(form,['lckxxb','lckxxb_reason'],'双联抗血小板') }} 
+       {{ macros.formGroup(form,['fjhzcry','fjhzcry_reason'],'再次入院') }} 
+       {{ macros.formGroup(form,['lczz'],'卒中') }}   
+       {{ macros.formGroup(form,['lclvef','lcntbnp']) }} 
+       
+       </div>
+</div>
+{%- endblock lcevent_widget  -%}
+

@@ -1,5 +1,5 @@
 function _initiallize_display_collection(selectElement,values){ 
-   var nextElement = selectElement.parent().parent('.row').next();
+   var nextElement = selectElement.next();
    if(values.indexOf(selectElement.val())!=-1){
           nextElement.show();
    }

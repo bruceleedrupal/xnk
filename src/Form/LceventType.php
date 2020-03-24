@@ -47,6 +47,7 @@ class LceventType extends AbstractType
             'attr'=>[
                'class'=>'lcevent_lcdie', 
             ],
+            'placeholder'=>'是否死亡',
             'label'=>'死亡',
             'required'=>false,
         ])
@@ -88,10 +89,9 @@ class LceventType extends AbstractType
             'choice_label'=>'title',
             'required'=>false,
         ])
-        ->add('lczcxjgs',ChoiceType::class,[
-            'choices'  => [
-                'Yes' => true,
-                'No' => false,
+        ->add('lczcxjgs',CheckboxType::class,[
+            'attr'=>[
+                'class'=>'icheck-primary ml-4'
             ],
             'label'=>'再次心肌梗死',
             'required'=>false,
@@ -111,12 +111,11 @@ class LceventType extends AbstractType
             'required'=>false,
         ])
             
-        ->add('lcxtzt',ChoiceType::class,[
-            'choices'  => [
-                'Yes' => true,
-                'No' => false,
-            ],
+        ->add('lcxtzt',CheckboxType::class,[            
             'label'=>'心跳骤停',
+            'attr'=>[
+                'class'=>'icheck-primary ml-4'
+            ],
             'required'=>false,
         ])
         ->add('ffzxgcto',ChoiceType::class,[
@@ -124,6 +123,7 @@ class LceventType extends AbstractType
                 'Yes' => true,
                 'No' => false,
             ],
+            'placeholder'=>'CTO?',
             'label'=>'非犯罪血管CTO',
             'required'=>false,
         ])

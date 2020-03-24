@@ -1,0 +1,13 @@
+{% macro formGroup(form,fields,name) %}
+    <div class="input-group form-group">
+          {% if name %}
+          <div class="input-group-prepend">
+            <span class="input-group-text">{{ name }}</span>
+          </div>
+          {% endif %}
+          {% for field in fields
+            if (attribute(form, field) is defined) %}
+            {{ form_widget(attribute(form, field)) }}
+        {% endfor %}
+     </div>   
+{% endmacro %}

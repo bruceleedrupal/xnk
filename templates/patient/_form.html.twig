@@ -1,19 +1,7 @@
 {% form_theme form 'form/bootstrap_4_horizontal_layout.html.twig' %}
 {% form_theme form.lcevents 'form/jquery.collection.html.twig' %}
 
-{% macro formGroup(form,fields,name) %}
-    <div class="input-group form-group">
-          {% if name %}
-          <div class="input-group-prepend">
-            <span class="input-group-text">{{ name }}</span>
-          </div>
-          {% endif %}
-          {% for field in fields
-            if (attribute(form, field) is defined) %}
-            {{ form_widget(attribute(form, field)) }}
-        {% endfor %}
-     </div>   
-{% endmacro %}
+{% import '_macros.html.twig' as macros %}
 
 
 
@@ -37,36 +25,29 @@
   </li>
 </ul>
 
-    {% for error in form.vars.errors.form.getErrors(true) %}
-   <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">   
-      {{ error.cause.propertyPath }}:{{error.message }} 
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% endfor %}
+
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade" id="rkx" role="tabpanel">
   <div class='row'>
       <div class='col-lg-4'>
 
-        {{ _self.formGroup(form,['name','currentAge'],'姓名/年龄') }} 
-        {{ _self.formGroup(form,['tall','weight','fuwei'],'三维 数据') }}     
-        {{ _self.formGroup(form,['gender','marriage'],'性别/婚姻') }} 
-        {{ _self.formGroup(form,['career','yibao'],'职业/医保') }} 
-        {{ _self.formGroup(form,['scholarship','tel'],'学历/电话') }} 
-        {{ _self.formGroup(form,['zyh'],'住院 号码') }}
-        {{ _self.formGroup(form,['xyqk','xyqkzhi','xyqkyear'],'吸烟情况') }}   
-         {{ _self.formGroup(form,['yjqk','yjqkliang','yjqkyear'],'饮酒情况') }}         
-        {{ _self.formGroup(form,['ryrq'],'入院 日期') }} 
-        {{ _self.formGroup(form,['nzzbs'],'脑卒中病史') }}   
+        {{ macros.formGroup(form,['name','currentAge'],'姓名/年龄') }} 
+        {{ macros.formGroup(form,['tall','weight','fuwei'],'三维 数据') }}     
+        {{ macros.formGroup(form,['gender','marriage'],'性别/婚姻') }} 
+        {{ macros.formGroup(form,['career','yibao'],'职业/医保') }} 
+        {{ macros.formGroup(form,['scholarship','tel'],'学历/电话') }} 
+        {{ macros.formGroup(form,['zyh'],'住院 号码') }}
+        {{ macros.formGroup(form,['xyqk','xyqkzhi','xyqkyear'],'吸烟情况') }}   
+         {{ macros.formGroup(form,['yjqk','yjqkliang','yjqkyear'],'饮酒情况') }}         
+        {{ macros.formGroup(form,['ryrq'],'入院 日期') }} 
+        {{ macros.formGroup(form,['nzzbs'],'脑卒中病史') }}   
         
-         {{ _self.formGroup(form,['xjgs','jwxjt','hbexzl']) }} 
-         {{ _self.formGroup(form,['wzdmjb','gxbjzs','pcibs']) }} 
-         {{ _self.formGroup(form,['xhdkybs','xgnbqbs','tx','copd']) }} 
-         {{ _self.formGroup(form,['zgzzl','pyywry']) }} 
-         {{ _self.formGroup(form,['pypci','pyxjgsbs']) }} 
+         {{ macros.formGroup(form,['xjgs','jwxjt','hbexzl']) }} 
+         {{ macros.formGroup(form,['wzdmjb','gxbjzs','pcibs']) }} 
+         {{ macros.formGroup(form,['xhdkybs','xgnbqbs','tx','copd']) }} 
+         {{ macros.formGroup(form,['zgzzl','pyywry']) }} 
+         {{ macros.formGroup(form,['pypci','pyxjgsbs']) }} 
         
          {% for field in ['ryrq']
             if (attribute(form, field) is defined) %}
@@ -77,21 +58,21 @@
 
         
          <div class='col-lg-4'>
-         {{ _self.formGroup(form,['jyyw','gxykzqk'],'高血压') }}  
-         {{ _self.formGroup(form,['jtyw','tnbkzqk'],'糖尿病') }}    
-         {{ _self.formGroup(form,['jzyw','gxzkzqk'],'高血脂') }}  
-         {{ _self.formGroup(form,['tfyw'],'痛风药物') }}         
-         {{ _self.formGroup(form,['cabgbs'],'CABG病史') }}      
+         {{ macros.formGroup(form,['jyyw','gxykzqk'],'高血压') }}  
+         {{ macros.formGroup(form,['jtyw','tnbkzqk'],'糖尿病') }}    
+         {{ macros.formGroup(form,['jzyw','gxzkzqk'],'高血脂') }}  
+         {{ macros.formGroup(form,['tfyw'],'痛风药物') }}         
+         {{ macros.formGroup(form,['cabgbs'],'CABG病史') }}      
                  
         </div>
         
         
          <div class='col-lg-4'>        
                    
-         {{ _self.formGroup(form,['kxxbyw'],'抗血小板药物') }} 
-         {{ _self.formGroup(form,['knyw'],'既往抗凝药物') }} 
-         {{ _self.formGroup(form,['ttyy'],'既往服用他汀') }} 
-         {{ _self.formGroup(form,['xxgjbjy'],'心血管疾病教育') }}
+         {{ macros.formGroup(form,['kxxbyw'],'抗血小板药物') }} 
+         {{ macros.formGroup(form,['knyw'],'既往抗凝药物') }} 
+         {{ macros.formGroup(form,['ttyy'],'既往服用他汀') }} 
+         {{ macros.formGroup(form,['xxgjbjy'],'心血管疾病教育') }}
            
          
         </div>
@@ -103,52 +84,52 @@
   <div class="tab-pane fade" id="lc" role="tabpanel">
   <div class='row'>
   <div class='col-lg-4'>          
-         {{ _self.formGroup(form,['fbsj'],'发病时间') }}
-         {{ _self.formGroup(form,['fbdd'],'发病地点') }}
-         {{ _self.formGroup(form,['xtxm','yy'],'疼痛部位/诱因') }}         
-         {{ _self.formGroup(form,['bszz','xsqj'],'伴随症状/求助') }}         
-         {{ _self.formGroup(form,['fbfyyw','yyjy'],'服用药物/犹豫') }}         
-         {{ _self.formGroup(form,['exxlsc','gsbw'],'心律失常/梗死') }}
-         {{ _self.formGroup(form,['kippip'],'Killip分级') }}
-         {{ _self.formGroup(form,['zzdx','ysxg','yqxtzt']) }} 
-         {{ _self.formGroup(form,['zszcdzz','yszcdzz','xfcd']) }}
-         {{ _self.formGroup(form,['arb','atst','zcysy']) }}
+         {{ macros.formGroup(form,['fbsj'],'发病时间') }}
+         {{ macros.formGroup(form,['fbdd'],'发病地点') }}
+         {{ macros.formGroup(form,['xtxm','yy'],'疼痛部位/诱因') }}         
+         {{ macros.formGroup(form,['bszz','xsqj'],'伴随症状/求助') }}         
+         {{ macros.formGroup(form,['fbfyyw','yyjy'],'服用药物/犹豫') }}         
+         {{ macros.formGroup(form,['exxlsc','gsbw'],'心律失常/梗死') }}
+         {{ macros.formGroup(form,['kippip'],'Killip分级') }}
+         {{ macros.formGroup(form,['zzdx','ysxg','yqxtzt']) }} 
+         {{ macros.formGroup(form,['zszcdzz','yszcdzz','xfcd']) }}
+         {{ macros.formGroup(form,['arb','atst','zcysy']) }}
          
   </div>
   
   
    <div class='col-lg-4'>
-    {{ _self.formGroup(form,['hx','xl','tw'],'呼吸心率体温') }}    
-    {{ _self.formGroup(form,['ssy','szy'],'血压 数据') }}    
-    {{ _self.formGroup(form,['sfxyzt','jpybhd'],'经皮氧饱和度') }}   
-    {{ _self.formGroup(form,['cm','jx'],'超敏 肌酐') }}   
-    {{ _self.formGroup(form,['xj','xn','xlv'],'血钾血钠血氯') }} 
-    {{ _self.formGroup(form,['egfr','hba1c'],'eGFR HbA1c') }} 
-    {{ _self.formGroup(form,['kfxt'],'空腹血糖') }}
-    {{ _self.formGroup(form,['jgdbi','jgdbt'],'肌钙蛋白') }}
-    {{ _self.formGroup(form,['ckmb','bnp'],'CK-MB BNP') }}
-    {{ _self.formGroup(form,['xhdb','hxbyj'],'血红 压积') }}
-    {{ _self.formGroup(form,['gysz','zdgc'],'甘油 胆固醇') }}    
-    {{ _self.formGroup(form,['hdlc','ldlc'],'HDL/LDL-C') }}    
-    {{ _self.formGroup(form,['ns','nt'],'尿酸 NT') }}
-    {{ _self.formGroup(form,['lvef'],'LVEF') }}
+    {{ macros.formGroup(form,['hx','xl','tw'],'呼吸心率体温') }}    
+    {{ macros.formGroup(form,['ssy','szy'],'血压 数据') }}    
+    {{ macros.formGroup(form,['sfxyzt','jpybhd'],'经皮氧饱和度') }}   
+    {{ macros.formGroup(form,['cm','jx'],'超敏 肌酐') }}   
+    {{ macros.formGroup(form,['xj','xn','xlv'],'血钾血钠血氯') }} 
+    {{ macros.formGroup(form,['egfr','hba1c'],'eGFR HbA1c') }} 
+    {{ macros.formGroup(form,['kfxt'],'空腹血糖') }}
+    {{ macros.formGroup(form,['jgdbi','jgdbt'],'肌钙蛋白') }}
+    {{ macros.formGroup(form,['ckmb','bnp'],'CK-MB BNP') }}
+    {{ macros.formGroup(form,['xhdb','hxbyj'],'血红 压积') }}
+    {{ macros.formGroup(form,['gysz','zdgc'],'甘油 胆固醇') }}    
+    {{ macros.formGroup(form,['hdlc','ldlc'],'HDL/LDL-C') }}    
+    {{ macros.formGroup(form,['ns','nt'],'尿酸 NT') }}
+    {{ macros.formGroup(form,['lvef'],'LVEF') }}
    </div>
    
    <div class='col-lg-4'>
-   {{ _self.formGroup(form,['zgzfs'],'再灌注方式') }}
-   {{ _self.formGroup(form,['jzyybb','jzyy'],'就诊医院') }}
-   {{ _self.formGroup(form,['zjfs','zyjl'],'方式 距离') }}
-   {{ _self.formGroup(form,['yqxdtcs','aspl','lbgl']) }}
-   {{ _self.formGroup(form,['tgrl','bzzj','yzmb','acei']) }}   
+   {{ macros.formGroup(form,['zgzfs'],'再灌注方式') }}
+   {{ macros.formGroup(form,['jzyybb','jzyy'],'就诊医院') }}
+   {{ macros.formGroup(form,['zjfs','zyjl'],'方式 距离') }}
+   {{ macros.formGroup(form,['yqxdtcs','aspl','lbgl']) }}
+   {{ macros.formGroup(form,['tgrl','bzzj','yzmb','acei']) }}   
    
-   {{ _self.formGroup(form,['dfzgs'],'低分子肝素') }}
-   {{ _self.formGroup(form,['zytt','lnj'],'他汀 利尿剂') }}
-   {{ _self.formGroup(form,['dba','dbada'],'多巴胺 多巴酚') }}
-   {{ _self.formGroup(form,['mln','zxmd'],'米力农 左昔孟旦') }}
-   {{ _self.formGroup(form,['xhs','kdlz'],'新活素 可达龙针') }}
-   {{ _self.formGroup(form,['adlp','ldky'],'可达龙片 利多卡因') }}
-   {{ _self.formGroup(form,['wcfztq','yctqzc'],'无创辅助 有创通气') }}
-   {{ _self.formGroup(form,['iabp','ecmo'],'IABP ECMO') }}
+   {{ macros.formGroup(form,['dfzgs'],'低分子肝素') }}
+   {{ macros.formGroup(form,['zytt','lnj'],'他汀 利尿剂') }}
+   {{ macros.formGroup(form,['dba','dbada'],'多巴胺 多巴酚') }}
+   {{ macros.formGroup(form,['mln','zxmd'],'米力农 左昔孟旦') }}
+   {{ macros.formGroup(form,['xhs','kdlz'],'新活素 可达龙针') }}
+   {{ macros.formGroup(form,['adlp','ldky'],'可达龙片 利多卡因') }}
+   {{ macros.formGroup(form,['wcfztq','yctqzc'],'无创辅助 有创通气') }}
+   {{ macros.formGroup(form,['iabp','ecmo'],'IABP ECMO') }}
    
 
    </div>
@@ -161,42 +142,42 @@
   <div class="tab-pane fade" id="contact" role="tabpanel">
   <div class="row">
      <div class='col-lg-4'>       
-    {{ _self.formGroup(form,['gsxgdm','hbcto'],'梗死 CTO') }}
-    {{ _self.formGroup(form,['xgbbzs'],'血管病变支数') }}
-    {{ _self.formGroup(form,['xgjd','dmyzgh']) }}
-    {{ _self.formGroup(form,['dmxxfhz','xsszxg']) }}
-    {{ _self.formGroup(form,['timixl']) }}  
+    {{ macros.formGroup(form,['gsxgdm','hbcto'],'梗死 CTO') }}
+    {{ macros.formGroup(form,['xgbbzs'],'血管病变支数') }}
+    {{ macros.formGroup(form,['xgjd','dmyzgh']) }}
+    {{ macros.formGroup(form,['dmxxfhz','xsszxg']) }}
+    {{ macros.formGroup(form,['timixl']) }}  
     
-    {{ _self.formGroup(form,['zyjjl','zjsl'],'造影剂剂量 支架数量') }}     
-    {{ _self.formGroup(form,['sscx','pcijkj','ykz']) }} 
-    {{ _self.formGroup(form,['hkz','shtimi','sfrqjz']) }}     
-    {{ _self.formGroup(form,['clffzxg'],'同时处理') }}    
+    {{ macros.formGroup(form,['zyjjl','zjsl'],'造影剂剂量 支架数量') }}     
+    {{ macros.formGroup(form,['sscx','pcijkj','ykz']) }} 
+    {{ macros.formGroup(form,['hkz','shtimi','sfrqjz']) }}     
+    {{ macros.formGroup(form,['clffzxg'],'同时处理') }}    
     </div>
    
    <div class='col-lg-4'>
-        {{ _self.formGroup(form,['zyj','zrzj'],'造影剂 植入支架') }}    
-        {{ _self.formGroup(form,['pcilj'],'PCI路径') }} 
-        {{ _self.formGroup(form,['hkzqnzj','hkzqncd'],'后扩球囊直径 长度') }} 
-        {{ _self.formGroup(form,['hkzdyl','szsc'],'后扩压力 室颤') }}
-        {{ _self.formGroup(form,['wfl'],'无复流') }} 
-        {{ _self.formGroup(form,['ykqnzz','ykqncd'],'球囊直径 长度') }} 
-        {{ _self.formGroup(form,['zjzj','zjcd'],'平均直径 总长度') }}
-        {{ _self.formGroup(form,['szyy_dba','szyy_dafda','szyy_qjssxs'],'术中用药') }}
-        {{ _self.formGroup(form,['szyy_atp','szyy_xsgy','szyy_ssxs'],'术中用药') }}  
-        {{ _self.formGroup(form,['szyy_mf','szyy_sn'],'术中用药') }} 
+        {{ macros.formGroup(form,['zyj','zrzj'],'造影剂 植入支架') }}    
+        {{ macros.formGroup(form,['pcilj'],'PCI路径') }} 
+        {{ macros.formGroup(form,['hkzqnzj','hkzqncd'],'后扩球囊直径 长度') }} 
+        {{ macros.formGroup(form,['hkzdyl','szsc'],'后扩压力 室颤') }}
+        {{ macros.formGroup(form,['wfl'],'无复流') }} 
+        {{ macros.formGroup(form,['ykqnzz','ykqncd'],'球囊直径 长度') }} 
+        {{ macros.formGroup(form,['zjzj','zjcd'],'平均直径 总长度') }}
+        {{ macros.formGroup(form,['szyy_dba','szyy_dafda','szyy_qjssxs'],'术中用药') }}
+        {{ macros.formGroup(form,['szyy_atp','szyy_xsgy','szyy_ssxs'],'术中用药') }}  
+        {{ macros.formGroup(form,['szyy_mf','szyy_sn'],'术中用药') }} 
          
    </div>  
    
    <div class='col-lg-4'>
-        {{ _self.formGroup(form,['swcy','swcy_yy'],'死亡/出院') }}   
-        {{ _self.formGroup(form,['jxxs','zjnxs'],'心衰/血栓') }}       
-        {{ _self.formGroup(form,['bxgxycj'],'靶血管血运重建') }} 
-        {{ _self.formGroup(form,['zyzz','zyqjcx'],'卒中/出血') }}         
-        {{ _self.formGroup(form,['zyexxlsc'],'恶性心律失常') }}
-        {{ _self.formGroup(form,['zyts','zyfy'],'住院天数/费用') }}
-        {{ _self.formGroup(form,['zyicu','zyicu_ts'],'ICU住院') }}
-        {{ _self.formGroup(form,['zcxjgs','zyxtzt']) }} 
-        {{ _self.formGroup(form,['zyzyjsb','zyxfcd']) }} 
+        {{ macros.formGroup(form,['swcy','swcy_yy'],'死亡/出院') }}   
+        {{ macros.formGroup(form,['jxxs','zjnxs'],'心衰/血栓') }}       
+        {{ macros.formGroup(form,['bxgxycj'],'靶血管血运重建') }} 
+        {{ macros.formGroup(form,['zyzz','zyqjcx'],'卒中/出血') }}         
+        {{ macros.formGroup(form,['zyexxlsc'],'恶性心律失常') }}
+        {{ macros.formGroup(form,['zyts','zyfy'],'住院天数/费用') }}
+        {{ macros.formGroup(form,['zyicu','zyicu_ts'],'ICU住院') }}
+        {{ macros.formGroup(form,['zcxjgs','zyxtzt']) }} 
+        {{ macros.formGroup(form,['zyzyjsb','zyxfcd']) }} 
        
         
    </div> 
@@ -204,9 +185,8 @@
    </div>
    
    <div class="tab-pane fade show active" id="lcevent" role="tabpanel">
-         {{ form_widget(form.lcevents) }}  
-         
-          
+         {{ form_widget(form.lcevents) }} 
+      
   </div>
      
    {{ form_widget(form) }}   

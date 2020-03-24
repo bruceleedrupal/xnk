@@ -65,7 +65,6 @@ CREATE TABLE `lcevent` (
   `lczz_id` int(11) DEFAULT NULL,
   `lccx_id` int(11) DEFAULT NULL,
   `lcexxlsc_id` int(11) DEFAULT NULL,
-  `lckxxb_id` int(11) DEFAULT NULL,
   `lcsfrq` date NOT NULL,
   `lcdie` tinyint(1) DEFAULT NULL,
   `lcdie_reason` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -79,17 +78,16 @@ CREATE TABLE `lcevent` (
   `lcntbnp` decimal(5,2) DEFAULT NULL,
   `patient_id` int(11) DEFAULT NULL,
   `ffzxgcto` tinyint(1) DEFAULT NULL,
+  `lckxxb` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_A29679A1443F796E` (`lczjnxs_id`),
   KEY `IDX_A29679A171FA20AF` (`lczz_id`),
   KEY `IDX_A29679A1B6031DD7` (`lccx_id`),
   KEY `IDX_A29679A1CC88CB13` (`lcexxlsc_id`),
-  KEY `IDX_A29679A1AD77DE51` (`lckxxb_id`),
   KEY `IDX_A29679A16B899279` (`patient_id`),
   CONSTRAINT `FK_A29679A1443F796E` FOREIGN KEY (`lczjnxs_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_A29679A16B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
   CONSTRAINT `FK_A29679A171FA20AF` FOREIGN KEY (`lczz_id`) REFERENCES `options` (`id`),
-  CONSTRAINT `FK_A29679A1AD77DE51` FOREIGN KEY (`lckxxb_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_A29679A1B6031DD7` FOREIGN KEY (`lccx_id`) REFERENCES `options` (`id`),
   CONSTRAINT `FK_A29679A1CC88CB13` FOREIGN KEY (`lcexxlsc_id`) REFERENCES `options` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -101,7 +99,7 @@ CREATE TABLE `lcevent` (
 
 LOCK TABLES `lcevent` WRITE;
 /*!40000 ALTER TABLE `lcevent` DISABLE KEYS */;
-INSERT INTO `lcevent` VALUES (1,NULL,NULL,NULL,NULL,NULL,'2016-03-04',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,NULL);
+INSERT INTO `lcevent` VALUES (1,NULL,NULL,NULL,NULL,'2016-03-04',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,NULL,1);
 /*!40000 ALTER TABLE `lcevent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1143,4 +1141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-13  8:21:39
+-- Dump completed on 2020-03-24 10:02:25
