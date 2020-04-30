@@ -22,7 +22,7 @@
         "bootstrap-sass": "^3.4.1",
         "copy-webpack-plugin": "^5.0.4",
         "font-awesome": "^4.7.0",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "popper.js": "^1.16.0",
         "symfony-collection": "ninsuo/symfony-collection",
         "webpack": "^4.41.2"
